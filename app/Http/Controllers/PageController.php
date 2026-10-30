@@ -92,6 +92,23 @@ class PageController extends Controller
     }
 
     /**
+     * Start-Up Services (Low-MOQ Apparel Sourcing & Prototyping)
+     */
+    public function startupServices()
+    {
+        $meta = SeoService::getMeta([
+            'title' => 'Start-Up Services | Low-MOQ Sourcing & Prototyping | SOFTTEX FASHIONS',
+            'description' => 'Dedicated apparel sourcing and manufacturing services for fashion startups and emerging brands in Bangladesh. Low MOQs, rapid 5-7 day prototyping, AQL 1.5 QA, and export logistics.',
+            'keywords' => 'startup apparel manufacturer, low moq clothing factory bangladesh, small batch garment production, emerging fashion brand sourcing, softtex fashions startup services',
+        ]);
+
+        $crumbs = ['Home' => url('/'), 'Services' => url('/services'), 'Start-Up Services' => url('/startup-services')];
+        $schemaJsonLd = SeoService::getSchemaJsonLd('services', [SeoService::getBreadcrumbSchema($crumbs)]);
+
+        return view('pages.startup-services', compact('meta', 'schemaJsonLd'));
+    }
+
+    /**
      * Quality Assurance
      */
     public function quality()

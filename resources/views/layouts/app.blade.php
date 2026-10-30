@@ -162,7 +162,14 @@
                   <a href="{{ route('quality') }}">Quality Assurance</a>
                 </div>
               </div>
-              <a class="{{ request()->routeIs('services') ? 'on' : '' }}" href="{{ route('services') }}">Our Services</a>
+              <div class="dd">
+                <a class="{{ (request()->routeIs('services') || request()->routeIs('startup-services')) ? 'on' : '' }}" href="{{ route('services') }}">Services &#9662;</a>
+                <div class="sub">
+                  <a href="{{ route('services') }}">Enterprise Sourcing</a>
+                  <a href="{{ route('startup-services') }}">Start-Up Services</a>
+                  <a href="{{ route('quality') }}">Quality Assurance</a>
+                </div>
+              </div>
               <div class="dd">
                 <a class="{{ (request()->is('catalogue*') || request()->is('products*')) ? 'on' : '' }}" href="{{ route('product.client', 'womens') }}">Catalogue &#9662;</a>
                 <div class="sub softtex-sub-catalogue">
@@ -244,6 +251,7 @@
               <li><a href="{{ route('company-profile') }}">About Us</a></li>
               <li><a href="{{ route('product.client', 'womens') }}">Catalogue</a></li>
               <li><a href="{{ route('services') }}">Our Services</a></li>
+              <li><a href="{{ route('startup-services') }}">Start-Up Services</a></li>
               <li><a href="{{ route('compliance') }}">Sustainability</a></li>
               <li><a href="{{ route('terms-conditions') }}">Terms &amp; Conditions</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>

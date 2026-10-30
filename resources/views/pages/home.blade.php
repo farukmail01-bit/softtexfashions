@@ -49,8 +49,8 @@
         </div>
         <div class="softtex-editorial-solution-body">
           <h3>Product Development &amp; Sampling</h3>
-          <p>From design brief to proto samples: pattern grading, fabric sourcing, trim development, and rapid fit revisions in 7-10 days.</p>
-          <a class="softtex-editorial-solution-link" href="{{ route('services') }}">Learn more &rarr;</a>
+          <p>From design brief to proto samples: pattern grading, fabric sourcing, trim development, and rapid fit revisions in 5-7 days.</p>
+          <a class="softtex-editorial-solution-link" href="{{ route('startup-services') }}">Learn more &rarr;</a>
         </div>
       </article>
 
@@ -61,8 +61,8 @@
         </div>
         <div class="softtex-editorial-solution-body">
           <h3>Apparel Sourcing &amp; Merchandising</h3>
-          <p>Direct factory matching across our network of 230+ audited manufacturing facilities in Bangladesh for optimal pricing and capacity.</p>
-          <a class="softtex-editorial-solution-link" href="{{ route('services') }}">Learn more &rarr;</a>
+          <p>Direct factory matching across our network of 230+ audited manufacturing facilities in Bangladesh for optimal FOB pricing and capacity.</p>
+          <a class="softtex-editorial-solution-link" href="{{ route('startup-services') }}">Learn more &rarr;</a>
         </div>
       </article>
 
@@ -74,7 +74,7 @@
         <div class="softtex-editorial-solution-body">
           <h3>Quality Assurance &amp; Inspection</h3>
           <p>Rigorous 3-tier inspection protocol: Pre-production, In-line, and Final Random Inspection per strict AQL 1.5 / 2.5 standards.</p>
-          <a class="softtex-editorial-solution-link" href="{{ route('quality') }}">Learn more &rarr;</a>
+          <a class="softtex-editorial-solution-link" href="{{ route('startup-services') }}">Learn more &rarr;</a>
         </div>
       </article>
 
@@ -86,9 +86,26 @@
         <div class="softtex-editorial-solution-body">
           <h3>Production Tracking &amp; Export Logistics</h3>
           <p>Proactive T&A scheduling, daily milestone updates, shipping documentation, and reliable global container freight export.</p>
-          <a class="softtex-editorial-solution-link" href="{{ route('services') }}">Learn more &rarr;</a>
+          <a class="softtex-editorial-solution-link" href="{{ route('startup-services') }}">Learn more &rarr;</a>
         </div>
       </article>
+    </div>
+
+    <!-- Start-Up Accelerator Callout Banner -->
+    <div class="softtex-startup-banner softtex-reveal">
+      <div class="softtex-startup-banner-content">
+        <span class="softtex-startup-banner-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Start-Up &amp; Emerging Brands Accelerator
+        </span>
+        <h3 class="softtex-startup-banner-title">Launching a New Apparel Label? Start with 500-Piece MOQs</h3>
+        <p class="softtex-startup-banner-text">
+          Enterprise factory-gate pricing, 5-7 day rapid sampling, and on-site AQL 1.5 inspection without the traditional 3,000+ unit barriers.
+        </p>
+      </div>
+      <a class="softtex-startup-banner-cta" href="{{ route('startup-services') }}">
+        Explore Start-Up Services &rarr;
+      </a>
     </div>
   </div>
 </section>

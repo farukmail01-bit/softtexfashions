@@ -6,6 +6,7 @@ import { assetUrl } from '../utils/asset';
 export default function Navbar({ onOpenRfq }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [catalogueOpen, setCatalogueOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function Navbar({ onOpenRfq }) {
   useEffect(() => {
     setMobileMenuOpen(false);
     setAboutOpen(false);
+    setServicesOpen(false);
     setCatalogueOpen(false);
   }, [location.pathname]);
 
@@ -37,6 +39,7 @@ export default function Navbar({ onOpenRfq }) {
   const closeMenu = () => {
     setMobileMenuOpen(false);
     setAboutOpen(false);
+    setServicesOpen(false);
     setCatalogueOpen(false);
   };
 
@@ -47,11 +50,14 @@ export default function Navbar({ onOpenRfq }) {
       e.stopPropagation();
       if (type === 'about') {
         setAboutOpen((prev) => !prev);
+      } else if (type === 'services') {
+        setServicesOpen((prev) => !prev);
       } else if (type === 'catalogue') {
         setCatalogueOpen((prev) => !prev);
       }
     } else {
       if (type === 'about') navigate('/about/company-profile');
+      if (type === 'services') navigate('/services');
       if (type === 'catalogue') navigate('/catalogue/womens');
     }
   };
@@ -209,9 +215,35 @@ export default function Navbar({ onOpenRfq }) {
               </div>
             </div>
 
-            <Link className={isActive('/services') ? 'on' : ''} to="/services" onClick={closeMenu}>
-              Our Services
-            </Link>
+            {/* Services Dropdown / Accordion */}
+            <div className={`dd ${servicesOpen ? 'expanded' : ''}`}>
+              <div
+                className="dd-toggle-wrap"
+                onClick={(e) => handleDropdownClick(e, 'services')}
+                role="button"
+                tabIndex={0}
+                aria-expanded={servicesOpen}
+                aria-label="Toggle Services submenu"
+              >
+                <span className={`dd-title ${(location.pathname.startsWith('/services') || location.pathname === '/startup-services') ? 'on' : ''}`}>
+                  Services
+                </span>
+                <button
+                  type="button"
+                  className="mobile-accordion-toggle"
+                  aria-label="Toggle Services submenu"
+                  aria-expanded={servicesOpen}
+                  onClick={(e) => handleDropdownClick(e, 'services')}
+                >
+                  <ChevronDown size={18} className={`accordion-icon ${servicesOpen ? 'rotated' : ''}`} />
+                </button>
+              </div>
+              <div className={`sub ${servicesOpen ? 'show-mobile' : ''}`}>
+                <Link to="/services" onClick={closeMenu}>Enterprise Sourcing</Link>
+                <Link to="/startup-services" onClick={closeMenu}>Start-Up Services</Link>
+                <Link to="/quality" onClick={closeMenu}>Quality Assurance</Link>
+              </div>
+            </div>
 
             {/* Catalogue Dropdown / Accordion */}
             <div className={`dd ${catalogueOpen ? 'expanded' : ''}`}>

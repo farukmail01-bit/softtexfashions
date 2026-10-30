@@ -193,6 +193,9 @@ export default function ServicesPage() {
             <Link className="softtex-editorial-button" to="/contact">
               Request Sourcing Proposal <ArrowRight size={16} />
             </Link>
+            <Link className="softtex-editorial-button softtex-editorial-button-secondary" to="/startup-services">
+              Start-Up Program (Low MOQs)
+            </Link>
             <Link className="softtex-editorial-button softtex-editorial-button-secondary" to="/calculator">
               FOB Cost Calculator <Sparkles size={16} />
             </Link>

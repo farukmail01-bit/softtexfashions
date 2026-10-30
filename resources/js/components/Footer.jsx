@@ -40,6 +40,7 @@ export default function Footer() {
             <li><Link to="/about/company-profile">About Us</Link></li>
             <li><Link to="/catalogue/womens">Catalogue</Link></li>
             <li><Link to="/services">Our Services</Link></li>
+            <li><Link to="/startup-services">Start-Up Services</Link></li>
             <li><Link to="/compliance">Sustainability</Link></li>
             <li><Link to="/terms-conditions">Terms &amp; Conditions</Link></li>
             <li><Link to="/contact">Contact</Link></li>

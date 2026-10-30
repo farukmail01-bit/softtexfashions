@@ -9177,6 +9177,338 @@ html, body {
     }
 }
 
+/* ==========================================================================
+   START-UP SERVICES & ACCELERATOR STYLES
+   ========================================================================== */
+
+.softtex-startup-banner {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, rgba(15, 36, 56, 0.03) 0%, rgba(152, 100, 47, 0.08) 100%);
+    border: 1px solid var(--editorial-line);
+    border-left: 4px solid var(--editorial-bronze, #8f5825);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.softtex-startup-banner-content {
+    flex: 1;
+    min-width: 260px;
+}
+
+.softtex-startup-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--editorial-bronze, #8f5825);
+    margin-bottom: 6px;
+}
+
+.softtex-startup-banner-title {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--editorial-ink, #1b2433);
+    margin: 0 0 6px;
+    line-height: 1.3;
+}
+
+.softtex-startup-banner-text {
+    font-size: 14px;
+    color: var(--editorial-muted, #5d6673);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.softtex-startup-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--editorial-ink, #0f2438);
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.softtex-startup-banner-cta:hover {
+    background: var(--editorial-bronze, #8f5825);
+    transform: translateY(-1px);
+}
+
+.softtex-startup-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(152, 100, 47, 0.1);
+    border: 1px solid rgba(152, 100, 47, 0.3);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--editorial-bronze, #8f5825);
+    margin-bottom: 18px;
+}
+
+.softtex-startup-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+}
+
+@media (max-width: 900px) {
+    .softtex-startup-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.softtex-startup-pillar-card {
+    background: var(--editorial-card, #ffffff);
+    border: 1px solid var(--editorial-line);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.softtex-startup-pillar-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--editorial-bronze, #8f5825);
+    box-shadow: 0 16px 36px rgba(15, 36, 56, 0.09);
+}
+
+.softtex-startup-pillar-thumb {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #e7e2d9;
+}
+
+.softtex-startup-pillar-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.softtex-startup-pillar-card:hover .softtex-startup-pillar-thumb img {
+    transform: scale(1.05);
+}
+
+.softtex-startup-pillar-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(15, 36, 56, 0.88);
+    backdrop-filter: blur(4px);
+    color: #e5b378;
+    border: 1px solid rgba(229, 179, 120, 0.35);
+    border-radius: 3px;
+}
+
+.softtex-startup-pillar-metric {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #ffffff;
+    color: var(--editorial-ink, #0f2438);
+    border: 1px solid var(--editorial-line);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.softtex-startup-pillar-body {
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.softtex-startup-pillar-title {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--editorial-ink, #1b2433);
+    margin: 0 0 12px;
+    line-height: 1.28;
+}
+
+.softtex-startup-pillar-intro {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--editorial-ink, #1b2433);
+    font-weight: 500;
+    background: rgba(152, 100, 47, 0.04);
+    border-left: 3px solid var(--editorial-bronze, #8f5825);
+    padding: 12px 14px;
+    margin: 0 0 18px;
+    border-radius: 0 4px 4px 0;
+}
+
+.softtex-startup-pillar-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.softtex-startup-pillar-features li {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--editorial-muted, #5d6673);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.softtex-startup-pillar-features li svg {
+    color: var(--editorial-bronze, #8f5825);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.softtex-startup-pillar-footer {
+    padding-top: 18px;
+    border-top: 1px solid var(--editorial-line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Comparison Matrix Table */
+.softtex-startup-matrix-wrap {
+    overflow-x: auto;
+    margin-top: 32px;
+    background: var(--editorial-card, #ffffff);
+    border: 1px solid var(--editorial-line);
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(15, 36, 56, 0.03);
+}
+
+.softtex-startup-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.softtex-startup-matrix th,
+.softtex-startup-matrix td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--editorial-line);
+}
+
+.softtex-startup-matrix th {
+    background: #fbf9f4;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--editorial-ink, #0f2438);
+    letter-spacing: 0.02em;
+}
+
+.softtex-startup-matrix th.softtex-highlight-col {
+    background: rgba(152, 100, 47, 0.08);
+    color: var(--editorial-bronze, #8f5825);
+    border-left: 2px solid var(--editorial-bronze, #8f5825);
+    border-right: 2px solid var(--editorial-bronze, #8f5825);
+}
+
+.softtex-startup-matrix td.softtex-highlight-col {
+    background: rgba(152, 100, 47, 0.03);
+    font-weight: 600;
+    color: var(--editorial-ink, #0f2438);
+    border-left: 2px solid var(--editorial-bronze, #8f5825);
+    border-right: 2px solid var(--editorial-bronze, #8f5825);
+}
+
+.softtex-startup-matrix td.softtex-traditional-col {
+    color: #8c97a4;
+}
+
+.softtex-startup-matrix tr:last-child td {
+    border-bottom: none;
+}
+
+/* Startup FAQ Styles */
+.softtex-startup-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+}
+
+@media (max-width: 800px) {
+    .softtex-startup-faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.softtex-startup-faq-card {
+    background: var(--editorial-card, #ffffff);
+    border: 1px solid var(--editorial-line);
+    border-radius: 6px;
+    padding: 24px;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.softtex-startup-faq-card:hover {
+    border-color: var(--editorial-bronze, #8f5825);
+    box-shadow: 0 8px 20px rgba(15, 36, 56, 0.05);
+}
+
+.softtex-startup-faq-q {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--editorial-ink, #0f2438);
+    margin: 0 0 10px;
+    line-height: 1.35;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.softtex-startup-faq-q svg {
+    color: var(--editorial-bronze, #8f5825);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.softtex-startup-faq-a {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--editorial-muted, #5d6673);
+    margin: 0;
+}
+
+
 
 
 

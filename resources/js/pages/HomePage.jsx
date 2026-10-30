@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowRight, ArrowDownToLine, Check, ChevronLeft, ChevronRight, Clock, Globe, Layers, ShieldCheck, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { ArrowRight, ArrowDownToLine, Check, ChevronLeft, ChevronRight, Clock, Globe, Layers, ShieldCheck, Sparkles, SlidersHorizontal, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { assetUrl } from '../utils/asset';
 
@@ -9,28 +9,28 @@ const solutionCards = [
     description: 'From design brief to proto samples: pattern grading, fabric sourcing, trim development, and rapid fit revisions in 5-7 days.',
     image: 'images/collections/product-development-sampling.jpg',
     tag: 'Design & Lab',
-    link: '/services',
+    link: '/startup-services',
   },
   {
     title: 'Apparel Sourcing & Merchandising',
     description: 'Direct factory matching across our network of 230+ audited manufacturing facilities in Bangladesh for optimal FOB pricing and capacity.',
     image: 'images/collections/woven-shirts-collection.jpg',
     tag: 'Sourcing Bridge',
-    link: '/services',
+    link: '/startup-services',
   },
   {
     title: 'Quality Assurance & Inspection',
     description: 'Rigorous 3-tier inspection protocol: Pre-production, In-line, and Final Random Inspection per strict AQL 1.5 / 2.5 standards.',
     image: 'images/collections/quality-assurance-inspection.jpg',
     tag: 'Zero Defects',
-    link: '/quality',
+    link: '/startup-services',
   },
   {
     title: 'Production Tracking & Export Logistics',
     description: 'Proactive T&A scheduling, daily milestone updates, shipping documentation, and reliable global container freight export.',
     image: 'images/factory/sewing-garment.jpg',
     tag: 'Global Delivery',
-    link: '/services',
+    link: '/startup-services',
   },
 ];
 
@@ -412,6 +412,23 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Start-Up Accelerator Callout Banner */}
+          <div className="softtex-startup-banner softtex-reveal">
+            <div className="softtex-startup-banner-content">
+              <span className="softtex-startup-banner-badge">
+                <Zap size={13} />
+                <span>Start-Up &amp; Emerging Brands Accelerator</span>
+              </span>
+              <h3 className="softtex-startup-banner-title">Launching a New Apparel Label? Start with 500-Piece MOQs</h3>
+              <p className="softtex-startup-banner-text">
+                Enterprise factory-gate pricing, 5-7 day rapid sampling, and on-site AQL 1.5 inspection without the traditional 3,000+ unit barriers.
+              </p>
+            </div>
+            <Link className="softtex-startup-banner-cta" to="/startup-services">
+              Explore Start-Up Services <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>

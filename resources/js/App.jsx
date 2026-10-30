@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import StartupServicesPage from './pages/StartupServicesPage';
 import CompliancePage from './pages/CompliancePage';
 import ProductsPage from './pages/ProductsPage';
 import VisionPage from './pages/VisionPage';
@@ -41,6 +42,9 @@ function PageSeoTracker() {
       '/about/management': 'Executive Management | SOFTTEX FASHIONS WEAR LIMITED',
       '/management': 'Executive Management | SOFTTEX FASHIONS WEAR LIMITED',
       '/services': 'Our Services | Sourcing, Development & QA | SOFTTEX FASHIONS',
+      '/startup-services': 'Start-Up Services | Low-MOQ Sourcing & Prototyping | SOFTTEX FASHIONS',
+      '/services/startup': 'Start-Up Services | Low-MOQ Sourcing & Prototyping | SOFTTEX FASHIONS',
+      '/services/start-up': 'Start-Up Services | Low-MOQ Sourcing & Prototyping | SOFTTEX FASHIONS',
       '/products': 'Product Catalogues | SOFTTEX FASHIONS WEAR LIMITED',
       '/catalogue': 'Product Catalogues | SOFTTEX FASHIONS WEAR LIMITED',
       '/quality': 'Quality Assurance & AQL Standards | SOFTTEX FASHIONS',
@@ -120,6 +124,9 @@ function AppContent() {
             <Route path="/about/management" element={<ManagementPage />} />
             <Route path="/management" element={<Navigate to="/about/management" replace />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/startup-services" element={<StartupServicesPage />} />
+            <Route path="/services/startup" element={<Navigate to="/startup-services" replace />} />
+            <Route path="/services/start-up" element={<Navigate to="/startup-services" replace />} />
             <Route path="/quality" element={<QualityPage />} />
             <Route path="/compliance" element={<CompliancePage />} />
             <Route path="/terms" element={<TermsPage />} />
