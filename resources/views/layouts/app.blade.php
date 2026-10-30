@@ -165,14 +165,47 @@
               <a class="{{ request()->routeIs('services') ? 'on' : '' }}" href="{{ route('services') }}">Our Services</a>
               <div class="dd">
                 <a class="{{ (request()->is('catalogue*') || request()->is('products*')) ? 'on' : '' }}" href="{{ route('product.client', 'womens') }}">Catalogue &#9662;</a>
-                <div class="sub">
-                  <a href="{{ route('product.client', 'womens') }}">Women</a>
-                  <a href="{{ route('product.client', 'mens') }}">Men</a>
-                  <a href="{{ route('product.client', 'kids') }}">Children</a>
-                  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 6px 0;"></div>
-                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Womens.pdf" style="font-size: 12px;">Download Women's PDF</a>
-                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Mens.pdf" style="font-size: 12px;">Download Men's PDF</a>
-                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf') }}" download="Softtex_Fashions_Wear_Limited_Kids.pdf" style="font-size: 12px;">Download Kids' PDF</a>
+                <div class="sub softtex-sub-catalogue">
+                  <div class="softtex-dd-section-header">
+                    <span>Browse Collections</span>
+                  </div>
+                  <a href="{{ route('product.client', 'womens') }}" class="softtex-dd-link">
+                    <span class="softtex-dd-link-title">Women</span>
+                    <span class="softtex-dd-link-tag">Browse</span>
+                  </a>
+                  <a href="{{ route('product.client', 'mens') }}" class="softtex-dd-link">
+                    <span class="softtex-dd-link-title">Men</span>
+                    <span class="softtex-dd-link-tag">Browse</span>
+                  </a>
+                  <a href="{{ route('product.client', 'kids') }}" class="softtex-dd-link">
+                    <span class="softtex-dd-link-title">Children</span>
+                    <span class="softtex-dd-link-tag">Browse</span>
+                  </a>
+
+                  <div class="softtex-dd-divider"></div>
+
+                  <div class="softtex-dd-section-header softtex-dd-pdf-header">
+                    <span>Download Catalogues</span>
+                    <span class="softtex-dd-pdf-pill">PDF</span>
+                  </div>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Womens.pdf" class="softtex-dd-link softtex-dd-download-link">
+                    <span class="softtex-dd-icon-box">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+                    </span>
+                    <span class="softtex-dd-download-text">Download Women's PDF</span>
+                  </a>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Mens.pdf" class="softtex-dd-link softtex-dd-download-link">
+                    <span class="softtex-dd-icon-box">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+                    </span>
+                    <span class="softtex-dd-download-text">Download Men's PDF</span>
+                  </a>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf') }}" download="Softtex_Fashions_Wear_Limited_Kids.pdf" class="softtex-dd-link softtex-dd-download-link">
+                    <span class="softtex-dd-icon-box">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+                    </span>
+                    <span class="softtex-dd-download-text">Download Kids' PDF</span>
+                  </a>
                 </div>
               </div>
               <a class="{{ request()->routeIs('compliance') ? 'on' : '' }}" href="{{ route('compliance') }}">Sustainability</a>

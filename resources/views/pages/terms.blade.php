@@ -111,6 +111,28 @@
 
 @section('content')
 <div class="softtex-editorial-page softtex-terms-page">
+  {{-- 0. Print-Only Corporate Letterhead --}}
+  <div class="softtex-terms-print-letterhead softtex-print-only">
+    <div class="softtex-terms-print-brand-row">
+      <div>
+        <div class="softtex-terms-print-company-name">SOFTTEX FASHIONS WEAR LIMITED</div>
+        <div class="softtex-terms-print-company-desc">100% Export-Oriented Garments Manufacturer &amp; Sourcing Buying House</div>
+        <div class="softtex-terms-print-company-details">
+          Corporate Office: House #14, Road #02, Sector #03, Uttara, Dhaka-1230, Bangladesh<br>
+          Email: info@softtexfashions.com &bull; Phone: +880 1904 464294 &bull; Web: softtexfashions.com
+        </div>
+      </div>
+      <div class="softtex-terms-print-badge-box">
+        <div class="softtex-terms-print-badge-code">DOC ID: STX-TOS-2026/27</div>
+        <div class="softtex-terms-print-badge-title">Official Trade Policy</div>
+        <div style="font-size: 7pt; color: #555555; margin-top: 2px;">AQL 1.5 / 2.5 Certified</div>
+      </div>
+    </div>
+    <div class="softtex-terms-print-doc-title">
+      Commercial Terms &amp; Conditions of Apparel Export
+    </div>
+  </div>
+
   {{-- 1. Page Header --}}
   <section class="ph">
     <div class="w">
@@ -194,7 +216,7 @@
         @endforeach
       </div>
 
-      <div style="margin-top: 40px; padding: 24px 28px; background: #ffffff; border: 1px solid var(--editorial-line, #e6ded1); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div class="softtex-terms-print-banner softtex-screen-only" style="margin-top: 40px; padding: 24px 28px; background: #ffffff; border: 1px solid var(--editorial-line, #e6ded1); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
         <div>
           <h4 style="margin: 0 0 4px; fontSize: 16px; color: #0b1a2b;">Need a formal signed copy for your compliance department?</h4>
           <p style="margin: 0; fontSize: 13px; color: #5a6b7d;">You can print or save these terms as a reference PDF directly from your browser.</p>
@@ -206,11 +228,34 @@
           Print / Save as PDF
         </button>
       </div>
+
+      {{-- Print-Only Corporate Signature & Endorsement Block --}}
+      <div class="softtex-terms-print-endorsement softtex-print-only">
+        <div class="softtex-terms-print-sign-box">
+          <div class="softtex-terms-sign-title">Issued &amp; Certified By:</div>
+          <div class="softtex-terms-sign-company">SOFTTEX FASHIONS WEAR LIMITED</div>
+          <div class="softtex-terms-sign-placeholder"></div>
+          <div class="softtex-terms-sign-meta">
+            <strong>Managing Director / Compliance &amp; Sourcing Lead</strong><br>
+            Softtex Fashions Wear Limited &bull; Dhaka, Bangladesh
+          </div>
+        </div>
+
+        <div class="softtex-terms-print-sign-box">
+          <div class="softtex-terms-sign-title">Accepted &amp; Confirmed By Buyer:</div>
+          <div class="softtex-terms-sign-company">AUTHORIZED APPAREL BUYER / CLIENT</div>
+          <div class="softtex-terms-sign-placeholder"></div>
+          <div class="softtex-terms-sign-meta">
+            <strong>Authorized Representative Signature &amp; Company Seal</strong><br>
+            Company Name &amp; Date: ________________________________
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   {{-- 4. CTA --}}
-  <section class="cta">
+  <section class="cta softtex-screen-only">
     <div class="w">
       <div>
         <div class="ey l">Ready to Proceed?</div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, MessageCircle, FileDown } from 'lucide-react';
 import { assetUrl } from '../utils/asset';
 
 export default function Navbar({ onOpenRfq }) {
@@ -236,14 +236,62 @@ export default function Navbar({ onOpenRfq }) {
                   <ChevronDown size={18} className={`accordion-icon ${catalogueOpen ? 'rotated' : ''}`} />
                 </button>
               </div>
-              <div className={`sub ${catalogueOpen ? 'show-mobile' : ''}`}>
-                <Link to="/catalogue/womens" onClick={closeMenu}>Women</Link>
-                <Link to="/catalogue/mens" onClick={closeMenu}>Men</Link>
-                <Link to="/catalogue/kids" onClick={closeMenu}>Children</Link>
-                <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', margin: '6px 0' }} />
-                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')} download="Softtex_Fashions_Wear_Limited_Womens.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Women's PDF</a>
-                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')} download="Softtex_Fashions_Wear_Limited_Mens.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Men's PDF</a>
-                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')} download="Softtex_Fashions_Wear_Limited_Kids.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Kids' PDF</a>
+              <div className={`sub softtex-sub-catalogue ${catalogueOpen ? 'show-mobile' : ''}`}>
+                <div className="softtex-dd-section-header">
+                  <span>Browse Collections</span>
+                </div>
+                <Link to="/catalogue/womens" onClick={closeMenu} className="softtex-dd-link">
+                  <span className="softtex-dd-link-title">Women</span>
+                  <span className="softtex-dd-link-tag">Browse</span>
+                </Link>
+                <Link to="/catalogue/mens" onClick={closeMenu} className="softtex-dd-link">
+                  <span className="softtex-dd-link-title">Men</span>
+                  <span className="softtex-dd-link-tag">Browse</span>
+                </Link>
+                <Link to="/catalogue/kids" onClick={closeMenu} className="softtex-dd-link">
+                  <span className="softtex-dd-link-title">Children</span>
+                  <span className="softtex-dd-link-tag">Browse</span>
+                </Link>
+
+                <div className="softtex-dd-divider" />
+
+                <div className="softtex-dd-section-header softtex-dd-pdf-header">
+                  <span>Download Catalogues</span>
+                  <span className="softtex-dd-pdf-pill">PDF</span>
+                </div>
+                <a
+                  href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')}
+                  download="Softtex_Fashions_Wear_Limited_Womens.pdf"
+                  onClick={closeMenu}
+                  className="softtex-dd-link softtex-dd-download-link"
+                >
+                  <span className="softtex-dd-icon-box">
+                    <FileDown size={14} />
+                  </span>
+                  <span className="softtex-dd-download-text">Download Women's PDF</span>
+                </a>
+                <a
+                  href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')}
+                  download="Softtex_Fashions_Wear_Limited_Mens.pdf"
+                  onClick={closeMenu}
+                  className="softtex-dd-link softtex-dd-download-link"
+                >
+                  <span className="softtex-dd-icon-box">
+                    <FileDown size={14} />
+                  </span>
+                  <span className="softtex-dd-download-text">Download Men's PDF</span>
+                </a>
+                <a
+                  href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')}
+                  download="Softtex_Fashions_Wear_Limited_Kids.pdf"
+                  onClick={closeMenu}
+                  className="softtex-dd-link softtex-dd-download-link"
+                >
+                  <span className="softtex-dd-icon-box">
+                    <FileDown size={14} />
+                  </span>
+                  <span className="softtex-dd-download-text">Download Kids' PDF</span>
+                </a>
               </div>
             </div>
 

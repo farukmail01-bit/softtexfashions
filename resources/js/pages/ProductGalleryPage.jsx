@@ -134,6 +134,12 @@ export default function ProductGalleryPage({ clientSlug = null }) {
           image.addEventListener('error', () => reject(new Error(`Unable to load ${image.alt}.`)), { once: true });
         });
       }));
+      document.body.classList.add('is-printing-catalogue');
+      const cleanup = () => {
+        document.body.classList.remove('is-printing-catalogue');
+        window.removeEventListener('afterprint', cleanup);
+      };
+      window.addEventListener('afterprint', cleanup);
       window.print();
     } catch (error) {
       console.error('Unable to prepare product catalogue PDF:', error);

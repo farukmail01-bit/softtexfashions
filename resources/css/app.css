@@ -4058,13 +4058,210 @@ Link {
     }
 }
 
+/* ==========================================================================
+   GLOBAL PRINT ENGINE & COMMERCIAL TERMS SPECIFICATION
+   ========================================================================== */
+.softtex-print-only {
+    display: none !important;
+}
+
 @media print {
-    body * {
+    @page {
+        size: A4 portrait;
+        margin: 14mm 15mm 15mm 15mm;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    html, body {
+        background: #ffffff !important;
+        color: #0b1a2b !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        font-size: 9.5pt !important;
+        line-height: 1.45 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* 1. Global Non-Printable Elements */
+    header.site-header,
+    .softtex-editorial-navbar,
+    .site-nav,
+    nav,
+    .mobile-drawer,
+    footer,
+    .softtex-editorial-footer,
+    .floating-dock,
+    .softtex-floating-island,
+    .softtex-rfq-modal,
+    .softtex-cost-calculator-modal,
+    #softtex-floating-island,
+    .softtex-cookie-banner,
+    .softtex-terms-print-banner,
+    .softtex-screen-only,
+    .cta,
+    .softtex-editorial-cta,
+    button,
+    .btn,
+    .softtex-editorial-button,
+    .no-print {
+        display: none !important;
         visibility: hidden !important;
     }
 
-    .catalogue-print-root,
-    .catalogue-print-root * {
+    .softtex-print-only {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* 2. Terms Page Print Layout */
+    .softtex-terms-page,
+    .softtex-terms-page * {
+        visibility: visible !important;
+    }
+
+    .softtex-terms-page {
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .softtex-terms-page .ph {
+        padding: 0 0 16px !important;
+        text-align: left !important;
+    }
+
+    .softtex-terms-page .ph h1 {
+        font-size: 18pt !important;
+        color: #0b1a2b !important;
+        margin: 0 0 6px !important;
+    }
+
+    .softtex-terms-page .ph p {
+        font-size: 8.5pt !important;
+        color: #4b5563 !important;
+        line-height: 1.4 !important;
+        margin: 0 0 12px !important;
+    }
+
+    .softtex-terms-pills {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .softtex-terms-pill {
+        border: 1px solid #d1d5db !important;
+        background: #f9fafb !important;
+        color: #111827 !important;
+        font-size: 8pt !important;
+        padding: 3px 8px !important;
+        border-radius: 4px !important;
+    }
+
+    .softtex-terms-bento {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 18px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .softtex-terms-bento-card {
+        border: 1px solid #e5e7eb !important;
+        border-radius: 4px !important;
+        padding: 8px 10px !important;
+        background: #ffffff !important;
+    }
+
+    .softtex-terms-bento-card h4 {
+        font-size: 9pt !important;
+        color: #98642f !important;
+        margin: 0 0 3px !important;
+    }
+
+    .softtex-terms-bento-card p {
+        font-size: 7.5pt !important;
+        color: #4b5563 !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+
+    .softtex-terms-articles-grid {
+        display: block !important;
+    }
+
+    .softtex-terms-article-card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 4px !important;
+        background: #ffffff !important;
+        padding: 10px 14px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .softtex-terms-article-header {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .softtex-terms-article-num {
+        font-size: 13pt !important;
+        font-weight: 700 !important;
+        color: #98642f !important;
+        line-height: 1 !important;
+    }
+
+    .softtex-terms-article-title {
+        font-size: 10.5pt !important;
+        font-weight: 700 !important;
+        color: #0b1a2b !important;
+        margin: 0 0 2px !important;
+    }
+
+    .softtex-terms-article-subtitle {
+        font-size: 7.5pt !important;
+        font-weight: 600 !important;
+        color: #98642f !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        margin: 0 !important;
+    }
+
+    .softtex-terms-article-list {
+        margin: 0 !important;
+        padding-left: 14px !important;
+    }
+
+    .softtex-terms-article-list li {
+        font-size: 8.5pt !important;
+        line-height: 1.4 !important;
+        color: #374151 !important;
+        margin-bottom: 3px !important;
+    }
+
+    .softtex-terms-article-list li svg {
+        display: none !important;
+    }
+
+    /* 3. Catalogue Print When Triggered from ProductGalleryPage */
+    body.is-printing-catalogue * {
+        visibility: hidden !important;
+    }
+
+    body.is-printing-catalogue .catalogue-print-root,
+    body.is-printing-catalogue .catalogue-print-root * {
         visibility: visible !important;
     }
 
@@ -4075,9 +4272,7 @@ Link {
         width: 100%;
         padding: 0;
         color: #142943;
-        font:
-            11pt/1.5 Arial,
-            sans-serif;
+        font: 11pt/1.5 Arial, sans-serif;
     }
 
     .catalogue-print-root h1 {
@@ -4126,6 +4321,110 @@ Link {
         padding-top: 3px;
         font-size: 7pt;
     }
+}
+
+/* Print Letterhead and Endorsement Components */
+.softtex-terms-print-letterhead {
+    border-bottom: 2px solid #98642f;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.softtex-terms-print-brand-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.softtex-terms-print-company-name {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 19pt;
+    font-weight: 700;
+    color: #0b1a2b;
+    letter-spacing: 0.02em;
+    margin: 0 0 2px;
+}
+
+.softtex-terms-print-company-desc {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #98642f;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.softtex-terms-print-company-details {
+    font-size: 8pt;
+    color: #555555;
+    line-height: 1.35;
+}
+
+.softtex-terms-print-badge-box {
+    text-align: right;
+    border: 1px solid #98642f;
+    border-radius: 4px;
+    padding: 6px 12px;
+    background: #fdfaf6 !important;
+}
+
+.softtex-terms-print-badge-code {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #98642f;
+}
+
+.softtex-terms-print-badge-title {
+    font-size: 7.5pt;
+    color: #0b1a2b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.softtex-terms-print-endorsement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px dashed #999999;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+.softtex-terms-print-sign-box {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: #fafafa !important;
+}
+
+.softtex-terms-sign-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #98642f;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+.softtex-terms-sign-company {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0b1a2b;
+    margin-bottom: 10px;
+}
+
+.softtex-terms-sign-placeholder {
+    height: 48px;
+    border-bottom: 1px solid #374151;
+    margin-bottom: 8px;
+}
+
+.softtex-terms-sign-meta {
+    font-size: 8pt;
+    color: #4b5563;
+    line-height: 1.4;
 }
 
 /* ========================================================
@@ -4828,13 +5127,98 @@ footer p,
     position: absolute;
     top: 100%;
     left: -14px;
-    min-width: 190px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    padding: 6px 0;
+    min-width: 210px;
+    background: #ffffff;
+    border: 1px solid var(--line, #e4ded0);
+    border-radius: 8px;
+    padding: 8px 6px;
     display: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    z-index: 30;
+    box-shadow: 0 18px 42px rgba(15, 36, 56, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+    z-index: 100;
+}
+.softtex-sub-catalogue {
+    min-width: 250px;
+    padding: 10px 8px;
+}
+.softtex-dd-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 10px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bz, #98642f);
+}
+.softtex-dd-pdf-pill {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(152, 100, 47, 0.12);
+    color: var(--bz, #98642f);
+}
+.softtex-dd-divider {
+    height: 1px;
+    background: var(--line, #e4ded0);
+    margin: 8px 4px 10px;
+}
+.softtex-dd-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px !important;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ink, #1b2433) !important;
+    transition: background-color 150ms ease, color 150ms ease;
+    font-size: 13px !important;
+    font-weight: 500;
+}
+.softtex-dd-link:hover {
+    background: rgba(152, 100, 47, 0.08) !important;
+    color: var(--bz, #98642f) !important;
+}
+.softtex-dd-link-title {
+    color: inherit;
+}
+.softtex-dd-link-tag {
+    font-size: 10.5px;
+    color: var(--mut, #5d6673);
+    transition: color 150ms ease;
+}
+.softtex-dd-link:hover .softtex-dd-link-tag {
+    color: var(--bz, #98642f);
+}
+.softtex-dd-download-link {
+    justify-content: flex-start !important;
+    gap: 9px;
+    font-size: 12.5px !important;
+}
+.softtex-dd-icon-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    background: rgba(152, 100, 47, 0.08);
+    color: var(--bz, #98642f);
+    flex-shrink: 0;
+    transition: transform 150ms ease, background-color 150ms ease;
+}
+.softtex-dd-download-link:hover .softtex-dd-icon-box {
+    background: var(--bz, #98642f);
+    color: #ffffff;
+    transform: translateY(1px);
+}
+.softtex-dd-download-text {
+    font-size: 12px;
+    color: var(--ink, #1b2433);
+}
+.softtex-dd-download-link:hover .softtex-dd-download-text {
+    color: var(--bz, #98642f);
 }
 @media (min-width: 1025px) {
     .dd:hover > .sub,

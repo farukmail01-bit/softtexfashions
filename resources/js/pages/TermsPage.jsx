@@ -129,6 +129,28 @@ export default function TermsPage() {
 
   return (
     <div className="softtex-editorial-page softtex-terms-page">
+      {/* 0. Print-Only Corporate Letterhead */}
+      <div className="softtex-terms-print-letterhead softtex-print-only">
+        <div className="softtex-terms-print-brand-row">
+          <div>
+            <div className="softtex-terms-print-company-name">SOFTTEX FASHIONS WEAR LIMITED</div>
+            <div className="softtex-terms-print-company-desc">100% Export-Oriented Garments Manufacturer &amp; Sourcing Buying House</div>
+            <div className="softtex-terms-print-company-details">
+              Corporate Office: House #14, Road #02, Sector #03, Uttara, Dhaka-1230, Bangladesh<br />
+              Email: info@softtexfashions.com &bull; Phone: +880 1904 464294 &bull; Web: softtexfashions.com
+            </div>
+          </div>
+          <div className="softtex-terms-print-badge-box">
+            <div className="softtex-terms-print-badge-code">DOC ID: STX-TOS-2026/27</div>
+            <div className="softtex-terms-print-badge-title">Official Trade Policy</div>
+            <div style={{ fontSize: '7pt', color: '#555555', marginTop: '2px' }}>AQL 1.5 / 2.5 Certified</div>
+          </div>
+        </div>
+        <div className="softtex-terms-print-doc-title">
+          Commercial Terms &amp; Conditions of Apparel Export
+        </div>
+      </div>
+
       {/* 1. Page Header */}
       <section className="ph">
         <div className="w">
@@ -219,6 +241,7 @@ export default function TermsPage() {
           </div>
 
           <div
+            className="softtex-terms-print-banner softtex-screen-only"
             style={{
               marginTop: '40px',
               padding: '24px 28px',
@@ -249,11 +272,34 @@ export default function TermsPage() {
               <Printer size={15} /> Print / Save as PDF
             </button>
           </div>
+
+          {/* Print-Only Corporate Signature & Endorsement Block */}
+          <div className="softtex-terms-print-endorsement softtex-print-only">
+            <div className="softtex-terms-print-sign-box">
+              <div className="softtex-terms-sign-title">Issued &amp; Certified By:</div>
+              <div className="softtex-terms-sign-company">SOFTTEX FASHIONS WEAR LIMITED</div>
+              <div className="softtex-terms-sign-placeholder" />
+              <div className="softtex-terms-sign-meta">
+                <strong>Managing Director / Compliance &amp; Sourcing Lead</strong><br />
+                Softtex Fashions Wear Limited &bull; Dhaka, Bangladesh
+              </div>
+            </div>
+
+            <div className="softtex-terms-print-sign-box">
+              <div className="softtex-terms-sign-title">Accepted &amp; Confirmed By Buyer:</div>
+              <div className="softtex-terms-sign-company">AUTHORIZED APPAREL BUYER / CLIENT</div>
+              <div className="softtex-terms-sign-placeholder" />
+              <div className="softtex-terms-sign-meta">
+                <strong>Authorized Representative Signature &amp; Company Seal</strong><br />
+                Company Name &amp; Date: ________________________________
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* 4. CTA */}
-      <section className="cta">
+      <section className="cta softtex-screen-only">
         <div className="w">
           <div>
             <div className="ey l">Ready to Proceed?</div>
