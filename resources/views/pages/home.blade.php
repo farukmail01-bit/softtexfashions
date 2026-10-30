@@ -44,7 +44,7 @@
     <div class="softtex-editorial-solutions-grid">
       <article class="softtex-editorial-solution-card softtex-reveal">
         <div class="softtex-editorial-solution-img-wrap">
-          <img src="{{ asset('images/softtex-editorial/ab.jpg') }}" alt="Product Development and Sampling" loading="lazy">
+          <img src="{{ asset('images/collections/product-development-sampling.jpg') }}" alt="Product Development and Sampling" loading="lazy">
           <span class="softtex-editorial-solution-tag">Design &amp; Lab</span>
         </div>
         <div class="softtex-editorial-solution-body">
@@ -56,7 +56,7 @@
 
       <article class="softtex-editorial-solution-card softtex-reveal">
         <div class="softtex-editorial-solution-img-wrap">
-          <img src="{{ asset('images/softtex-editorial/f3.jpg') }}" alt="Apparel Sourcing" loading="lazy">
+          <img src="{{ asset('images/collections/woven-shirts-collection.jpg') }}" alt="Apparel Sourcing" loading="lazy">
           <span class="softtex-editorial-solution-tag">Sourcing Bridge</span>
         </div>
         <div class="softtex-editorial-solution-body">
@@ -68,7 +68,7 @@
 
       <article class="softtex-editorial-solution-card softtex-reveal">
         <div class="softtex-editorial-solution-img-wrap">
-          <img src="{{ asset('images/softtex-editorial/q1.jpg') }}" alt="Quality Control" loading="lazy">
+          <img src="{{ asset('images/collections/quality-assurance-inspection.jpg') }}" alt="Quality Control" loading="lazy">
           <span class="softtex-editorial-solution-tag">Zero Defects</span>
         </div>
         <div class="softtex-editorial-solution-body">
@@ -80,7 +80,7 @@
 
       <article class="softtex-editorial-solution-card softtex-reveal">
         <div class="softtex-editorial-solution-img-wrap">
-          <img src="{{ asset('images/softtex-editorial/q2.jpg') }}" alt="Merchandising & Production Follow-up" loading="lazy">
+          <img src="{{ asset('images/factory/sewing-garment.jpg') }}" alt="Merchandising & Production Follow-up" loading="lazy">
           <span class="softtex-editorial-solution-tag">Global Delivery</span>
         </div>
         <div class="softtex-editorial-solution-body">
@@ -104,7 +104,7 @@
     <div class="softtex-editorial-photo-collections-grid">
       <a class="softtex-editorial-photo-collection-card softtex-reveal" href="{{ route('product.client', 'mens') }}">
         <div class="softtex-editorial-photo-collection-thumb">
-          <img src="{{ asset('images/softtex-editorial/f3.jpg') }}" alt="Woven Shirts & Tops" loading="lazy">
+          <img src="{{ asset('images/collections/woven-shirts-collection.jpg') }}" alt="Woven Shirts & Tops" loading="lazy">
           <span class="softtex-editorial-photo-collection-count">120+ Styles</span>
         </div>
         <div class="softtex-editorial-photo-collection-body">
@@ -116,7 +116,7 @@
 
       <a class="softtex-editorial-photo-collection-card softtex-reveal" href="{{ route('product.client', 'womens') }}">
         <div class="softtex-editorial-photo-collection-thumb">
-          <img src="{{ asset('images/softtex-editorial/f1.jpg') }}" alt="Knitwear & Polos" loading="lazy">
+          <img src="{{ asset('images/collections/knitwear-polos-collection.jpg') }}" alt="Knitwear & Polos" loading="lazy">
           <span class="softtex-editorial-photo-collection-count">100+ Styles</span>
         </div>
         <div class="softtex-editorial-photo-collection-body">
@@ -128,7 +128,7 @@
 
       <a class="softtex-editorial-photo-collection-card softtex-reveal" href="{{ route('product.client', 'mens') }}">
         <div class="softtex-editorial-photo-collection-thumb">
-          <img src="{{ asset('images/softtex-editorial/f2.jpg') }}" alt="Denim & Bottoms" loading="lazy">
+          <img src="{{ asset('images/collections/denim-bottoms-collection.jpg') }}" alt="Denim & Bottoms" loading="lazy">
           <span class="softtex-editorial-photo-collection-count">80+ Styles</span>
         </div>
         <div class="softtex-editorial-photo-collection-body">
@@ -152,7 +152,7 @@
 
       <a class="softtex-editorial-photo-collection-card softtex-reveal" href="{{ route('product.client', 'kids') }}">
         <div class="softtex-editorial-photo-collection-thumb">
-          <img src="{{ asset('images/kids/1.jpg') }}" alt="Children & Babywear" loading="lazy">
+          <img src="{{ asset('images/collections/children-babywear-collection.jpg') }}" alt="Children & Babywear" loading="lazy">
           <span class="softtex-editorial-photo-collection-count">78+ Styles</span>
         </div>
         <div class="softtex-editorial-photo-collection-body">
@@ -256,9 +256,9 @@
       <a class="btn" href="{{ route('quality') }}">Learn More About Our Services &rarr;</a>
     </div>
     <div class="qm softtex-reveal-right">
-      <div><img src="{{ asset('images/softtex-editorial/q1.jpg') }}" alt="Quality check of a shirt" loading="lazy"></div>
-      <div><img src="{{ asset('images/softtex-editorial/q2.jpg') }}" alt="Garment factory floor" loading="lazy"></div>
-      <div><img src="{{ asset('images/softtex-editorial/q3.jpg') }}" alt="Fabric swatches" loading="lazy"></div>
+      <div><img src="{{ asset('images/collections/quality-assurance-inspection.jpg') }}" alt="Quality check of a shirt" loading="lazy"></div>
+      <div><img src="{{ asset('images/factory/sewing-garment.jpg') }}" alt="Garment factory floor" loading="lazy"></div>
+      <div><img src="{{ asset('images/collections/woven-shirts-collection.jpg') }}" alt="Fabric swatches" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -268,7 +268,7 @@
   <div class="w">
     <div class="softtex-editorial-about-inner">
       <div class="softtex-editorial-about-img-wrap softtex-reveal-left">
-        <img src="{{ asset('images/softtex-editorial/ab.jpg') }}" alt="Fabric swatches on a sourcing table" loading="lazy">
+        <img src="{{ asset('images/collections/product-development-sampling.jpg') }}" alt="Fabric swatches on a sourcing table" loading="lazy">
       </div>
       <div class="softtex-editorial-about-content softtex-reveal-right">
         <div class="ey l">About Softtex</div>

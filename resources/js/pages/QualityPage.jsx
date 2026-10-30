@@ -99,17 +99,17 @@ const labTests = [
 
 const galleryPhotos = [
   {
-    img: 'images/softtex-editorial/q1.jpg',
+    img: 'images/collections/quality-assurance-inspection.jpg',
     title: 'Garment Specification & Measurement',
     desc: 'Critical point-to-point measurement audit against approved buyer tech pack.',
   },
   {
-    img: 'images/softtex-editorial/q2.jpg',
+    img: 'images/factory/sewing-garment.jpg',
     title: 'Modern Lean Production Floor',
     desc: 'Synchronized sewing line with automated workstations and inline QA desks.',
   },
   {
-    img: 'images/softtex-editorial/q3.jpg',
+    img: 'images/collections/product-development-sampling.jpg',
     title: 'Fabric Swatch & Shade Matching',
     desc: 'D65 lightbox evaluation ensuring absolute color harmony across dye lots.',
   },

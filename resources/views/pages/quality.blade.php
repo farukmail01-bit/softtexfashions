@@ -196,7 +196,7 @@
       <div class="softtex-quality-gallery-grid">
         <div class="softtex-quality-gallery-card">
           <div class="softtex-quality-gallery-img">
-            <img src="{{ asset('images/softtex-editorial/q1.jpg') }}" alt="Garment Specification &amp; Measurement" loading="lazy">
+            <img src="{{ asset('images/collections/quality-assurance-inspection.jpg') }}" alt="Garment Specification &amp; Measurement" loading="lazy">
           </div>
           <div class="softtex-quality-gallery-caption">
             <strong>Garment Specification &amp; Measurement</strong>
@@ -205,7 +205,7 @@
         </div>
         <div class="softtex-quality-gallery-card">
           <div class="softtex-quality-gallery-img">
-            <img src="{{ asset('images/softtex-editorial/q2.jpg') }}" alt="Modern Lean Production Floor" loading="lazy">
+            <img src="{{ asset('images/factory/sewing-garment.jpg') }}" alt="Modern Lean Production Floor" loading="lazy">
           </div>
           <div class="softtex-quality-gallery-caption">
             <strong>Modern Lean Production Floor</strong>
@@ -214,7 +214,7 @@
         </div>
         <div class="softtex-quality-gallery-card">
           <div class="softtex-quality-gallery-img">
-            <img src="{{ asset('images/softtex-editorial/q3.jpg') }}" alt="Fabric Swatch &amp; Shade Matching" loading="lazy">
+            <img src="{{ asset('images/collections/product-development-sampling.jpg') }}" alt="Fabric Swatch &amp; Shade Matching" loading="lazy">
           </div>
           <div class="softtex-quality-gallery-caption">
             <strong>Fabric Swatch &amp; Shade Matching</strong>

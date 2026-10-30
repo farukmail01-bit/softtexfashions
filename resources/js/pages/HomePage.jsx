@@ -7,28 +7,28 @@ const solutionCards = [
   {
     title: 'Product Development & Sampling',
     description: 'From design brief to proto samples: pattern grading, fabric sourcing, trim development, and rapid fit revisions in 5-7 days.',
-    image: 'images/softtex-editorial/ab.jpg',
+    image: 'images/collections/product-development-sampling.jpg',
     tag: 'Design & Lab',
     link: '/services',
   },
   {
     title: 'Apparel Sourcing & Merchandising',
     description: 'Direct factory matching across our network of 230+ audited manufacturing facilities in Bangladesh for optimal FOB pricing and capacity.',
-    image: 'images/softtex-editorial/f3.jpg',
+    image: 'images/collections/woven-shirts-collection.jpg',
     tag: 'Sourcing Bridge',
     link: '/services',
   },
   {
     title: 'Quality Assurance & Inspection',
     description: 'Rigorous 3-tier inspection protocol: Pre-production, In-line, and Final Random Inspection per strict AQL 1.5 / 2.5 standards.',
-    image: 'images/softtex-editorial/q1.jpg',
+    image: 'images/collections/quality-assurance-inspection.jpg',
     tag: 'Zero Defects',
     link: '/quality',
   },
   {
     title: 'Production Tracking & Export Logistics',
     description: 'Proactive T&A scheduling, daily milestone updates, shipping documentation, and reliable global container freight export.',
-    image: 'images/softtex-editorial/q2.jpg',
+    image: 'images/factory/sewing-garment.jpg',
     tag: 'Global Delivery',
     link: '/services',
   },
@@ -38,7 +38,7 @@ const productCollections = [
   {
     title: 'Woven Shirts & Tops',
     category: 'Woven Wear',
-    image: 'images/softtex-editorial/f3.jpg',
+    image: 'images/collections/woven-shirts-collection.jpg',
     path: '/catalogue/mens',
     count: '120+ Styles',
     description: 'Poplin, oxford, linen blends & tailored formal/casual shirts.',
@@ -46,7 +46,7 @@ const productCollections = [
   {
     title: 'Knitwear & Polos',
     category: 'Knitwear',
-    image: 'images/softtex-editorial/f1.jpg',
+    image: 'images/collections/knitwear-polos-collection.jpg',
     path: '/catalogue/womens',
     count: '100+ Styles',
     description: '100% combed cotton jersey tees, piqués & fleece hoodies.',
@@ -54,7 +54,7 @@ const productCollections = [
   {
     title: 'Denim & Bottoms',
     category: 'Denim & Casuals',
-    image: 'images/softtex-editorial/f2.jpg',
+    image: 'images/collections/denim-bottoms-collection.jpg',
     path: '/catalogue/mens',
     count: '80+ Styles',
     description: '10-14oz authentic ring denim, stretches & washed chinos.',
@@ -70,7 +70,7 @@ const productCollections = [
   {
     title: 'Children & Babywear',
     category: 'Kidswear',
-    image: 'images/kids/1.jpg',
+    image: 'images/collections/children-babywear-collection.jpg',
     path: '/catalogue/kids',
     count: '78+ Styles',
     description: 'Safe, nickel-free, OEKO-TEX certified infant & youth apparel.',
@@ -708,9 +708,9 @@ export default function HomePage() {
             <Link className="softtex-editorial-button" to="/quality">Learn about our quality process <ArrowRight size={16} /></Link>
           </div>
           <div className="softtex-editorial-quality-collage softtex-reveal-right">
-            <img src={assetUrl('images/softtex-editorial/q1.jpg')} alt="Garment quality inspection" loading="lazy" />
-            <img src={assetUrl('images/softtex-editorial/q2.jpg')} alt="Garment production floor" loading="lazy" />
-            <img src={assetUrl('images/softtex-editorial/q3.jpg')} alt="Apparel fabric swatches" loading="lazy" />
+            <img src={assetUrl('images/collections/quality-assurance-inspection.jpg')} alt="Garment quality inspection" loading="lazy" />
+            <img src={assetUrl('images/factory/sewing-garment.jpg')} alt="Garment production floor" loading="lazy" />
+            <img src={assetUrl('images/collections/woven-shirts-collection.jpg')} alt="Apparel fabric swatches" loading="lazy" />
           </div>
         </div>
       </section>
@@ -720,7 +720,7 @@ export default function HomePage() {
         <div className="softtex-editorial-wrap">
           <div className="softtex-editorial-about-inner">
             <div className="softtex-editorial-about-img-wrap softtex-reveal-left">
-              <img src={assetUrl('images/softtex-editorial/ab.jpg')} alt="Fabric swatches for apparel sourcing" loading="lazy" />
+              <img src={assetUrl('images/collections/product-development-sampling.jpg')} alt="Fabric swatches for apparel sourcing" loading="lazy" />
             </div>
             <div className="softtex-editorial-about-content softtex-reveal-right">
               <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">About Softtex</p>
