@@ -263,22 +263,6 @@
   </div>
 </section>
 
-{{-- ABOUT SECTION --}}
-<section class="sec alt softtex-editorial-about-section softtex-reveal" id="about">
-  <div class="w">
-    <div class="softtex-editorial-about-inner">
-      <div class="softtex-editorial-about-img-wrap softtex-reveal-left">
-        <img src="{{ asset('images/collections/product-development-sampling.jpg') }}" alt="Fabric swatches on a sourcing table" loading="lazy">
-      </div>
-      <div class="softtex-editorial-about-content softtex-reveal-right">
-        <div class="ey l">About Softtex</div>
-        <h2>A local partner. A global perspective.</h2>
-        <p>SOFTTEX FASHIONS WEAR LIMITED is a 100% export-oriented garments manufacturer and buying house based in Bangladesh. We work with international fashion brands, retailers and wholesalers to source a wide range of apparel through a reliable network of manufacturers. Our focus is on building long-term relationships through transparency, professionalism and a commitment to your business goals.</p>
-        <a class="btn o" href="{{ route('company-profile') }}">More About Us &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 {{-- TRUST & CERTIFICATIONS --}}
 <section class="sec alt" id="trust">
@@ -431,6 +415,8 @@
         });
       });
     });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.softtex-reveal, .softtex-reveal-scale, .softtex-reveal-left, .softtex-reveal-right')
         .forEach(function (el) { el.classList.add('is-revealed'); });
       return;

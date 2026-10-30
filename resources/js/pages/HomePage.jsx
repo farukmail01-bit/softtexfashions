@@ -203,49 +203,6 @@ const operationalBenchmarks = [
   },
 ];
 
-const estimatorBenchmarks = {
-  knits: {
-    label: 'Knitwear & Polos',
-    fob: '$3.80 - $6.50',
-    leadTime: '45 - 55 Days',
-    sampling: '5 - 7 Days',
-    fabric: '100% Combed BCI Cotton, Single Jersey / Piqué (180-240 GSM)',
-    capacity: '850,000 Pcs/mo',
-  },
-  wovens: {
-    label: 'Woven Shirts & Blouses',
-    fob: '$5.50 - $9.20',
-    leadTime: '55 - 65 Days',
-    sampling: '7 - 10 Days',
-    fabric: 'Poplin, Oxford, Yarn-Dyed Linen / Cotton Blends (120-160 GSM)',
-    capacity: '400,000 Pcs/mo',
-  },
-  denim: {
-    label: 'Denim & Casual Bottoms',
-    fob: '$6.80 - $11.50',
-    leadTime: '60 - 70 Days',
-    sampling: '8 - 12 Days',
-    fabric: '10-14oz Ring-Spun Denim, Stretch Spandex, Enzyme Stone Wash',
-    capacity: '350,000 Pcs/mo',
-  },
-  outerwear: {
-    label: 'Jackets & Outerwear',
-    fob: '$12.00 - $24.00',
-    leadTime: '65 - 75 Days',
-    sampling: '10 - 14 Days',
-    fabric: 'Waterproof Poly/Nylon, Down/Polyfill Insulation, YKK Trims',
-    capacity: '200,000 Pcs/mo',
-  },
-  kids: {
-    label: 'Children & Babywear',
-    fob: '$2.90 - $5.20',
-    leadTime: '45 - 55 Days',
-    sampling: '5 - 7 Days',
-    fabric: 'OEKO-TEX Class I Nickel-Free, Organic Cotton Interlock',
-    capacity: '300,000 Pcs/mo',
-  },
-};
-
 const certificationBadges = [
   { name: 'ACCORD / RSC', logo: 'images/certificatelogos/accord-logo.png', desc: 'Building & Fire Safety' },
   { name: 'BSCI', logo: 'images/certificatelogos/bsci-logo.png', desc: 'Social Compliance' },
@@ -336,8 +293,6 @@ export default function HomePage() {
   const [heroSlideDirection, setHeroSlideDirection] = useState('next');
   const [isHeroPhotoPaused, setIsHeroPhotoPaused] = useState(false);
   const [brandRegion, setBrandRegion] = useState('all');
-  const [calcCategory, setCalcCategory] = useState('knits');
-  const [calcQuantity, setCalcQuantity] = useState(3000);
   const heroGridRef = useRef(null);
   const previousHeroSlide = useRef(activeHeroSlide);
 
@@ -438,8 +393,6 @@ export default function HomePage() {
     if (brandRegion === 'all') return buyerLogos;
     return buyerLogos.filter((b) => b.region === brandRegion);
   }, [brandRegion]);
-
-  const activeBenchmark = estimatorBenchmarks[calcCategory] || estimatorBenchmarks.knits;
 
   return (
     <div className="softtex-home-page softtex-editorial-home">
@@ -715,23 +668,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Softtex Split Feature with Inspection Hands Photo */}
-      <section className="softtex-editorial-section softtex-editorial-alt softtex-editorial-about-section softtex-reveal" id="about">
-        <div className="softtex-editorial-wrap">
-          <div className="softtex-editorial-about-inner">
-            <div className="softtex-editorial-about-img-wrap softtex-reveal-left">
-              <img src={assetUrl('images/collections/product-development-sampling.jpg')} alt="Fabric swatches for apparel sourcing" loading="lazy" />
-            </div>
-            <div className="softtex-editorial-about-content softtex-reveal-right">
-              <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">About Softtex</p>
-              <h2>A local partner. A global perspective.</h2>
-              <p>SOFTTEX FASHIONS WEAR LIMITED is a 100% export-oriented garments manufacturer and buying house based in Bangladesh. We work with international fashion brands, retailers and wholesalers through a reliable network of manufacturing partners, with a focus on transparency, professionalism and long-term relationships.</p>
-              <Link className="softtex-editorial-button softtex-editorial-button-outline" to="/about/company-profile">More about us <ArrowRight size={16} /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Trusted Worldwide Section: Metrics + Brand Showcase + Certification Emblems */}
       <section className="softtex-editorial-section softtex-editorial-alt" id="trust">
         <div className="softtex-editorial-wrap">
@@ -843,95 +779,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Garment FOB & Lead-Time Estimator Widget */}
-          <div className="softtex-editorial-estimator-wrap softtex-reveal" style={{ marginTop: '48px' }}>
-            <div className="softtex-estimator-grid">
-              <div className="softtex-estimator-controls">
-                <div>
-                  <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">Buyer tools</p>
-                  <h3 style={{ margin: '4px 0 8px', fontSize: '20px' }}>Garment FOB &amp; Production Estimator</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--editorial-muted)', margin: 0 }}>
-                    Select your product category and target volume to view standard production lead times, sampling turnaround, and FOB price benchmarks.
-                  </p>
-                </div>
-
-                <div className="softtex-estimator-group">
-                  <label htmlFor="est-category">Apparel Category</label>
-                  <select
-                    id="est-category"
-                    className="softtex-estimator-select"
-                    value={calcCategory}
-                    onChange={(e) => setCalcCategory(e.target.value)}
-                  >
-                    <option value="knits">Knitwear (T-Shirts, Polos &amp; Hoodies)</option>
-                    <option value="wovens">Woven Wear (Shirts &amp; Blouses)</option>
-                    <option value="denim">Denim &amp; Casual Bottoms</option>
-                    <option value="outerwear">Jackets &amp; Outerwear</option>
-                    <option value="kids">Children &amp; Babywear</option>
-                  </select>
-                </div>
-
-                <div className="softtex-estimator-group">
-                  <label htmlFor="est-quantity">Target Order Volume</label>
-                  <select
-                    id="est-quantity"
-                    className="softtex-estimator-select"
-                    value={calcQuantity}
-                    onChange={(e) => setCalcQuantity(Number(e.target.value))}
-                  >
-                    <option value="1000">1,000 Pcs (Standard MOQ)</option>
-                    <option value="3000">3,000 Pcs (Multi-color run)</option>
-                    <option value="5000">5,000 Pcs (Commercial bulk)</option>
-                    <option value="10000">10,000+ Pcs (High volume programme)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="softtex-estimator-result-card softtex-float">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '12px', color: '#d9ad7c', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Sourcing Projection
-                  </span>
-                  <span style={{ fontSize: '11px', background: 'rgba(217, 173, 124, 0.15)', color: '#f7d59b', padding: '3px 8px', borderRadius: '4px' }}>
-                    Chittagong FOB
-                  </span>
-                </div>
-
-                <div className="softtex-estimator-result-grid">
-                  <div className="softtex-estimator-metric">
-                    <span>Target FOB Unit Price</span>
-                    <strong>{activeBenchmark.fob}</strong>
-                  </div>
-                  <div className="softtex-estimator-metric">
-                    <span>Bulk Lead Time</span>
-                    <strong>{activeBenchmark.leadTime}</strong>
-                  </div>
-                  <div className="softtex-estimator-metric">
-                    <span>Proto Sampling</span>
-                    <strong>{activeBenchmark.sampling}</strong>
-                  </div>
-                  <div className="softtex-estimator-metric">
-                    <span>Monthly Line Capacity</span>
-                    <strong>{activeBenchmark.capacity}</strong>
-                  </div>
-                </div>
-
-                <div style={{ fontSize: '11.5px', color: '#c4d0de', lineHeight: 1.4, borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '12px' }}>
-                  <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Standard Specification:</strong>
-                  {activeBenchmark.fabric}
-                </div>
-
-                <Link
-                  className="softtex-editorial-button"
-                  style={{ textAlign: 'center', justifyContent: 'center', marginTop: '6px' }}
-                  to="/contact"
-                >
-                  Request formal tech pack quotation <ArrowRight size={15} />
-                </Link>
               </div>
             </div>
           </div>
