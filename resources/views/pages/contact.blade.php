@@ -1,21 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@php
-    $terms = [
-        '50% deposit with order to start production.',
-        '50% balance before shipment.',
-        'No refund on cancelled orders.',
-        'MOQ: 300 pieces per style and per colour (100 pieces per size).',
-        'Small orders of 50-100 pieces per style are accepted at a higher price.',
-        'The customer must supply a Tech Pack for each style.',
-        'Samples are available at cost plus courier charge; sample costs are refunded with a regular order. Future samples are free.',
-        'Discounts are available for repeat orders.',
-        'Main-order delivery: 20-45 days, subject to order confirmation and production planning.',
-        'OEM MOQ: 300 pieces per style.',
-        'Discounts are available for fixed annual orders.',
-    ];
-@endphp
 <div class="softtex-contact-page">
   <header class="softtex-page-hero">
     <div class="container">
@@ -42,22 +27,17 @@
       <h2>From tech pack to shipment.</h2>
       <p>Share your product brief and target delivery window. Our team will confirm feasibility, pricing and the production schedule before an order is placed.</p>
       <a class="softtex-button softtex-button-primary" href="mailto:info@softtexfashions.com?subject=Apparel%20production%20enquiry">Start an enquiry</a>
-    </aside>
-  </section>
-  <section class="softtex-terms-section" id="terms-conditions">
-    <div class="container">
-      <div class="softtex-section-heading">
-        <p class="softtex-eyebrow">Order information</p>
-        <h2>Terms &amp; Conditions</h2>
-        <p>Please review these commercial terms before confirming an order.</p>
+
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,0.08);">
+        <p style="margin: 0 0 6px; font-size: 12px; font-weight: 600; color: var(--editorial-ink, #0b1a2b);">Commercial Governance</p>
+        <p style="margin: 0; font-size: 12px; color: var(--editorial-muted, #5a6b7d); line-height: 1.5;">
+          Review our minimum order quantities (MOQ), sample approval protocol, payment guidelines and export policies on our dedicated
+          <a href="{{ route('terms-conditions') }}" style="color: var(--editorial-bronze, #8f5825); font-weight: 600; text-decoration: underline;">
+            Terms &amp; Conditions page &rarr;
+          </a>
+        </p>
       </div>
-      <ol class="softtex-terms-list">
-        @foreach($terms as $term)
-          <li><span class="softtex-terms-check" aria-hidden="true">✓</span><span>{{ $term }}</span></li>
-        @endforeach
-      </ol>
-      <p class="softtex-terms-note">Order specifications, final pricing and confirmed delivery dates will be documented in the order confirmation.</p>
-    </div>
+    </aside>
   </section>
 </div>
 @endsection

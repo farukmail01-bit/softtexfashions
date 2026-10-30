@@ -143,6 +143,23 @@ class PageController extends Controller
     }
 
     /**
+     * Commercial Terms & Conditions
+     */
+    public function terms()
+    {
+        $meta = SeoService::getMeta([
+            'title' => 'Terms & Conditions | SOFTTEX FASHIONS WEAR LIMITED',
+            'description' => 'Commercial terms, payment methods, minimum order quantities (MOQ), sample approvals, delivery schedules, and export trade guidelines of Softtex Fashions Wear Ltd.',
+            'keywords' => 'softtex terms conditions, apparel export payment terms, garment moq bangladesh, garment buying house terms dhaka',
+        ]);
+
+        $crumbs = ['Home' => url('/'), 'Terms & Conditions' => url('/terms-conditions')];
+        $schemaJsonLd = SeoService::getSchemaJsonLd('terms', [SeoService::getBreadcrumbSchema($crumbs)]);
+
+        return view('pages.terms', compact('meta', 'schemaJsonLd'));
+    }
+
+    /**
      * Dynamic Product & Client Gallery Pages
      */
     public function productClient(string $slug)

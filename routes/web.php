@@ -20,6 +20,10 @@ Route::redirect('/management', '/about/management', 301);
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/quality', [PageController::class, 'quality'])->name('quality');
 Route::get('/compliance', [PageController::class, 'compliance'])->name('compliance');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+Route::get('/terms-conditions', [PageController::class, 'terms'])->name('terms-conditions');
+Route::redirect('/terms.html', '/terms', 301);
+Route::redirect('/terms-conditions.html', '/terms-conditions', 301);
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 // 2. Apparel Catalogue & Client Showcases (Primary: /catalogue/{slug})

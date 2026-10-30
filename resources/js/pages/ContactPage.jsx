@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Mail, MapPin, Phone, MessageCircle, ArrowUpRight, Check } from 'lucide-react';
-import { businessTerms } from '../data/businessTerms';
+import { Link } from 'react-router-dom';
+import { Mail, MapPin, Phone, MessageCircle, ArrowUpRight, FileText } from 'lucide-react';
 
 export default function ContactPage() {
   const [pageData, setPageData] = useState(null);
@@ -94,23 +94,19 @@ export default function ContactPage() {
           <a className="softtex-button softtex-button-primary" href={`mailto:${email}?subject=${encodeURIComponent('Apparel production enquiry')}`}>
             Start an enquiry <ArrowUpRight size={17} />
           </a>
-        </aside>
-      </section>
 
-      <section className="softtex-terms-section" id="terms-conditions">
-        <div className="container">
-          <div className="softtex-section-heading">
-            <p className="softtex-eyebrow">Order information</p>
-            <h2>Terms &amp; Conditions</h2>
-            <p>Please review these commercial terms before confirming an order.</p>
+          <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid rgba(0,0,0,0.08)' }}>
+            <p style={{ margin: '0 0 6px', fontSize: '12px', fontWeight: 600, color: 'var(--editorial-ink, #0b1a2b)' }}>
+              Commercial Governance
+            </p>
+            <p style={{ margin: 0, fontSize: '12px', color: 'var(--editorial-muted, #5a6b7d)', lineHeight: 1.5 }}>
+              Review our minimum order quantities (MOQ), sample approval protocol, payment guidelines and export policies on our dedicated{' '}
+              <Link to="/terms-conditions" style={{ color: 'var(--editorial-bronze, #8f5825)', fontWeight: 600, textDecoration: 'underline' }}>
+                Terms &amp; Conditions page &rarr;
+              </Link>
+            </p>
           </div>
-          <ol className="softtex-terms-list">
-            {businessTerms.map((term) => (
-              <li key={term}><Check size={17} aria-hidden="true" /><span>{term}</span></li>
-            ))}
-          </ol>
-          <p className="softtex-terms-note">Order specifications, final pricing and confirmed delivery dates will be documented in the order confirmation.</p>
-        </div>
+        </aside>
       </section>
     </div>
   );

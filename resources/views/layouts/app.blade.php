@@ -161,6 +161,7 @@
                   <a href="{{ route('management') }}">Our Management</a>
                   <a href="{{ route('quality') }}">Quality Assurance</a>
                   <a href="{{ route('compliance') }}">Sustainability</a>
+                  <a href="{{ route('terms-conditions') }}">Terms &amp; Conditions</a>
                 </div>
               </div>
               <a class="{{ request()->routeIs('services') ? 'on' : '' }}" href="{{ route('services') }}">Our Services</a>
@@ -177,8 +178,9 @@
                 </div>
               </div>
               <a class="{{ request()->routeIs('compliance') ? 'on' : '' }}" href="{{ route('compliance') }}">Sustainability</a>
+              <a class="{{ (request()->is('terms*') || request()->routeIs('terms*')) ? 'on' : '' }}" href="{{ route('terms-conditions') }}">Terms &amp; Conditions</a>
               <a class="{{ request()->routeIs('contact') ? 'on' : '' }}" href="{{ route('contact') }}">Contact</a>
-              <a class="btn" href="{{ route('contact') }}#terms-conditions">Request a Quote &rarr;</a>
+              <a class="btn" href="{{ route('contact') }}">Request a Quote &rarr;</a>
             </nav>
           </div>
         </header>
@@ -212,6 +214,7 @@
               <li><a href="{{ route('product.client', 'womens') }}">Catalogue</a></li>
               <li><a href="{{ route('services') }}">Our Services</a></li>
               <li><a href="{{ route('compliance') }}">Sustainability</a></li>
+              <li><a href="{{ route('terms-conditions') }}">Terms &amp; Conditions</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
           </div>

@@ -14,6 +14,7 @@ const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 const VisionPage = lazy(() => import('./pages/VisionPage'));
 const ManagementPage = lazy(() => import('./pages/ManagementPage'));
 const QualityPage = lazy(() => import('./pages/QualityPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ProductGalleryPage = lazy(() => import('./pages/ProductGalleryPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
@@ -44,6 +45,8 @@ function PageSeoTracker() {
       '/catalogue': 'Product Catalogues | SOFTTEX FASHIONS WEAR LIMITED',
       '/quality': 'Quality Assurance & AQL Standards | SOFTTEX FASHIONS',
       '/compliance': 'Global Compliance & Factory Standards | SOFTTEX FASHIONS',
+      '/terms': 'Terms & Conditions | SOFTTEX FASHIONS WEAR LIMITED',
+      '/terms-conditions': 'Terms & Conditions | SOFTTEX FASHIONS WEAR LIMITED',
       '/contact': 'Contact Us | SOFTTEX FASHIONS WEAR LIMITED | Dhaka, Bangladesh',
       '/catalogue/mens': 'Men Apparel Catalogue | SOFTTEX FASHIONS',
       '/catalogue/womens': 'Women Apparel Catalogue | SOFTTEX FASHIONS',
@@ -119,6 +122,8 @@ function AppContent() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/quality" element={<QualityPage />} />
             <Route path="/compliance" element={<CompliancePage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/terms-conditions" element={<TermsPage />} />
             <Route path="/contact" element={<ContactPage />} />
 
             {/* Sourcing Intelligence Blog */}

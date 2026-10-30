@@ -207,6 +207,7 @@ export default function Navbar({ onOpenRfq }) {
                 <Link to="/about/management" onClick={closeMenu}>Our Management</Link>
                 <Link to="/quality" onClick={closeMenu}>Quality Assurance</Link>
                 <Link to="/compliance" onClick={closeMenu}>Sustainability</Link>
+                <Link to="/terms-conditions" onClick={closeMenu}>Terms &amp; Conditions</Link>
               </div>
             </div>
 
@@ -252,12 +253,16 @@ export default function Navbar({ onOpenRfq }) {
               Sustainability
             </Link>
 
+            <Link className={isActive('/terms') || isActive('/terms-conditions') ? 'on' : ''} to="/terms-conditions" onClick={closeMenu}>
+              Terms &amp; Conditions
+            </Link>
+
             <Link className={isActive('/contact') ? 'on' : ''} to="/contact" onClick={closeMenu}>
               Contact
             </Link>
 
             {/* Quote CTA Button */}
-            <Link className="btn softtex-nav-cta-btn" to="/contact#terms-conditions" onClick={closeMenu}>
+            <Link className="btn softtex-nav-cta-btn" to="/contact" onClick={closeMenu}>
               Request a Quote &rarr;
             </Link>
 

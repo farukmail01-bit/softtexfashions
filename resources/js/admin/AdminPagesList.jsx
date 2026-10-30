@@ -98,7 +98,7 @@ export default function AdminPagesList() {
   };
 
   const handleDelete = async (id, title, slug) => {
-    const coreSlugs = ['home', 'services', 'quality', 'company-profile', 'vision', 'management', 'compliance', 'contact'];
+    const coreSlugs = ['home', 'services', 'quality', 'company-profile', 'vision', 'management', 'compliance', 'terms', 'contact'];
     if (coreSlugs.includes(slug)) {
       showToast('Core system pages cannot be deleted.', 'error');
       return;
@@ -119,7 +119,7 @@ export default function AdminPagesList() {
     }
   };
 
-  const coreSlugs = ['home', 'services', 'quality', 'company-profile', 'vision', 'management', 'compliance', 'contact'];
+  const coreSlugs = ['home', 'services', 'quality', 'company-profile', 'vision', 'management', 'compliance', 'terms', 'contact'];
 
   const filteredPages = pages.filter((p) => {
     const matchSearch =
@@ -129,7 +129,7 @@ export default function AdminPagesList() {
     if (!matchSearch) return false;
 
     if (filterType === 'corporate') {
-      return ['home', 'company-profile', 'vision', 'management', 'compliance', 'contact'].includes(p.slug);
+      return ['home', 'company-profile', 'vision', 'management', 'compliance', 'terms', 'contact'].includes(p.slug);
     }
     if (filterType === 'services') {
       return ['services', 'quality'].includes(p.slug);
