@@ -208,6 +208,28 @@
   </div>
 </section>
 
+{{-- QUALITY SECTION WITH 3-IMAGE COLLAGE --}}
+<section class="sec alt softtex-reveal" id="quality">
+  <div class="w two">
+    <div class="softtex-reveal-left">
+      <div class="ey l">Quality &amp; Responsible Sourcing</div>
+      <h2>Quality is built into every step.</h2>
+      <p>We believe consistent quality comes from clear technical specifications, inline monitoring, and statistically verified inspections. Our on-site QA team enforces AQL 1.5 / 2.5 standards so zero substandard goods leave the factory floor.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; margin-bottom:22px;">
+        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• 4-Point Fabric Inspection</span>
+        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• AQL 1.5 / 2.5 Level II</span>
+        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• 100% Needle Detection</span>
+      </div>
+      <a class="btn" href="{{ route('quality') }}">Learn More About Our Services &rarr;</a>
+    </div>
+    <div class="qm softtex-reveal-right">
+      <div><img src="{{ asset('images/collections/quality-assurance-inspection.jpg') }}" alt="Quality check of a shirt" loading="lazy"></div>
+      <div><img src="{{ asset('images/factory/sewing-garment.jpg') }}" alt="Garment factory floor" loading="lazy"></div>
+      <div><img src="{{ asset('images/collections/woven-shirts-collection.jpg') }}" alt="Fabric swatches" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 {{-- OPERATIONAL INTELLIGENCE & SOURCING DOSSIER --}}
 <section class="softtex-editorial-dossier-section softtex-reveal" id="capabilities">
   <div class="w">
@@ -237,28 +259,6 @@
         <strong>17+ Export Destinations</strong>
         <p>Direct maritime export via Chittagong Sea Port and expedited air cargo from Hazrat Shahjalal International (DAC).</p>
       </div>
-    </div>
-  </div>
-</section>
-
-{{-- QUALITY SECTION WITH 3-IMAGE COLLAGE --}}
-<section class="sec alt softtex-reveal" id="quality">
-  <div class="w two">
-    <div class="softtex-reveal-left">
-      <div class="ey l">Quality &amp; Responsible Sourcing</div>
-      <h2>Quality is built into every step.</h2>
-      <p>We believe consistent quality comes from clear technical specifications, inline monitoring, and statistically verified inspections. Our on-site QA team enforces AQL 1.5 / 2.5 standards so zero substandard goods leave the factory floor.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; margin-bottom:22px;">
-        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• 4-Point Fabric Inspection</span>
-        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• AQL 1.5 / 2.5 Level II</span>
-        <span style="font-size:11px; font-weight:650; color:var(--bz); border:1px solid var(--bd); padding:4px 9px; background:#fff;">• 100% Needle Detection</span>
-      </div>
-      <a class="btn" href="{{ route('quality') }}">Learn More About Our Services &rarr;</a>
-    </div>
-    <div class="qm softtex-reveal-right">
-      <div><img src="{{ asset('images/collections/quality-assurance-inspection.jpg') }}" alt="Quality check of a shirt" loading="lazy"></div>
-      <div><img src="{{ asset('images/factory/sewing-garment.jpg') }}" alt="Garment factory floor" loading="lazy"></div>
-      <div><img src="{{ asset('images/collections/woven-shirts-collection.jpg') }}" alt="Fabric swatches" loading="lazy"></div>
     </div>
   </div>
 </section>

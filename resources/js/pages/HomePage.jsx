@@ -625,27 +625,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Operational Intelligence & Sourcing Benchmarks Dossier */}
-      <section className="softtex-editorial-dossier-section" id="capabilities">
-        <div className="softtex-editorial-wrap">
-          <div className="softtex-editorial-heading softtex-reveal">
-            <p className="softtex-editorial-eyebrow">Operational intelligence</p>
-            <h2>Manufacturing Capacity &amp; Execution Benchmarks</h2>
-            <p>Verifiable manufacturing metrics and standard operating procedures powering dependable supply chains for global brands.</p>
-          </div>
-          <div className="softtex-editorial-dossier-grid">
-            {operationalBenchmarks.map((bench, idx) => (
-              <div key={bench.title} className={`softtex-editorial-dossier-card softtex-reveal delay-${idx + 1}`}>
-                <div className="softtex-editorial-dossier-icon-wrap">{bench.icon}</div>
-                <span className="dossier-subtitle">{bench.subtitle}</span>
-                <strong>{bench.title}</strong>
-                <p>{bench.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Quality Assurance Section with 3-Image Collage */}
       <section className="softtex-editorial-section softtex-editorial-alt" id="quality">
         <div className="softtex-editorial-wrap softtex-editorial-quality-grid">
@@ -664,6 +643,27 @@ export default function HomePage() {
             <img src={assetUrl('images/collections/quality-assurance-inspection.jpg')} alt="Garment quality inspection" loading="lazy" />
             <img src={assetUrl('images/factory/sewing-garment.jpg')} alt="Garment production floor" loading="lazy" />
             <img src={assetUrl('images/collections/woven-shirts-collection.jpg')} alt="Apparel fabric swatches" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      {/* Operational Intelligence & Sourcing Benchmarks Dossier */}
+      <section className="softtex-editorial-dossier-section" id="capabilities">
+        <div className="softtex-editorial-wrap">
+          <div className="softtex-editorial-heading softtex-reveal">
+            <p className="softtex-editorial-eyebrow">Operational intelligence</p>
+            <h2>Manufacturing Capacity &amp; Execution Benchmarks</h2>
+            <p>Verifiable manufacturing metrics and standard operating procedures powering dependable supply chains for global brands.</p>
+          </div>
+          <div className="softtex-editorial-dossier-grid">
+            {operationalBenchmarks.map((bench, idx) => (
+              <div key={bench.title} className={`softtex-editorial-dossier-card softtex-reveal delay-${idx + 1}`}>
+                <div className="softtex-editorial-dossier-icon-wrap">{bench.icon}</div>
+                <span className="dossier-subtitle">{bench.subtitle}</span>
+                <strong>{bench.title}</strong>
+                <p>{bench.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
