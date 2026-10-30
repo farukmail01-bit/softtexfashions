@@ -3568,6 +3568,80 @@ Link {
     font-weight: 550;
 }
 
+/* Secondary Factory Card filling the right column */
+.softtex-who-secondary-card {
+    margin-top: 18px;
+    background: #fff;
+    border: 1px solid var(--editorial-line);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.05);
+}
+
+.softtex-who-secondary-img-wrap {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background: #eae6dd;
+}
+
+.softtex-who-secondary-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.softtex-who-secondary-card:hover .softtex-who-secondary-img-wrap img {
+    transform: scale(1.03);
+}
+
+.softtex-who-secondary-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(10, 25, 47, 0.88) 0%, transparent 100%);
+    padding: 24px 14px 10px;
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.softtex-who-secondary-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 11px 14px;
+    background: var(--editorial-sand, #f8f6f0);
+    border-top: 1px solid var(--editorial-line);
+}
+
+.softtex-who-secondary-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.softtex-who-secondary-pills span {
+    font-size: 10.5px;
+    font-weight: 650;
+    color: var(--editorial-bronze, #9c6c38);
+    background: #fff;
+    border: 1px solid var(--editorial-line);
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.softtex-who-secondary-caption {
+    font-size: 11px;
+    color: var(--editorial-muted);
+    font-weight: 600;
+}
+
 /* Mission Values 3-Card Grid */
 .softtex-mission-values-grid {
     display: grid;

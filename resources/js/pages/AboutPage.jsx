@@ -130,10 +130,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Column: Visual Photo Composition with Overlapping Stats Card */}
+            {/* Right Column: Visual Photo Composition with Overlapping Stats Card & Secondary Factory Card */}
             <div className="softtex-who-composition">
               <div className="softtex-who-we-are-card">
-                <div className="softtex-who-we-are-img-wrap" style={{ height: '340px' }}>
+                <div className="softtex-who-we-are-img-wrap" style={{ height: '250px' }}>
                   <img
                     src={assetUrl('images/collections/product-development-sampling.jpg')}
                     alt="Textile swatches and pattern development atelier at Softtex Fashions"
@@ -163,6 +163,28 @@ export default function AboutPage() {
                 <div className="softtex-who-stat-item">
                   <strong>100% Tested</strong>
                   <span>Needle &amp; Metal Detection</span>
+                </div>
+              </div>
+
+              {/* Secondary Factory Production Card (Fills height and completes the story) */}
+              <div className="softtex-who-secondary-card">
+                <div className="softtex-who-secondary-img-wrap">
+                  <img
+                    src={assetUrl('images/factory/sewing-garment.jpg')}
+                    alt="Modern export garment factory sewing line"
+                    loading="lazy"
+                  />
+                  <div className="softtex-who-secondary-badge">
+                    <span>Certified Apparel Manufacturing Facilities · Ashulia &amp; Gazipur</span>
+                  </div>
+                </div>
+                <div className="softtex-who-secondary-meta">
+                  <div className="softtex-who-secondary-pills">
+                    <span>ACCORD / RSC Certified</span>
+                    <span>BSCI Audited</span>
+                    <span>OEKO-TEX Standard</span>
+                  </div>
+                  <span className="softtex-who-secondary-caption">230+ Assigned Units</span>
                 </div>
               </div>
             </div>

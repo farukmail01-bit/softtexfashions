@@ -128,7 +128,7 @@
       {{-- Right Column: Visual Photo Composition with Overlapping Stats Card --}}
       <div class="softtex-who-composition">
         <div class="softtex-who-we-are-card">
-          <div class="softtex-who-we-are-img-wrap" style="height:340px;">
+          <div class="softtex-who-we-are-img-wrap" style="height:250px;">
             <img
               src="{{ asset('images/collections/product-development-sampling.jpg') }}"
               alt="Textile swatches and pattern development atelier at Softtex Fashions"
@@ -158,6 +158,28 @@
           <div class="softtex-who-stat-item">
             <strong>100% Tested</strong>
             <span>Needle &amp; Metal Detection</span>
+          </div>
+        </div>
+
+        {{-- Secondary Factory Production Card (Fills height and completes the story) --}}
+        <div class="softtex-who-secondary-card">
+          <div class="softtex-who-secondary-img-wrap">
+            <img
+              src="{{ asset('images/factory/sewing-garment.jpg') }}"
+              alt="Modern export garment factory sewing line"
+              loading="lazy"
+            >
+            <div class="softtex-who-secondary-badge">
+              <span>Certified Apparel Manufacturing Facilities · Ashulia &amp; Gazipur</span>
+            </div>
+          </div>
+          <div class="softtex-who-secondary-meta">
+            <div class="softtex-who-secondary-pills">
+              <span>ACCORD / RSC Certified</span>
+              <span>BSCI Audited</span>
+              <span>OEKO-TEX Standard</span>
+            </div>
+            <span class="softtex-who-secondary-caption">230+ Assigned Units</span>
           </div>
         </div>
       </div>
