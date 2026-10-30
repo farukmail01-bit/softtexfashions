@@ -92,9 +92,11 @@ export default function VisionPage() {
                 <article className="softtex-vision-mission-card" key={`${index}-${point}`}>
                   <div className="softtex-vision-mission-card-top">
                     <span className="softtex-vision-mission-number">{String(index + 1).padStart(2, '0')}</span>
-                    <MissionIcon size={20} strokeWidth={1.5} aria-hidden="true" />
                   </div>
-                  <p>{point}</p>
+                  <p className="softtex-vision-mission-text">{point}</p>
+                  <div className="softtex-vision-mission-watermark" aria-hidden="true">
+                    <MissionIcon size={120} strokeWidth={1.2} />
+                  </div>
                 </article>
               );
             })}
