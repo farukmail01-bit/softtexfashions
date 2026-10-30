@@ -38,6 +38,7 @@ function PageSeoTracker() {
       '/about/company-profile': 'Company Profile | SOFTTEX FASHIONS WEAR LIMITED',
       '/about/vision': 'Our Vision & Mission | SOFTTEX FASHIONS WEAR LIMITED',
       '/about/management': 'Executive Management | SOFTTEX FASHIONS WEAR LIMITED',
+      '/management': 'Executive Management | SOFTTEX FASHIONS WEAR LIMITED',
       '/services': 'Our Services | Sourcing, Development & QA | SOFTTEX FASHIONS',
       '/products': 'Product Catalogues | SOFTTEX FASHIONS WEAR LIMITED',
       '/catalogue': 'Product Catalogues | SOFTTEX FASHIONS WEAR LIMITED',
@@ -114,6 +115,7 @@ function AppContent() {
             <Route path="/about/company-profile" element={<AboutPage />} />
             <Route path="/about/vision" element={<VisionPage />} />
             <Route path="/about/management" element={<ManagementPage />} />
+            <Route path="/management" element={<Navigate to="/about/management" replace />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/quality" element={<QualityPage />} />
             <Route path="/compliance" element={<CompliancePage />} />

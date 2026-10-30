@@ -210,24 +210,70 @@ class CmsDatabaseSeeder extends Seeder
         ]);
 
         // ==========================================
-        // 4. MANAGEMENT
+        // 4. MANAGEMENT & PARTNERS
         // ==========================================
-        $managementSections = [
-            'quote_title' => 'Words of wisdom from our CEO',
-            'quote_text' => 'SOFTTEX FASHIONS WEAR LTD. has been emerging over the years as a trusted sourcing as well as manufacturing partner for global clothing buyers, retailers & brands along with ingenuity, uniqueness, managing supply chain, and well-planned operations. SOFTTEX FASHIONS WEAR LTD. has a large network of factories that have been technically and ethically audited to industry standards. We are specialized in Knitwear, Sweater, and Woven items. All are composite top-class factories with all modern facilities & internationally certified. We have Experienced and highly Technical Management to execute the product exactly as per the buyer’s requirements. Our management concentrates fully on buyer satisfaction. Quality is our main strength that is why we believe in a long-term relationship. As the Chief Executive Officer (C.E.O) of the SOFTTEX FASHIONS WEAR LTD., me & my team is profoundly dedicated & enthusiastic to take on new challenges. Overcoming hurdles and reaping opportunities, which would not have been possible without the concerted effort of my entire team, we have honed the deliverance of premium quality clothing materials & goods.',
-            'ceo_author' => '--- Muhammad Bashir Uddin, C.E.O, SOFTTEX FASHIONS WEAR LTD.',
-            'ceo_image' => 'static/media/ceo.6569cb0597ecee45ec68.jpeg'
+        $managementPartners = [
+            [
+                'name' => 'Josna',
+                'role' => 'Chairman (Founder)',
+                'department' => 'Founding Board',
+                'avatar' => 'JS',
+                'badge' => 'Founder & Board',
+                'bio' => 'Strategic guidance, corporate ethics, and long-term organizational governance ensuring Softtex adheres to world-class manufacturing standards.',
+                'highlight' => 'Corporate Governance & Ethical Compliance'
+            ],
+            [
+                'name' => 'Rakib',
+                'role' => 'Managing Director (Founder)',
+                'department' => 'Executive Leadership',
+                'avatar' => 'RK',
+                'badge' => 'Founder & Executive',
+                'bio' => 'Overall corporate execution, factory partnership network across Bangladesh, supply chain excellence, and high-volume apparel manufacturing.',
+                'highlight' => 'Factory Operations & Global Supply Chain'
+            ],
+            [
+                'name' => 'Rana',
+                'role' => 'Marketing Director (Head of Marketing)',
+                'department' => 'Commercial Leadership',
+                'avatar' => 'RN',
+                'badge' => 'Head of Marketing',
+                'bio' => 'Leading international brand acquisitions, FOB price competitiveness, buyer relationship management across Europe and North America.',
+                'highlight' => 'Global Brand Acquisition & Buyer Relations'
+            ],
+            [
+                'name' => 'Jannatul Ferdous Happy',
+                'role' => 'Co-Marketing Director',
+                'department' => 'Marketing & Merchandising',
+                'avatar' => 'JH',
+                'badge' => 'Marketing Leadership',
+                'bio' => 'Overseeing merchandising coordination, rapid sample approval cycles, buyer communication, and trend-focused apparel lines.',
+                'highlight' => 'Merchandising Operations & Sampling'
+            ],
+            [
+                'name' => 'Yusuf',
+                'role' => 'Business Development Executive',
+                'department' => 'Business Growth',
+                'avatar' => 'YS',
+                'badge' => 'Business Development',
+                'bio' => 'Market intelligence, tech-pack costing analysis, new buyer onboarding, and cultivating long-term relationships with global apparel retailers.',
+                'highlight' => 'Strategic Sourcing & New Market Growth'
+            ]
         ];
 
         Page::updateOrCreate(['slug' => 'management'], [
-            'title' => 'Our Management',
-            'subtitle' => 'Leadership Driven by Textile Integrity',
-            'hero_title' => 'Our Management',
-            'content' => 'A team of passionate textile engineers, senior merchandisers, and international trade specialists leading Softtex Fashions Wear Ltd.',
-            'sections_data' => $managementSections,
-            'meta_title' => 'Executive Management | SOFTTEX FASHIONS WEAR LIMITED',
-            'meta_description' => 'Meet our executive leadership, master merchandisers, and technical QA inspectors bridging international apparel buyers and Bangladeshi factories.',
-            'meta_keywords' => 'softtex fashions management, garments buying house directors',
+            'title' => 'Our Partners & Management',
+            'subtitle' => 'Visionary Leadership & Apparel Excellence',
+            'hero_title' => 'Our Partners & Management',
+            'content' => 'The visionary founders and dedicated leadership team steering Softtex Fashions Wear Limited toward sustainable manufacturing and global apparel excellence.',
+            'sections_data' => [
+                'page_title' => 'Our Partners & Management',
+                'page_eyebrow' => 'Leadership & Governance',
+                'page_lead' => 'The visionary founders and dedicated leadership team steering Softtex Fashions Wear Limited toward sustainable manufacturing and global apparel excellence.',
+                'partners' => $managementPartners
+            ],
+            'meta_title' => 'Our Partners & Management | SOFTTEX FASHIONS WEAR LIMITED',
+            'meta_description' => 'Meet the executive leadership and partners of Softtex Fashions Wear Limited: Chairman Josna, Managing Director Rakib, Marketing Director Rana, Co-Marketing Director Jannatul Ferdous Happy, and Business Development Executive Yusuf.',
+            'meta_keywords' => 'softtex fashions partners, garments buying house directors, rakib managing director, josna chairman, rana marketing director',
             'status' => 'published',
         ]);
 

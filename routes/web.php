@@ -16,6 +16,7 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about/company-profile', [PageController::class, 'companyProfile'])->name('company-profile');
 Route::get('/about/vision', [PageController::class, 'vision'])->name('vision');
 Route::get('/about/management', [PageController::class, 'management'])->name('management');
+Route::redirect('/management', '/about/management', 301);
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/quality', [PageController::class, 'quality'])->name('quality');
 Route::get('/compliance', [PageController::class, 'compliance'])->name('compliance');
