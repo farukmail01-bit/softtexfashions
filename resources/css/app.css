@@ -1387,7 +1387,9 @@ Link {
     background-position: center right;
     background-repeat: no-repeat;
     opacity: 0;
-    transform: scale(1.03);
+    transform: scale(1.02);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transition:
         opacity 850ms cubic-bezier(0.16, 1, 0.3, 1),
         transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -1407,10 +1409,11 @@ Link {
     z-index: 1;
     background: linear-gradient(
         90deg,
-        rgba(250, 248, 243, 0.88) 0%,
-        rgba(250, 248, 243, 0.80) 40%,
-        rgba(250, 248, 243, 0.45) 62%,
-        rgba(250, 248, 243, 0.08) 100%
+        rgba(250, 248, 243, 0.65) 0%,
+        rgba(250, 248, 243, 0.35) 26%,
+        rgba(250, 248, 243, 0.08) 40%,
+        rgba(250, 248, 243, 0) 50%,
+        transparent 100%
     );
     pointer-events: none;
 }
@@ -1493,18 +1496,21 @@ Link {
     margin: 0 0 18px;
     font-size: clamp(42px, 5.1vw, 64px);
     letter-spacing: -0.035em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
 .softtex-editorial-hero h1 em {
     display: block;
     color: var(--editorial-bronze);
     font-style: normal;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
 .softtex-editorial-lead {
     max-width: 470px;
     margin-bottom: 23px;
     color: var(--editorial-muted);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
 .softtex-editorial-actions {
@@ -2949,9 +2955,11 @@ Link {
     .softtex-editorial-hero-overlay {
         background: linear-gradient(
             180deg,
-            rgba(250, 248, 243, 0.88) 0%,
-            rgba(250, 248, 243, 0.80) 65%,
-            rgba(250, 248, 243, 0.35) 100%
+            rgba(250, 248, 243, 0.70) 0%,
+            rgba(250, 248, 243, 0.35) 35%,
+            rgba(250, 248, 243, 0.08) 55%,
+            rgba(250, 248, 243, 0) 70%,
+            transparent 100%
         );
     }
 
@@ -4245,10 +4253,11 @@ nav a.btn,
     z-index: 1;
     background: linear-gradient(
         90deg,
-        rgba(250, 248, 243, 0.88) 0%,
-        rgba(250, 248, 243, 0.80) 42%,
-        rgba(250, 248, 243, 0.45) 64%,
-        rgba(250, 248, 243, 0.08) 100%
+        rgba(250, 248, 243, 0.65) 0%,
+        rgba(250, 248, 243, 0.35) 26%,
+        rgba(250, 248, 243, 0.08) 40%,
+        rgba(250, 248, 243, 0) 50%,
+        transparent 100%
     );
     pointer-events: none;
 }
@@ -4272,11 +4281,13 @@ nav a.btn,
     font-size: clamp(38px, 5vw, 60px);
     margin-bottom: 20px;
     color: var(--ink);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 .softtex-editorial-hero-copy h1 em {
     display: block;
     font-style: normal;
     color: var(--bz);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 .softtex-editorial-lead {
     color: var(--mut);
@@ -4284,6 +4295,7 @@ nav a.btn,
     line-height: 1.6;
     max-width: 480px;
     margin-bottom: 28px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
 .vals {
