@@ -162,6 +162,32 @@
         </div>
       </a>
     </div>
+
+    {{-- QUICK PDF CATALOGUE DOWNLOAD BAR FOR BUYERS --}}
+    <div class="softtex-reveal" style="margin-top:36px; padding:24px 28px; background:#ffffff; border:1px solid var(--editorial-line); border-radius:8px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; box-shadow:0 4px 16px rgba(11,26,43,0.04);">
+      <div>
+        <span style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--editorial-bronze); display:block; margin-bottom:2px;">
+          Buyer Resources
+        </span>
+        <h3 style="margin:0; font-size:18px; font-family:Newsreader, Georgia, serif; color:var(--editorial-ink);">
+          Download Complete PDF Catalogues
+        </h3>
+        <p style="margin:0; font-size:13px; color:var(--editorial-muted);">
+          Full technical specifications, fabric compositions, and style portfolios ready for offline review.
+        </p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Womens.pdf" class="btn" style="font-size:12px; padding:10px 16px; text-decoration:none;">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 17v4h14v-4" /></svg> Women's PDF (1.75 MB)
+        </a>
+        <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Mens.pdf" class="btn" style="font-size:12px; padding:10px 16px; text-decoration:none;">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 17v4h14v-4" /></svg> Men's PDF (1.48 MB)
+        </a>
+        <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf') }}" download="Softtex_Fashions_Wear_Limited_Kids.pdf" class="btn" style="font-size:12px; padding:10px 16px; text-decoration:none;">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 17v4h14v-4" /></svg> Children's PDF (902 KB)
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -170,6 +170,10 @@
                   <a href="{{ route('product.client', 'womens') }}">Women</a>
                   <a href="{{ route('product.client', 'mens') }}">Men</a>
                   <a href="{{ route('product.client', 'kids') }}">Children</a>
+                  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 6px 0;"></div>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Womens.pdf" style="font-size: 12px;">Download Women's PDF</a>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Mens.pdf" style="font-size: 12px;">Download Men's PDF</a>
+                  <a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf') }}" download="Softtex_Fashions_Wear_Limited_Kids.pdf" style="font-size: 12px;">Download Kids' PDF</a>
                 </div>
               </div>
               <a class="{{ request()->routeIs('compliance') ? 'on' : '' }}" href="{{ route('compliance') }}">Sustainability</a>
@@ -214,9 +218,12 @@
           <div class="softtex-editorial-footer-column">
             <h4>Apparel Catalogue</h4>
             <ul>
-              <li><a href="{{ route('product.client', 'womens') }}">Women</a></li>
-              <li><a href="{{ route('product.client', 'mens') }}">Men</a></li>
-              <li><a href="{{ route('product.client', 'kids') }}">Children</a></li>
+              <li><a href="{{ route('product.client', 'womens') }}">Women Collection</a></li>
+              <li><a href="{{ route('product.client', 'mens') }}">Men Collection</a></li>
+              <li><a href="{{ route('product.client', 'kids') }}">Children Collection</a></li>
+              <li><a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Womens.pdf" style="color:#e5b378;">Women's PDF Catalogue</a></li>
+              <li><a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf') }}" download="Softtex_Fashions_Wear_Limited_Mens.pdf" style="color:#e5b378;">Men's PDF Catalogue</a></li>
+              <li><a href="{{ asset('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf') }}" download="Softtex_Fashions_Wear_Limited_Kids.pdf" style="color:#e5b378;">Kids' PDF Catalogue</a></li>
             </ul>
           </div>
           <div class="softtex-editorial-footer-column">

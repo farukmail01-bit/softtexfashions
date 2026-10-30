@@ -25,6 +25,24 @@ const categories = {
   },
 };
 
+const categoryPdfs = {
+  womens: {
+    file: 'Softtex_Fashions_Wear_Limited_Womens.pdf',
+    title: 'Women Apparel Catalogue',
+    size: '1.75 MB',
+  },
+  mens: {
+    file: 'Softtex_Fashions_Wear_Limited_Mens.pdf',
+    title: 'Men Apparel Catalogue',
+    size: '1.48 MB',
+  },
+  kids: {
+    file: 'Softtex_Fashions_Wear_Limited_Kids.pdf',
+    title: 'Children Apparel Catalogue',
+    size: '902 KB',
+  },
+};
+
 const clientTitles = {
   'us-polo': 'U.S. Polo Assn. portfolio',
   'rich-cotton': 'Rich Cotton portfolio',
@@ -149,10 +167,46 @@ export default function ProductGalleryPage({ clientSlug = null }) {
           </div>
           {category && (
             <div className="softtex-catalogue-hero-download">
-              <button type="button" className="softtex-button softtex-button-primary" onClick={saveCatalogueAsPdf} disabled={!galleryReady}>
-                <ArrowDownToLine size={17} /> {galleryLoading ? 'Loading product names…' : 'Download PDF Catalogue'}
-              </button>
-              <small>{galleryReady ? 'Choose “Save as PDF” in the print dialog.' : 'Product names are required before the catalogue can be downloaded.'}</small>
+              {categoryPdfs[slug] ? (
+                <>
+                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                    <a
+                      href={assetUrl(`pdf/${categoryPdfs[slug].file}`)}
+                      download={categoryPdfs[slug].file}
+                      className="softtex-button softtex-button-primary"
+                      style={{ textDecoration: 'none' }}
+                      title={`Download ${categoryPdfs[slug].title} (${categoryPdfs[slug].size})`}
+                    >
+                      <ArrowDownToLine size={17} /> Download PDF Catalogue
+                    </a>
+                    <a
+                      href={assetUrl(`pdf/${categoryPdfs[slug].file}`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="softtex-button"
+                      style={{
+                        textDecoration: 'none',
+                        background: 'rgba(255, 255, 255, 0.15)',
+                        color: '#ffffff',
+                        border: '1px solid rgba(255, 255, 255, 0.35)',
+                      }}
+                      title={`Open ${categoryPdfs[slug].title} in browser`}
+                    >
+                      <FileText size={16} /> View PDF
+                    </a>
+                  </div>
+                  <small style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
+                    PDF format ({categoryPdfs[slug].size}) &bull; Ready for offline buyer review &amp; tech packs
+                  </small>
+                </>
+              ) : (
+                <>
+                  <button type="button" className="softtex-button softtex-button-primary" onClick={saveCatalogueAsPdf} disabled={!galleryReady}>
+                    <ArrowDownToLine size={17} /> {galleryLoading ? 'Loading product names…' : 'Download PDF Catalogue'}
+                  </button>
+                  <small>{galleryReady ? 'Choose “Save as PDF” in the print dialog.' : 'Product names are required before the catalogue can be downloaded.'}</small>
+                </>
+              )}
             </div>
           )}
         </div>
@@ -229,6 +283,91 @@ export default function ProductGalleryPage({ clientSlug = null }) {
             </div>
           </section>
         )}
+
+        <section
+          style={{
+            margin: '40px 0 24px',
+            padding: '24px 28px',
+            background: 'linear-gradient(135deg, #0b1a2b 0%, #16314c 100%)',
+            borderRadius: '8px',
+            color: '#ffffff',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px',
+            boxShadow: '0 8px 24px rgba(11, 26, 43, 0.08)',
+          }}
+        >
+          <div>
+            <span
+              style={{
+                display: 'inline-block',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: '#e5b378',
+                marginBottom: '4px',
+              }}
+            >
+              Export Catalogues
+            </span>
+            <h3 style={{ margin: '0 0 4px', fontSize: '20px', fontFamily: 'Newsreader, Georgia, serif', color: '#ffffff' }}>
+              Download PDF Catalogues
+            </h3>
+            <p style={{ margin: 0, fontSize: '13px', color: '#9fb0c4' }}>
+              Direct access to complete garment styling, technical specifications, and fabric blends.
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <a
+              href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')}
+              download="Softtex_Fashions_Wear_Limited_Womens.pdf"
+              className="softtex-button"
+              style={{
+                textDecoration: 'none',
+                background: slug === 'womens' ? '#8f5825' : 'rgba(255,255,255,0.12)',
+                color: '#ffffff',
+                border: '1px solid rgba(255,255,255,0.25)',
+                fontSize: '12px',
+                padding: '10px 14px',
+              }}
+            >
+              <ArrowDownToLine size={15} /> Women (1.75 MB)
+            </a>
+            <a
+              href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')}
+              download="Softtex_Fashions_Wear_Limited_Mens.pdf"
+              className="softtex-button"
+              style={{
+                textDecoration: 'none',
+                background: slug === 'mens' ? '#8f5825' : 'rgba(255,255,255,0.12)',
+                color: '#ffffff',
+                border: '1px solid rgba(255,255,255,0.25)',
+                fontSize: '12px',
+                padding: '10px 14px',
+              }}
+            >
+              <ArrowDownToLine size={15} /> Men (1.48 MB)
+            </a>
+            <a
+              href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')}
+              download="Softtex_Fashions_Wear_Limited_Kids.pdf"
+              className="softtex-button"
+              style={{
+                textDecoration: 'none',
+                background: slug === 'kids' ? '#8f5825' : 'rgba(255,255,255,0.12)',
+                color: '#ffffff',
+                border: '1px solid rgba(255,255,255,0.25)',
+                fontSize: '12px',
+                padding: '10px 14px',
+              }}
+            >
+              <ArrowDownToLine size={15} /> Children (902 KB)
+            </a>
+          </div>
+        </section>
 
         <nav className="softtex-category-nav" aria-label="Product categories">
           <p className="softtex-eyebrow">Browse categories</p>

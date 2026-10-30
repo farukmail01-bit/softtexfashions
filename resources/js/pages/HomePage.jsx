@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowRight, Check, ChevronLeft, ChevronRight, Clock, Globe, Layers, ShieldCheck, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { ArrowRight, ArrowDownToLine, Check, ChevronLeft, ChevronRight, Clock, Globe, Layers, ShieldCheck, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { assetUrl } from '../utils/asset';
 
@@ -592,6 +592,62 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Quick PDF Catalogue Download Bar for Buyers */}
+          <div
+            className="softtex-reveal"
+            style={{
+              marginTop: '36px',
+              padding: '24px 28px',
+              background: '#ffffff',
+              border: '1px solid var(--editorial-line)',
+              borderRadius: '8px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '18px',
+              boxShadow: '0 4px 16px rgba(11,26,43,0.04)',
+            }}
+          >
+            <div>
+              <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--editorial-bronze)', display: 'block', marginBottom: '2px' }}>
+                Buyer Resources
+              </span>
+              <h3 style={{ margin: 0, fontSize: '18px', fontFamily: 'Newsreader, Georgia, serif', color: 'var(--editorial-ink)' }}>
+                Download Complete PDF Catalogues
+              </h3>
+              <p style={{ margin: 0, fontSize: '13px', color: 'var(--editorial-muted)' }}>
+                Full technical specifications, fabric compositions, and style portfolios ready for offline review.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <a
+                href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')}
+                download="Softtex_Fashions_Wear_Limited_Womens.pdf"
+                className="softtex-editorial-button"
+                style={{ fontSize: '12px', padding: '10px 16px', textDecoration: 'none' }}
+              >
+                <ArrowDownToLine size={15} /> Women's PDF (1.75 MB)
+              </a>
+              <a
+                href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')}
+                download="Softtex_Fashions_Wear_Limited_Mens.pdf"
+                className="softtex-editorial-button"
+                style={{ fontSize: '12px', padding: '10px 16px', textDecoration: 'none' }}
+              >
+                <ArrowDownToLine size={15} /> Men's PDF (1.48 MB)
+              </a>
+              <a
+                href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')}
+                download="Softtex_Fashions_Wear_Limited_Kids.pdf"
+                className="softtex-editorial-button"
+                style={{ fontSize: '12px', padding: '10px 16px', textDecoration: 'none' }}
+              >
+                <ArrowDownToLine size={15} /> Children's PDF (902 KB)
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -51,6 +51,9 @@ export default function Footer() {
             {productLinks.map(([label, path]) => (
               <li key={path}><Link to={path}>{label}</Link></li>
             ))}
+            <li><a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')} download="Softtex_Fashions_Wear_Limited_Womens.pdf" style={{ color: '#e5b378' }}>Women's PDF Catalogue</a></li>
+            <li><a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')} download="Softtex_Fashions_Wear_Limited_Mens.pdf" style={{ color: '#e5b378' }}>Men's PDF Catalogue</a></li>
+            <li><a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')} download="Softtex_Fashions_Wear_Limited_Kids.pdf" style={{ color: '#e5b378' }}>Kids' PDF Catalogue</a></li>
           </ul>
         </div>
 

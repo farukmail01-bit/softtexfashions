@@ -23,6 +23,50 @@ Route::get('/compliance', [PageController::class, 'compliance'])->name('complian
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 // 2. Apparel Catalogue & Client Showcases (Primary: /catalogue/{slug})
+Route::get('/catalogue/download/{category}', function ($category) {
+    $map = [
+        'womens' => 'Softtex_Fashions_Wear_Limited_Womens.pdf',
+        'women' => 'Softtex_Fashions_Wear_Limited_Womens.pdf',
+        'mens' => 'Softtex_Fashions_Wear_Limited_Mens.pdf',
+        'men' => 'Softtex_Fashions_Wear_Limited_Mens.pdf',
+        'kids' => 'Softtex_Fashions_Wear_Limited_Kids.pdf',
+        'children' => 'Softtex_Fashions_Wear_Limited_Kids.pdf',
+    ];
+
+    $cat = strtolower(trim($category));
+    if (!isset($map[$cat])) {
+        abort(404, 'Catalogue not found');
+    }
+
+    $fileName = $map[$cat];
+    $filePath = public_path("pdf/{$fileName}");
+    if (!file_exists($filePath)) {
+        $filePath = base_path("pdf/{$fileName}");
+    }
+
+    if (!file_exists($filePath)) {
+        abort(404, 'Catalogue PDF file not found on server.');
+    }
+
+    return response()->download($filePath, $fileName, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'attachment; filename="' . $fileName . '"',
+    ]);
+})->name('catalogue.download');
+
+Route::get('/pdf/{file}', function ($file) {
+    $filePath = public_path("pdf/{$file}");
+    if (!file_exists($filePath)) {
+        $filePath = base_path("pdf/{$file}");
+    }
+    if (!file_exists($filePath)) {
+        abort(404, 'PDF file not found.');
+    }
+    return response()->file($filePath, [
+        'Content-Type' => 'application/pdf',
+    ]);
+})->where('file', '.*\.pdf$');
+
 Route::redirect('/catalogue/misc', '/catalogue/womens', 301);
 Route::get('/catalogue/{slug}', [PageController::class, 'productClient'])->name('product.client');
 Route::redirect('/catalogue', '/catalogue/womens', 301);

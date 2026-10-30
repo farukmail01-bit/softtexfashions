@@ -241,6 +241,10 @@ export default function Navbar({ onOpenRfq }) {
                 <Link to="/catalogue/womens" onClick={closeMenu}>Women</Link>
                 <Link to="/catalogue/mens" onClick={closeMenu}>Men</Link>
                 <Link to="/catalogue/kids" onClick={closeMenu}>Children</Link>
+                <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', margin: '6px 0' }} />
+                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Womens.pdf')} download="Softtex_Fashions_Wear_Limited_Womens.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Women's PDF</a>
+                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Mens.pdf')} download="Softtex_Fashions_Wear_Limited_Mens.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Men's PDF</a>
+                <a href={assetUrl('pdf/Softtex_Fashions_Wear_Limited_Kids.pdf')} download="Softtex_Fashions_Wear_Limited_Kids.pdf" onClick={closeMenu} style={{ fontSize: '12px' }}>Download Kids' PDF</a>
               </div>
             </div>
 
