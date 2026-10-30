@@ -78,109 +78,86 @@
         <h2>Bridging global apparel buyers with verified Bangladesh manufacturers.</h2>
 
         <p class="softtex-who-lead">
-          Softtex Fashions Wear Limited supports international apparel buyers, retailers, and fashion wholesalers with seamless sourcing and manufacturing coordination in Bangladesh.
+          Softtex Fashions Wear Limited operates as the dedicated sourcing and manufacturing bridge between international apparel brands, retailers, and verified production facilities across Bangladesh.
         </p>
         <p>
-          We operate as the dedicated buying bridge between international fashion brands and verified manufacturing facilities. Our stationed merchandising and technical teams follow orders against buyer-approved specifications, ensuring timely fabric lab dips, accurate proto sizing, strict AQL 1.5/2.5 quality control, and dependable shipping schedules.
-        </p>
-        <p>
-          From high-volume commercial basic knits to intricate fashion woven shirts and authentic washed denim, we provide complete supply chain visibility and transparent communication at every stage of production.
+          From high-volume commercial basic knits to intricate fashion woven tailoring and authentic washed denim, our stationed merchandising and technical teams enforce buyer-approved specifications, timely fabric lab dips, and dependable shipping schedules.
         </p>
 
-        {{-- Structured Highlights --}}
-        <div class="softtex-who-highlights">
-          <div class="softtex-who-highlight-item">
-            <div class="softtex-who-highlight-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <strong>Direct Factory Network</strong>
-              <p>Matching each style with 230+ audited partner units in Dhaka, Gazipur &amp; Narayanganj with specialized machinery and compliance certifications.</p>
+        {{-- Numbered Editorial Pillars --}}
+        <div class="softtex-who-pillars">
+          <div class="softtex-who-pillar-item">
+            <div class="softtex-who-pillar-num">01</div>
+            <div class="softtex-who-pillar-content">
+              <strong>Direct Factory Matching</strong>
+              <p>Connecting every style program with 230+ audited partner units across Dhaka, Gazipur &amp; Narayanganj with specialized machinery.</p>
             </div>
           </div>
 
-          <div class="softtex-who-highlight-item">
-            <div class="softtex-who-highlight-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <strong>Rigorous QA Oversight</strong>
-              <p>Stationed on-site QA team enforcing 4-point raw fabric inspection, inline stitch monitoring, and 100% metal/needle detection.</p>
+          <div class="softtex-who-pillar-item">
+            <div class="softtex-who-pillar-num">02</div>
+            <div class="softtex-who-pillar-content">
+              <strong>Stationed QA Oversight</strong>
+              <p>On-site quality teams enforcing 4-point raw fabric inspection, inline stitch monitoring, and strict AQL 1.5/2.5 audits.</p>
             </div>
           </div>
 
-          <div class="softtex-who-highlight-item">
-            <div class="softtex-who-highlight-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
+          <div class="softtex-who-pillar-item">
+            <div class="softtex-who-pillar-num">03</div>
+            <div class="softtex-who-pillar-content">
               <strong>Transparent Milestone Tracking</strong>
-              <p>Proactive Time &amp; Action (T&amp;A) calendar updates with daily reporting, ensuring complete control over shipment timelines.</p>
+              <p>Proactive Time &amp; Action (T&amp;A) calendar updates with daily reporting, providing complete control over shipment timelines.</p>
             </div>
           </div>
         </div>
 
-        <div style="margin-top:28px;">
-          <a class="btn" href="{{ route('services') }}">Explore Our Sourcing Services &rarr;</a>
+        <div class="softtex-who-actions">
+          <a class="btn" href="{{ route('services') }}">Explore Sourcing Services &rarr;</a>
+          <a class="btn o" href="{{ route('contact') }}">Contact Merchandising Desk</a>
         </div>
       </div>
 
-      {{-- Right Column: Visual Photo Composition with Overlapping Stats Card --}}
-      <div class="softtex-who-composition">
-        <div class="softtex-who-we-are-card">
-          <div class="softtex-who-we-are-img-wrap" style="height:250px;">
-            <img
-              src="{{ asset('images/collections/product-development-sampling.jpg') }}"
-              alt="Textile swatches and pattern development atelier at Softtex Fashions"
-              loading="lazy"
-              style="height:100%; object-fit:cover;"
-            >
-            <div class="softtex-who-we-are-badge">
-              <span>Apparel Merchandising &amp; Prototyping Atelier · Dhaka, Bangladesh</span>
-            </div>
+      {{-- Right Column: Single Unified Operations Sourcing Hub Card --}}
+      <div class="softtex-who-hub-card">
+        <div class="softtex-who-hub-media">
+          <img
+            src="{{ asset('images/collections/product-development-sampling.jpg') }}"
+            alt="Textile swatches and pattern development atelier at Softtex Fashions"
+            loading="lazy"
+          >
+          <div class="softtex-who-hub-badge">
+            <span class="softtex-who-hub-badge-dot"></span>
+            <span>Apparel Merchandising Atelier · Dhaka Sourcing Hub</span>
           </div>
         </div>
 
-        {{-- Overlapping Stats Card --}}
-        <div class="softtex-who-stat-card">
-          <div class="softtex-who-stat-item">
+        <div class="softtex-who-hub-stats">
+          <div class="softtex-who-hub-stat">
             <strong>1.8M+ Units</strong>
-            <span>Monthly Line Capacity</span>
+            <span>Monthly Capacity</span>
           </div>
-          <div class="softtex-who-stat-item">
-            <strong>5 - 7 Days</strong>
-            <span>Proto Sample Turnaround</span>
+          <div class="softtex-who-hub-stat">
+            <strong>5–7 Days</strong>
+            <span>Proto Turnaround</span>
           </div>
-          <div class="softtex-who-stat-item">
+          <div class="softtex-who-hub-stat">
             <strong>AQL 1.5 / 2.5</strong>
-            <span>Major / Minor Standard</span>
+            <span>Quality Standard</span>
           </div>
-          <div class="softtex-who-stat-item">
+          <div class="softtex-who-hub-stat">
             <strong>100% Tested</strong>
-            <span>Needle &amp; Metal Detection</span>
+            <span>Needle &amp; Metal Check</span>
           </div>
         </div>
 
-        {{-- Secondary Factory Production Card (Fills height and completes the story) --}}
-        <div class="softtex-who-secondary-card">
-          <div class="softtex-who-secondary-img-wrap">
-            <img
-              src="{{ asset('images/factory/sewing-garment.jpg') }}"
-              alt="Modern export garment factory sewing line"
-              loading="lazy"
-            >
-            <div class="softtex-who-secondary-badge">
-              <span>Certified Apparel Manufacturing Facilities · Ashulia &amp; Gazipur</span>
-            </div>
+        <div class="softtex-who-hub-footer">
+          <div class="softtex-who-hub-tags">
+            <span>RSC / ACCORD</span>
+            <span>BSCI Audited</span>
+            <span>OEKO-TEX</span>
+            <span>SEDEX</span>
           </div>
-          <div class="softtex-who-secondary-meta">
-            <div class="softtex-who-secondary-pills">
-              <span>ACCORD / RSC Certified</span>
-              <span>BSCI Audited</span>
-              <span>OEKO-TEX Standard</span>
-            </div>
-            <span class="softtex-who-secondary-caption">230+ Assigned Units</span>
-          </div>
+          <span class="softtex-who-hub-network">230+ Assigned Units</span>
         </div>
       </div>
     </div>
@@ -235,7 +212,7 @@
 {{-- Metrics & What We Make Section --}}
 <section class="sec">
   <div class="w">
-    {{-- Elevated Executive Metrics Bar --}}
+    {{-- Executive Dark Navy Metrics Ribbon --}}
     <div class="softtex-profile-metrics-bar">
       <div class="softtex-profile-metric-box">
         <strong>100+</strong>
@@ -243,11 +220,11 @@
       </div>
       <div class="softtex-profile-metric-box">
         <strong>5+</strong>
-        <span>Years Export Excellence</span>
+        <span>Major Export Continents</span>
       </div>
       <div class="softtex-profile-metric-box">
         <strong>230+</strong>
-        <span>Assigned Manufacturing Units</span>
+        <span>Partner Manufacturing Units</span>
       </div>
       <div class="softtex-profile-metric-box">
         <strong>1.8M+</strong>

@@ -3300,9 +3300,9 @@ Link {
 
 .softtex-editorial-content-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     align-items: start;
-    gap: 48px;
+    gap: 44px;
 }
 
 .softtex-editorial-content-grid h2,
@@ -3459,8 +3459,8 @@ Link {
     margin-bottom: 16px;
 }
 
-.softtex-who-highlights {
-    margin-top: 28px;
+.softtex-who-pillars {
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -3468,26 +3468,24 @@ Link {
     border-top: 1px solid var(--editorial-line);
 }
 
-.softtex-who-highlight-item {
+.softtex-who-pillar-item {
     display: flex;
     gap: 14px;
     align-items: flex-start;
 }
 
-.softtex-who-highlight-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    background: rgba(156, 108, 56, 0.12);
+.softtex-who-pillar-num {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
     color: var(--editorial-bronze, #9c6c38);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.2;
+    padding-top: 1px;
     flex-shrink: 0;
-    margin-top: 2px;
+    width: 24px;
 }
 
-.softtex-who-highlight-item strong {
+.softtex-who-pillar-content strong {
     display: block;
     font-size: 13.5px;
     color: var(--editorial-ink);
@@ -3495,11 +3493,19 @@ Link {
     font-weight: 700;
 }
 
-.softtex-who-highlight-item p {
+.softtex-who-pillar-content p {
     font-size: 12.5px;
     line-height: 1.5;
     color: var(--editorial-muted);
     margin: 0;
+}
+
+.softtex-who-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 26px;
+    flex-wrap: wrap;
 }
 
 /* Minimalist clean banner pill */
@@ -3529,117 +3535,133 @@ Link {
     display: inline-block;
 }
 
-/* Photo composition & Overlapping stats badge in Who We Are */
-.softtex-who-composition {
-    position: relative;
-    padding-bottom: 24px;
-}
-
-.softtex-who-stat-card {
-    position: relative;
-    margin-top: -28px;
-    margin-left: 20px;
-    margin-right: 20px;
+/* Unified Operational Sourcing Hub Card in Who We Are */
+.softtex-who-hub-card {
     background: #fff;
     border: 1px solid var(--editorial-line);
-    border-radius: 8px;
-    padding: 16px 20px;
-    box-shadow: 0 12px 28px rgba(10, 25, 47, 0.08);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 18px;
-}
-
-.softtex-who-stat-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(10, 25, 47, 0.06);
     display: flex;
     flex-direction: column;
 }
 
-.softtex-who-stat-item strong {
+.softtex-who-hub-media {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: #eae6dd;
+}
+
+.softtex-who-hub-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.softtex-who-hub-card:hover .softtex-who-hub-media img {
+    transform: scale(1.03);
+}
+
+.softtex-who-hub-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(10, 25, 47, 0.82);
+    backdrop-filter: blur(8px);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.softtex-who-hub-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    flex-shrink: 0;
+}
+
+.softtex-who-hub-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--editorial-line);
+    border-bottom: 1px solid var(--editorial-line);
+    background: #fff;
+}
+
+.softtex-who-hub-stat {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.softtex-who-hub-stat:nth-child(1),
+.softtex-who-hub-stat:nth-child(3) {
+    border-right: 1px solid var(--editorial-line);
+}
+
+.softtex-who-hub-stat:nth-child(1),
+.softtex-who-hub-stat:nth-child(2) {
+    border-bottom: 1px solid var(--editorial-line);
+}
+
+.softtex-who-hub-stat strong {
     font-size: 17px;
     font-weight: 750;
     color: var(--editorial-bronze, #9c6c38);
     line-height: 1.2;
 }
 
-.softtex-who-stat-item span {
-    font-size: 11px;
+.softtex-who-hub-stat span {
+    font-size: 10.5px;
     color: var(--editorial-muted);
-    font-weight: 550;
-}
-
-/* Secondary Factory Card filling the right column */
-.softtex-who-secondary-card {
-    margin-top: 18px;
-    background: #fff;
-    border: 1px solid var(--editorial-line);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.05);
-}
-
-.softtex-who-secondary-img-wrap {
-    position: relative;
-    height: 180px;
-    overflow: hidden;
-    background: #eae6dd;
-}
-
-.softtex-who-secondary-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.softtex-who-secondary-card:hover .softtex-who-secondary-img-wrap img {
-    transform: scale(1.03);
-}
-
-.softtex-who-secondary-badge {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(0deg, rgba(10, 25, 47, 0.88) 0%, transparent 100%);
-    padding: 24px 14px 10px;
-    color: #fff;
-    font-size: 11.5px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
-.softtex-who-secondary-meta {
+.softtex-who-hub-footer {
+    padding: 11px 16px;
+    background: var(--editorial-sand, #f8f6f0);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    padding: 11px 14px;
-    background: var(--editorial-sand, #f8f6f0);
-    border-top: 1px solid var(--editorial-line);
 }
 
-.softtex-who-secondary-pills {
+.softtex-who-hub-tags {
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
-.softtex-who-secondary-pills span {
-    font-size: 10.5px;
+.softtex-who-hub-tags span {
+    font-size: 10px;
     font-weight: 650;
     color: var(--editorial-bronze, #9c6c38);
     background: #fff;
     border: 1px solid var(--editorial-line);
-    padding: 3px 7px;
+    padding: 2.5px 6.5px;
     border-radius: 3px;
+    letter-spacing: 0.02em;
 }
 
-.softtex-who-secondary-caption {
+.softtex-who-hub-network {
     font-size: 11px;
+    font-weight: 650;
     color: var(--editorial-muted);
-    font-weight: 600;
 }
 
 /* Mission Values 3-Card Grid */
@@ -3653,8 +3675,9 @@ Link {
 .softtex-mission-value-card {
     background: #fff;
     border: 1px solid var(--editorial-line);
+    border-top: 3px solid var(--editorial-bronze, #9c6c38);
     border-radius: 8px;
-    padding: 24px 20px;
+    padding: 26px 20px;
     box-shadow: 0 4px 16px rgba(10, 25, 47, 0.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -3697,43 +3720,54 @@ Link {
     color: var(--editorial-muted);
 }
 
-/* Enhanced Metrics Bar */
+/* Executive Dark Navy Metrics Ribbon */
 .softtex-profile-metrics-bar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    margin-bottom: 48px;
+    gap: 0;
+    background: var(--editorial-ink, #0a192f);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 52px;
+    box-shadow: 0 16px 36px rgba(10, 25, 47, 0.12);
 }
 
 .softtex-profile-metric-box {
-    background: var(--editorial-sand, #f8f6f0);
-    border: 1px solid var(--editorial-line);
-    border-radius: 8px;
-    padding: 20px 16px;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    padding: 26px 16px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.softtex-profile-metric-box:last-child {
+    border-right: 0;
 }
 
 .softtex-profile-metric-box:hover {
-    border-color: var(--editorial-bronze, #9c6c38);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .softtex-profile-metric-box strong {
     display: block;
-    font-size: clamp(24px, 2.5vw, 32px);
+    font-size: clamp(24px, 2.4vw, 32px);
     font-weight: 800;
-    color: var(--editorial-ink);
+    color: var(--editorial-bronze, #d4a373);
     line-height: 1.1;
     margin-bottom: 6px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 .softtex-profile-metric-box span {
     display: block;
-    font-size: 11.5px;
-    color: var(--editorial-muted);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.72);
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     line-height: 1.35;
 }
 
@@ -3836,6 +3870,14 @@ Link {
     .softtex-profile-metrics-bar {
         grid-template-columns: repeat(3, 1fr);
     }
+    .softtex-profile-metric-box:nth-child(3) {
+        border-right: 0;
+    }
+    .softtex-profile-metric-box:nth-child(1),
+    .softtex-profile-metric-box:nth-child(2),
+    .softtex-profile-metric-box:nth-child(3) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 }
 
 @media (max-width: 800px) {
@@ -3844,6 +3886,18 @@ Link {
     }
     .softtex-profile-metrics-bar {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .softtex-profile-metric-box {
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .softtex-profile-metric-box:nth-child(2n) {
+        border-right: 0;
+    }
+    .softtex-profile-metric-box:last-child {
+        grid-column: 1 / -1;
+        border-right: 0;
+        border-bottom: 0;
     }
     .softtex-profile-products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -3854,13 +3908,16 @@ Link {
     .softtex-profile-metrics-bar {
         grid-template-columns: 1fr;
     }
+    .softtex-profile-metric-box {
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 20px 14px;
+    }
+    .softtex-profile-metric-box:last-child {
+        border-bottom: 0;
+    }
     .softtex-profile-products-grid {
         grid-template-columns: 1fr;
-    }
-    .softtex-who-stat-card {
-        grid-template-columns: 1fr;
-        margin-left: 10px;
-        margin-right: 10px;
     }
 }
 
