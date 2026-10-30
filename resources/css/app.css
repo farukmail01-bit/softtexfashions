@@ -1407,10 +1407,10 @@ Link {
     z-index: 1;
     background: linear-gradient(
         90deg,
-        rgba(250, 248, 243, 0.98) 0%,
-        rgba(250, 248, 243, 0.94) 40%,
-        rgba(250, 248, 243, 0.7) 62%,
-        rgba(250, 248, 243, 0.2) 100%
+        rgba(250, 248, 243, 0.88) 0%,
+        rgba(250, 248, 243, 0.80) 40%,
+        rgba(250, 248, 243, 0.45) 62%,
+        rgba(250, 248, 243, 0.08) 100%
     );
     pointer-events: none;
 }
@@ -1611,7 +1611,7 @@ Link {
     padding: 5px;
     border: 1px solid rgba(255, 255, 255, 0.68);
     border-radius: 999px;
-    background: rgba(250, 248, 243, 0.94);
+    background: rgba(250, 248, 243, 0.82);
     box-shadow: 0 5px 16px rgba(15, 36, 56, 0.2);
     backdrop-filter: blur(8px);
     transform: translateX(-50%);
@@ -2949,9 +2949,9 @@ Link {
     .softtex-editorial-hero-overlay {
         background: linear-gradient(
             180deg,
-            rgba(250, 248, 243, 0.97) 0%,
-            rgba(250, 248, 243, 0.92) 65%,
-            rgba(250, 248, 243, 0.5) 100%
+            rgba(250, 248, 243, 0.88) 0%,
+            rgba(250, 248, 243, 0.80) 65%,
+            rgba(250, 248, 243, 0.35) 100%
         );
     }
 
@@ -4245,10 +4245,10 @@ nav a.btn,
     z-index: 1;
     background: linear-gradient(
         90deg,
-        rgba(250, 248, 243, 0.98) 0%,
-        rgba(250, 248, 243, 0.94) 42%,
-        rgba(250, 248, 243, 0.68) 64%,
-        rgba(250, 248, 243, 0.2) 100%
+        rgba(250, 248, 243, 0.88) 0%,
+        rgba(250, 248, 243, 0.80) 42%,
+        rgba(250, 248, 243, 0.45) 64%,
+        rgba(250, 248, 243, 0.08) 100%
     );
     pointer-events: none;
 }
@@ -5458,7 +5458,7 @@ nav .sub a:hover,
     position: relative;
     background-color: var(--editorial-bg, #fdfbf7);
     background-image:
-        linear-gradient(rgba(253, 251, 247, 0.94), rgba(253, 251, 247, 0.96)),
+        linear-gradient(rgba(253, 251, 247, 0.80), rgba(253, 251, 247, 0.82)),
         url('/images/earth-light.jpg');
     background-position: center;
     background-size: cover;
@@ -5472,7 +5472,7 @@ nav .sub a:hover,
     position: relative;
     background-color: var(--editorial-card, #f8f6f0);
     background-image:
-        linear-gradient(rgba(248, 246, 240, 0.94), rgba(248, 246, 240, 0.96)),
+        linear-gradient(rgba(248, 246, 240, 0.80), rgba(248, 246, 240, 0.82)),
         url('/images/factory/watermark-pattern.jpg');
     background-position: center;
     background-size: cover;
