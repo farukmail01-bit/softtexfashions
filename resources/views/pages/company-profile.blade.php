@@ -9,12 +9,90 @@
 </section>
 
 <section class="sec">
-  <div class="w two" style="align-items:start">
-    <h2>Who we are</h2>
-    <div>
-      <p>Softtex Fashions Wear Ltd. has bought and sourced apparel in Bangladesh since 2018. We are the buying bridge between buyers and importers on one side, and manufacturers and exporters of readymade garments on the other.</p>
-      <p>We work closely with renowned Bangladeshi garment manufacturers. Every order is followed strictly, with quality assurance, standard inspections and on-time delivery.</p>
-      <p>Our global merchandising team serves buyers worldwide for finished apparel, textiles and readymade garment stock lots. Competitive prices, good quality and on-time delivery are our main strength.</p>
+  <div class="w">
+    {{-- Editorial Sourcing Atelier Banner --}}
+    <div class="softtex-editorial-banner-wrap">
+      <div class="softtex-editorial-banner-inner">
+        <img
+          src="{{ asset('images/home-slider/softtex-buying-house-meeting.jpg') }}"
+          alt="Softtex Fashions buying house team reviewing garment production briefs and tech packs"
+          loading="lazy"
+        >
+        <div class="softtex-editorial-banner-overlay">
+          <span class="softtex-editorial-banner-pill">Merchandising Operations</span>
+          <h3>Reliable apparel execution from concept tech-pack to vessel departure</h3>
+        </div>
+      </div>
+    </div>
+
+    {{-- Who We Are Split Grid --}}
+    <div class="softtex-editorial-content-grid">
+      <div class="softtex-who-we-are-col-left">
+        <p class="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">Who we are</p>
+        <h2>Bridging global apparel buyers with verified Bangladesh manufacturers.</h2>
+        <div class="softtex-who-we-are-card">
+          <div class="softtex-who-we-are-img-wrap">
+            <img
+              src="{{ asset('images/collections/product-development-sampling.jpg') }}"
+              alt="Textile swatches and pattern development atelier at Softtex Fashions"
+              loading="lazy"
+            >
+            <div class="softtex-who-we-are-badge">
+              <span>Sourcing &amp; Merchandising Desk · Dhaka, Bangladesh</span>
+            </div>
+          </div>
+          <div class="softtex-who-we-are-meta">
+            <span>100% Export Oriented</span>
+            <span>230+ Factory Partners</span>
+            <span>AQL 1.5 Quality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="softtex-who-we-are-col-right">
+        <p class="softtex-who-lead">
+          Softtex Fashions Wear Limited supports apparel buyers with sourcing and manufacturing coordination in Bangladesh. We work between international buyers and garment manufacturers to help move approved product briefs through sampling, production and shipment.
+        </p>
+        <p>
+          Our merchandising and quality teams follow orders against buyer-approved specifications, agreed quality requirements and delivery plans. We focus on clear communication and practical coordination throughout the process.
+        </p>
+        <p>
+          We support global buyers with finished apparel programmes across knitwear, denim and woven categories.
+        </p>
+
+        {{-- Structured Highlights --}}
+        <div class="softtex-who-highlights">
+          <div class="softtex-who-highlight-item">
+            <div class="softtex-who-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Direct Factory Network</strong>
+              <p>Matching each style with 230+ audited partner units in Dhaka, Gazipur &amp; Narayanganj with specialized machinery and compliance certifications.</p>
+            </div>
+          </div>
+
+          <div class="softtex-who-highlight-item">
+            <div class="softtex-who-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Rigorous QA Oversight</strong>
+              <p>Stationed on-site QA team enforcing 4-point raw fabric inspection, inline stitch monitoring, and 100% metal/needle detection.</p>
+            </div>
+          </div>
+
+          <div class="softtex-who-highlight-item">
+            <div class="softtex-who-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Transparent Milestone Tracking</strong>
+              <p>Proactive Time &amp; Action (T&amp;A) calendar updates with daily reporting, ensuring complete control over shipment timelines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

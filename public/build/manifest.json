@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DXtAMW4d.css",
+    "file": "assets/app-DlUCB8SE.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/admin/AdminRoot.jsx": {
-    "file": "assets/AdminRoot-DbfQd1zP.js",
+    "file": "assets/AdminRoot-BAtp2pD6.js",
     "name": "AdminRoot",
     "src": "resources/js/admin/AdminRoot.jsx",
     "isDynamicEntry": true,
@@ -18,7 +18,7 @@
     ]
   },
   "resources/js/main.jsx": {
-    "file": "assets/main-DT_WGFZy.js",
+    "file": "assets/main-ChSw4kZa.js",
     "name": "main",
     "src": "resources/js/main.jsx",
     "isEntry": true,

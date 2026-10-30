@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { assetUrl } from '../utils/asset';
 
 export default function AboutPage() {
   return (
@@ -14,12 +15,90 @@ export default function AboutPage() {
       </header>
 
       <section className="softtex-editorial-section">
-        <div className="softtex-editorial-wrap softtex-editorial-content-grid">
-          <h2>Who we are</h2>
-          <div>
-            <p>Softtex Fashions Wear Limited supports apparel buyers with sourcing and manufacturing coordination in Bangladesh. We work between international buyers and garment manufacturers to help move approved product briefs through sampling, production and shipment.</p>
-            <p>Our merchandising and quality teams follow orders against buyer-approved specifications, agreed quality requirements and delivery plans. We focus on clear communication and practical coordination throughout the process.</p>
-            <p>We support global buyers with finished apparel programmes across knitwear, denim and woven categories.</p>
+        <div className="softtex-editorial-wrap">
+          {/* Editorial Sourcing Atelier Banner */}
+          <div className="softtex-editorial-banner-wrap">
+            <div className="softtex-editorial-banner-inner">
+              <img
+                src={assetUrl('images/home-slider/softtex-buying-house-meeting.jpg')}
+                alt="Softtex Fashions buying house team reviewing garment production briefs and tech packs"
+                loading="lazy"
+              />
+              <div className="softtex-editorial-banner-overlay">
+                <span className="softtex-editorial-banner-pill">Merchandising Operations</span>
+                <h3>Reliable apparel execution from concept tech-pack to vessel departure</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Who We Are Split Grid */}
+          <div className="softtex-editorial-content-grid">
+            <div className="softtex-who-we-are-col-left">
+              <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">Who we are</p>
+              <h2>Bridging global apparel buyers with verified Bangladesh manufacturers.</h2>
+              <div className="softtex-who-we-are-card">
+                <div className="softtex-who-we-are-img-wrap">
+                  <img
+                    src={assetUrl('images/collections/product-development-sampling.jpg')}
+                    alt="Textile swatches and pattern development atelier at Softtex Fashions"
+                    loading="lazy"
+                  />
+                  <div className="softtex-who-we-are-badge">
+                    <span>Sourcing &amp; Merchandising Desk · Dhaka, Bangladesh</span>
+                  </div>
+                </div>
+                <div className="softtex-who-we-are-meta">
+                  <span>100% Export Oriented</span>
+                  <span>230+ Factory Partners</span>
+                  <span>AQL 1.5 Quality</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="softtex-who-we-are-col-right">
+              <p className="softtex-who-lead">
+                Softtex Fashions Wear Limited supports apparel buyers with sourcing and manufacturing coordination in Bangladesh. We work between international buyers and garment manufacturers to help move approved product briefs through sampling, production and shipment.
+              </p>
+              <p>
+                Our merchandising and quality teams follow orders against buyer-approved specifications, agreed quality requirements and delivery plans. We focus on clear communication and practical coordination throughout the process.
+              </p>
+              <p>
+                We support global buyers with finished apparel programmes across knitwear, denim and woven categories.
+              </p>
+
+              {/* Structured Highlights */}
+              <div className="softtex-who-highlights">
+                <div className="softtex-who-highlight-item">
+                  <div className="softtex-who-highlight-icon">
+                    <Check size={16} />
+                  </div>
+                  <div>
+                    <strong>Direct Factory Network</strong>
+                    <p>Matching each style with 230+ audited partner units in Dhaka, Gazipur &amp; Narayanganj with specialized machinery and compliance certifications.</p>
+                  </div>
+                </div>
+
+                <div className="softtex-who-highlight-item">
+                  <div className="softtex-who-highlight-icon">
+                    <Check size={16} />
+                  </div>
+                  <div>
+                    <strong>Rigorous QA Oversight</strong>
+                    <p>Stationed on-site QA team enforcing 4-point raw fabric inspection, inline stitch monitoring, and 100% metal/needle detection.</p>
+                  </div>
+                </div>
+
+                <div className="softtex-who-highlight-item">
+                  <div className="softtex-who-highlight-icon">
+                    <Check size={16} />
+                  </div>
+                  <div>
+                    <strong>Transparent Milestone Tracking</strong>
+                    <p>Proactive Time &amp; Action (T&amp;A) calendar updates with daily reporting, ensuring complete control over shipment timelines.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
