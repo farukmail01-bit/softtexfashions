@@ -123,4 +123,12 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Automated GitHub Webhook Deployment
+    |--------------------------------------------------------------------------
+    */
+    'deploy_secret' => env('DEPLOY_SECRET', 'softtex_auto_deploy_key_2026'),
+    'deploy_branch' => env('DEPLOY_BRANCH', 'main'),
+
 ];

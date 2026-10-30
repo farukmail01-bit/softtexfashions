@@ -9,7 +9,11 @@
 
     # Block direct access to sensitive framework folders
     RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|tests|vendor)/ - [F,L]
-    RewriteRule ^(artisan|composer\.(json|lock)|package\.(json|lock)|vite\.config\.js) - [F,L]
+    RewriteRule ^(artisan|composer\.(json|lock)|package\.(json|lock)|vite\.config\.js|\.env.*) - [F,L]
+
+    # Allow direct execution of webhook deployment entrypoint
+    RewriteCond %{REQUEST_URI} ^/deploy\.php$ [NC]
+    RewriteRule ^deploy\.php$ public/deploy.php [L]
 
     # Rewrite all web requests to the public directory
     RewriteCond %{REQUEST_URI} !^/public/

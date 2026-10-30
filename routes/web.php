@@ -185,3 +185,8 @@ Route::get('/admin/{any?}', [PageController::class, 'home'])->where('any', '.*')
 
 // 10. SPA Fallback for public client routes & branded 404
 Route::fallback([PageController::class, 'home']);
+
+// 11. Automated Continuous Deployment Webhook (GitHub Auto-Deploy)
+Route::post('/api/deploy-webhook', [\App\Http\Controllers\DeploymentWebhookController::class, 'handle'])->name('deploy.webhook');
+Route::get('/api/deploy-webhook/status', [\App\Http\Controllers\DeploymentWebhookController::class, 'status'])->name('deploy.webhook.status');
+
