@@ -768,9 +768,9 @@ export default function HomePage() {
             <div className="softtex-brand-tabs" role="tablist" aria-label="Filter brands by region">
               {[
                 { id: 'all', label: 'All Partners (12)' },
-                { id: 'Americas', label: 'North America (USA)' },
-                { id: 'Europe', label: 'Europe & UK' },
-                { id: 'Asia-Pacific', label: 'Asia-Pacific' },
+                { id: 'Americas', label: 'North America (7)' },
+                { id: 'Europe', label: 'Europe & UK (2)' },
+                { id: 'Asia-Pacific', label: 'Asia-Pacific (3)' },
               ].map((tab) => (
                 <button
                   type="button"
@@ -787,9 +787,9 @@ export default function HomePage() {
 
             {/* Interactive Brand Spotlight Grid */}
             <div className="softtex-brand-spotlight-grid">
-              {filteredBuyerLogos.map((buyer, idx) => (
+              {filteredBuyerLogos.map((buyer) => (
                 <Link
-                  className={`softtex-brand-spotlight-card softtex-reveal delay-${(idx % 4) + 1}`}
+                  className="softtex-brand-spotlight-card"
                   key={buyer.name}
                   to={buyer.link}
                   title={`View ${buyer.name} Production Portfolio`}

@@ -321,10 +321,18 @@
         <span style="font-size:11.5px; color:var(--editorial-bronze, #9c6c38); font-weight:650; letter-spacing:0.04em;">12 Accredited Brand Portfolios</span>
       </div>
 
+      {{-- Regional Filter Tabs --}}
+      <div class="softtex-brand-tabs" role="tablist" aria-label="Filter brands by region">
+        <button type="button" class="softtex-brand-tab-btn active" data-region="all" role="tab" aria-selected="true">All Partners (12)</button>
+        <button type="button" class="softtex-brand-tab-btn" data-region="Americas" role="tab" aria-selected="false">North America (7)</button>
+        <button type="button" class="softtex-brand-tab-btn" data-region="Europe" role="tab" aria-selected="false">Europe &amp; UK (2)</button>
+        <button type="button" class="softtex-brand-tab-btn" data-region="Asia-Pacific" role="tab" aria-selected="false">Asia-Pacific (3)</button>
+      </div>
+
       {{-- Interactive Brand Spotlight Grid --}}
       <div class="softtex-brand-spotlight-grid">
         @foreach($buyerLogosList as $buyer)
-          <a class="softtex-brand-spotlight-card softtex-reveal" href="{{ $buyer['url'] }}" title="View {{ $buyer['name'] }} Production Portfolio">
+          <a class="softtex-brand-spotlight-card" href="{{ $buyer['url'] }}" data-region="{{ $buyer['region'] }}" title="View {{ $buyer['name'] }} Production Portfolio">
             <div class="softtex-brand-spotlight-card-top">
               <div class="softtex-brand-spotlight-logo-wrap">
                 <img src="{{ asset($buyer['logo']) }}" alt="{{ $buyer['name'] }}" loading="lazy">
@@ -404,7 +412,25 @@
 @section('scripts')
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Regional brand tab filter
+    document.querySelectorAll('.softtex-brand-tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.softtex-brand-tab-btn').forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        var region = btn.getAttribute('data-region');
+        document.querySelectorAll('.softtex-brand-spotlight-card').forEach(function (card) {
+          if (region === 'all' || card.getAttribute('data-region') === region) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
       document.querySelectorAll('.softtex-reveal, .softtex-reveal-scale, .softtex-reveal-left, .softtex-reveal-right')
         .forEach(function (el) { el.classList.add('is-revealed'); });
       return;
