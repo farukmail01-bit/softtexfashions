@@ -280,10 +280,22 @@ const heroSlides = [
     description: 'Thoughtful product development, quality assurance and production coordination for international fashion brands.',
   },
   {
-    path: 'images/home-slider/buying-house-meeting.jpg',
-    alt: 'Apparel buying house team reviewing designs and production plans',
+    path: 'images/home-slider/softtex-buying-house-meeting.jpg',
+    alt: 'Softtex apparel buying house team reviewing designs and production plans',
     headline: <>Your Vision.<em>Our Sourcing Expertise.</em></>,
     description: 'Connecting global fashion brands with reliable apparel manufacturing, sourcing, quality control and production coordination from Bangladesh.',
+  },
+  {
+    path: 'images/home-slider/softtex-fashions-global-garment-manufacturing-banner.jpg',
+    alt: 'Softtex Fashions Global Garment Manufacturing Banner',
+    headline: <>Global Manufacturing.<em>Precision & Scale.</em></>,
+    description: 'World-class garment manufacturing with certified compliance, modern machinery, and high-efficiency capacity.',
+  },
+  {
+    path: 'images/home-slider/softtex-fashions-quality-in-every-stitch.jpg',
+    alt: 'Softtex Fashions Quality in Every Stitch',
+    headline: <>Quality in Every Stitch.<em>Excellence Assured.</em></>,
+    description: 'Rigorous multi-stage quality control from raw materials to final shipment per strict international AQL standards.',
   },
   {
     path: 'images/home-slider/fashion-atelier.jpg',
