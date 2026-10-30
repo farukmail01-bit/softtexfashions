@@ -75,8 +75,8 @@ export default function FloatingDockIsland() {
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.borderColor = '#0070f3';
-            e.currentTarget.style.color = '#0070f3';
+            e.currentTarget.style.borderColor = '#98642f';
+            e.currentTarget.style.color = '#98642f';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
@@ -180,7 +180,7 @@ export default function FloatingDockIsland() {
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.08)';
-            e.currentTarget.style.color = '#0070f3';
+            e.currentTarget.style.color = '#98642f';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'scale(1)';

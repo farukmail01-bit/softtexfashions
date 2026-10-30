@@ -92,8 +92,8 @@ export default function CostCalculatorIsland() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            background: 'rgba(0, 112, 243, 0.08)',
-            color: '#0070f3',
+            background: 'rgba(152, 100, 47, 0.08)',
+            color: '#98642f',
             fontSize: '0.75rem',
             fontWeight: 800,
             textTransform: 'uppercase',
@@ -181,7 +181,7 @@ export default function CostCalculatorIsland() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
               <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#334155' }}>
-                Order Volume: <strong style={{ color: '#0070f3' }}>{Number(orderQuantity).toLocaleString()} Pcs</strong>
+                Order Volume: <strong style={{ color: '#98642f' }}>{Number(orderQuantity).toLocaleString()} Pcs</strong>
               </label>
               <span style={{ fontSize: '0.72rem', color: '#16a34a', fontWeight: 700 }}>
                 {orderQuantity >= 10000 ? 'Volume Discount Active' : 'Standard MOQ'}
@@ -194,7 +194,7 @@ export default function CostCalculatorIsland() {
               step="500"
               value={orderQuantity}
               onChange={(e) => setOrderQuantity(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#0070f3', cursor: 'pointer' }}
+              style={{ width: '100%', accentColor: '#98642f', cursor: 'pointer' }}
             />
           </div>
 
@@ -294,7 +294,7 @@ export default function CostCalculatorIsland() {
                     ))}
                   </div>
                 </div>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0070f3', margin: '4px 0' }}>
+                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#98642f', margin: '4px 0' }}>
                   {currentCurr.symbol}{lowPrice} - {currentCurr.symbol}{highPrice}
                   <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#64748b', marginLeft: '6px' }}>/ pc</span>
                 </div>
@@ -332,17 +332,20 @@ export default function CostCalculatorIsland() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  background: '#0070f3',
+                  background: '#98642f',
                   color: '#ffffff',
                   padding: '12px',
-                  borderRadius: '8px',
-                  border: 'none',
+                  borderRadius: '6px',
+                  border: '1px solid #784b22',
                   fontWeight: 700,
                   fontSize: '0.92rem',
                   cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(0, 112, 243, 0.25)',
+                  boxShadow: '0 4px 12px rgba(152, 100, 47, 0.25)',
                   transition: 'background 0.2s',
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#784b22'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#98642f'; }}
+              >
               >
                 <Sparkles size={16} />
                 <span>Request Sample &amp; Formal Quote for this Specification</span>

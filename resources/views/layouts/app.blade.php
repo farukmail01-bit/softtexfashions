@@ -160,8 +160,6 @@
                   <a href="{{ route('vision') }}">Vision &amp; Mission</a>
                   <a href="{{ route('management') }}">Our Management</a>
                   <a href="{{ route('quality') }}">Quality Assurance</a>
-                  <a href="{{ route('compliance') }}">Sustainability</a>
-                  <a href="{{ route('terms-conditions') }}">Terms &amp; Conditions</a>
                 </div>
               </div>
               <a class="{{ request()->routeIs('services') ? 'on' : '' }}" href="{{ route('services') }}">Our Services</a>

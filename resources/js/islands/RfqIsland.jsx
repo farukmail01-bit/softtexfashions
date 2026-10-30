@@ -146,7 +146,7 @@ export default function RfqIsland() {
             particleCount: 100,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ['#0070f3', '#ff5e14', '#10b981', '#f59e0b'],
+            colors: ['#98642f', '#c4894d', '#10b981', '#0f172a'],
           });
         } catch (e) {}
       } else {
@@ -326,7 +326,7 @@ export default function RfqIsland() {
                 </h3>
                 <p style={{ color: '#475569', fontSize: '0.95rem', maxWidth: '480px', margin: '0 auto 14px' }}>
                   Official Tracking Code:{' '}
-                  <strong style={{ color: '#0070f3', fontFamily: 'monospace', fontSize: '1.1rem' }}>
+                  <strong style={{ color: '#98642f', fontFamily: 'monospace', fontSize: '1.1rem' }}>
                     {submittedResult.rfq_number}
                   </strong>
                 </p>
@@ -431,8 +431,8 @@ export default function RfqIsland() {
                   <span
                     style={{
                       display: 'inline-block',
-                      background: 'rgba(0, 112, 243, 0.1)',
-                      color: '#0070f3',
+                      background: 'rgba(152, 100, 47, 0.1)',
+                      color: '#98642f',
                       fontSize: '0.72rem',
                       fontWeight: 800,
                       textTransform: 'uppercase',
@@ -681,7 +681,7 @@ export default function RfqIsland() {
                       />
                       {techpackFile ? (
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-                          <Paperclip size={18} color="#0070f3" />
+                          <Paperclip size={18} color="#98642f" />
                           <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0f172a' }}>
                             {techpackFile.name}
                           </span>
@@ -745,15 +745,22 @@ export default function RfqIsland() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '8px',
-                        padding: '11px 24px',
-                        borderRadius: '8px',
-                        border: 'none',
-                        background: '#0070f3',
+                        padding: '12px 24px',
+                        borderRadius: '6px',
+                        border: '1px solid #784b22',
+                        background: '#98642f',
                         color: '#ffffff',
                         fontWeight: 700,
                         fontSize: '0.95rem',
                         cursor: loading ? 'not-allowed' : 'pointer',
-                        boxShadow: '0 4px 14px rgba(0, 112, 243, 0.35)',
+                        boxShadow: '0 4px 14px rgba(152, 100, 47, 0.35)',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!loading) e.currentTarget.style.background = '#784b22';
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!loading) e.currentTarget.style.background = '#98642f';
                       }}
                     >
                       <Send size={16} />
@@ -776,7 +783,7 @@ export default function RfqIsland() {
                 Track Sourcing Dossier &amp; Costing Workflow
               </h3>
               <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
-                Enter your official RFQ reference code (e.g. <code style={{ color: '#0070f3' }}>STX-RFQ-XXXX-2026</code>) to inspect live progress.
+                Enter your official RFQ reference code (e.g. <code style={{ color: '#98642f' }}>STX-RFQ-XXXX-2026</code>) to inspect live progress.
               </p>
             </div>
 
@@ -953,7 +960,7 @@ export default function RfqIsland() {
                   {trackingResult.has_techpack && (
                     <div style={{ gridColumn: '1 / -1' }}>
                       <span style={{ color: '#64748b' }}>Attached Tech Pack:</span>{' '}
-                      <strong style={{ color: '#0070f3' }}>✓ {trackingResult.techpack_name} (Under Review by Pattern Master)</strong>
+                      <strong style={{ color: '#98642f' }}>✓ {trackingResult.techpack_name} (Under Review by Pattern Master)</strong>
                     </div>
                   )}
                 </div>
