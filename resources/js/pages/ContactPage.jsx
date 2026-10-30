@@ -28,7 +28,7 @@ export default function ContactPage() {
   const rawEmail = office.office_email || settings.company_email || settings.contact_email || 'info@softtexfashions.com';
   const email = rawEmail.includes('bashir@') ? 'info@softtexfashions.com' : rawEmail;
   const phone = office.office_phone || settings.company_phone || settings.contact_phone || '+880 1904 464294';
-  const tel = office.office_tel || settings.contact_tel || '01612 844020';
+  const tel = office.office_tel || settings.contact_tel || '+880 1612 844020';
   const whatsapp = settings.company_whatsapp || settings.contact_whatsapp || phone;
   const whatsappNumber = whatsapp.replace(/[^\d]/g, '') || '8801904464294';
   const address = office.office_address || settings.corporate_address || settings.contact_address ||

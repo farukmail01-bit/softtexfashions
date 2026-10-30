@@ -126,7 +126,7 @@
       @endif
       <h3>Product categories</h3>
       <ul>@foreach($category['products'] as $product)<li>{{ $product }}</li>@endforeach</ul>
-      <p>For product details and enquiries: info@softtexfashions.com | Mobile: +880 1904 464294 | Tel: 01612 844020</p>
+      <p>For product details and enquiries: info@softtexfashions.com | Mobile: +880 1904 464294 | Tel: +880 1612 844020</p>
     </div>
   @endif
 </div>

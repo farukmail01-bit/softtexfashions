@@ -132,7 +132,7 @@ class PageController extends Controller
     {
         $meta = SeoService::getMeta([
             'title' => 'Contact Us | SOFTTEX FASHIONS WEAR LIMITED | Dhaka, Bangladesh',
-            'description' => 'Get in touch with Softtex Fashions Wear Ltd. Head office: House # 53/55(3A floor), Road # 20, Nikunja-2, Khilkhet, Dhaka -1229. Phone: +880 1904 464294, Tel: 01612 844020. Email: info@softtexfashions.com',
+            'description' => 'Get in touch with Softtex Fashions Wear Ltd. Head office: House # 53/55(3A floor), Road # 20, Nikunja-2, Khilkhet, Dhaka -1229. Phone: +880 1904 464294, Tel: +880 1612 844020. Email: info@softtexfashions.com',
             'keywords' => 'contact softtex fashions, garments buying house phone number, nikunja khilkhet buying house address, request garment quotation',
         ]);
 

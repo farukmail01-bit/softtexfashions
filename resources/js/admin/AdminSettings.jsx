@@ -59,7 +59,7 @@ export default function AdminSettings() {
     // Corporate
     company_name: 'SOFTTEX FASHIONS WEAR LIMITED',
     company_email: 'info@softtexfashions.com',
-    company_phone: '01612 844020',
+    company_phone: '+880 1612 844020',
     company_mobile: '+880 1904 464294',
     company_whatsapp: '+8801904464294',
     corporate_address: 'House # 53/55(3A floor), Road # 20, Nikunja-2, Khilkhet, Dhaka -1229, Bangladesh',

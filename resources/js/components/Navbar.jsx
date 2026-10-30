@@ -71,9 +71,9 @@ export default function Navbar({ onOpenRfq }) {
               <span>+880 1904 464294</span>
             </a>
             <span className="softtex-topbar-divider">|</span>
-            <a href="tel:01612844020" className="softtex-topbar-link" title="Call Telephone">
+            <a href="tel:+8801612844020" className="softtex-topbar-link" title="Call Telephone">
               <Phone size={12} />
-              <span>01612 844020</span>
+              <span>+880 1612 844020</span>
             </a>
             <span className="softtex-topbar-divider">|</span>
             <a
@@ -100,9 +100,9 @@ export default function Navbar({ onOpenRfq }) {
                 <span>+880 1904 464294</span>
               </a>
               <span className="ticker-bullet">&middot;</span>
-              <a href="tel:01612844020" className="ticker-link">
+              <a href="tel:+8801612844020" className="ticker-link">
                 <Phone size={11} />
-                <span>01612 844020</span>
+                <span>+880 1612 844020</span>
               </a>
               <span className="ticker-bullet">&middot;</span>
               <a
@@ -125,9 +125,9 @@ export default function Navbar({ onOpenRfq }) {
                 <span>+880 1904 464294</span>
               </a>
               <span className="ticker-bullet">&middot;</span>
-              <a href="tel:01612844020" className="ticker-link">
+              <a href="tel:+8801612844020" className="ticker-link">
                 <Phone size={11} />
-                <span>01612 844020</span>
+                <span>+880 1612 844020</span>
               </a>
               <span className="ticker-bullet">&middot;</span>
               <a
@@ -318,9 +318,9 @@ export default function Navbar({ onOpenRfq }) {
                 <Phone size={14} />
                 <span>+880 1904 464294</span>
               </a>
-              <a href="tel:01612844020" className="mobile-contact-chip">
+              <a href="tel:+8801612844020" className="mobile-contact-chip">
                 <Phone size={14} />
-                <span>01612 844020</span>
+                <span>+880 1612 844020</span>
               </a>
               <a
                 href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions"

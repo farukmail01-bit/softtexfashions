@@ -39,7 +39,7 @@ class SeoService
             'url' => url('/'),
             'logo' => asset('images/softtex-logo.png'),
             'description' => '100% Export-Oriented Garments Manufacturer & Buying House in Dhaka, Bangladesh. Quality Our Commitment.',
-            'telephone' => '+880 1904 464294, 01612 844020',
+            'telephone' => '+880 1904 464294, +880 1612 844020',
             'email' => 'info@softtexfashions.com',
             'address' => [
                 '@type' => 'PostalAddress',
