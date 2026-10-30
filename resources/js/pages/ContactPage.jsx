@@ -30,7 +30,7 @@ export default function ContactPage() {
   const phone = office.office_phone || settings.company_phone || settings.contact_phone || '+880 1904 464294';
   const tel = office.office_tel || settings.contact_tel || '01612 844020';
   const whatsapp = settings.company_whatsapp || settings.contact_whatsapp || phone;
-  const whatsappNumber = whatsapp.replace(/[^\d]/g, '');
+  const whatsappNumber = whatsapp.replace(/[^\d]/g, '') || '8801904464294';
   const address = office.office_address || settings.corporate_address || settings.contact_address ||
     'House # 53/55(3A floor), Road # 20, Nikunja-2, Khilkhet, Dhaka -1229, Bangladesh.';
 
@@ -45,50 +45,88 @@ export default function ContactPage() {
       </header>
 
       <section className="container softtex-contact-layout" aria-label="Contact information and order terms">
+        {/* Left Column: Direct Desks & UK Marketing Office */}
         <div className="softtex-contact-card">
-          <p className="softtex-eyebrow">SOFTTEX FASHIONS WEAR LIMITED</p>
-          <h2>Contact our team</h2>
-          <p className="softtex-muted">For new enquiries, sampling and production discussions.</p>
+          <div className="softtex-contact-card-main">
+            <p className="softtex-eyebrow">SOFTTEX FASHIONS WEAR LIMITED</p>
+            <h2>Contact our team</h2>
+            <p className="softtex-muted">For new enquiries, sampling and production discussions.</p>
 
-          <a className="softtex-contact-method" href={`mailto:${email}`}>
-            <span className="softtex-contact-icon"><Mail size={20} /></span>
-            <span><small>Email</small><strong>{email}</strong></span>
-            <ArrowUpRight size={17} />
-          </a>
-          <a className="softtex-contact-method" href={`tel:${phone.replace(/[^\d+]/g, '')}`}>
-            <span className="softtex-contact-icon"><Phone size={20} /></span>
-            <span><small>Mobile</small><strong>{phone}</strong></span>
-            <ArrowUpRight size={17} />
-          </a>
-          <a className="softtex-contact-method" href={`tel:${tel.replace(/[^\d+]/g, '')}`}>
-            <span className="softtex-contact-icon"><Phone size={20} /></span>
-            <span><small>Telephone</small><strong>{tel}</strong></span>
-            <ArrowUpRight size={17} />
-          </a>
-          <div className="softtex-contact-method">
-            <span className="softtex-contact-icon"><MapPin size={20} /></span>
-            <span><small>Bangladesh office</small><strong>{address}</strong></span>
+            <a className="softtex-contact-method" href={`mailto:${email}`}>
+              <span className="softtex-contact-icon"><Mail size={20} /></span>
+              <span><small>Email</small><strong>{email}</strong></span>
+              <ArrowUpRight size={17} />
+            </a>
+            <a className="softtex-contact-method" href={`tel:${phone.replace(/[^\d+]/g, '')}`}>
+              <span className="softtex-contact-icon"><Phone size={20} /></span>
+              <span><small>Mobile</small><strong>{phone}</strong></span>
+              <ArrowUpRight size={17} />
+            </a>
+            <a className="softtex-contact-method" href={`tel:${tel.replace(/[^\d+]/g, '')}`}>
+              <span className="softtex-contact-icon"><Phone size={20} /></span>
+              <span><small>Telephone</small><strong>{tel}</strong></span>
+              <ArrowUpRight size={17} />
+            </a>
+            <div className="softtex-contact-method">
+              <span className="softtex-contact-icon"><MapPin size={20} /></span>
+              <span><small>Bangladesh office</small><strong>{address}</strong></span>
+            </div>
+          </div>
+
+          {/* UK Marketing Office Box (Perfect Vertical Alignment) */}
+          <div className="softtex-uk-office">
+            <div className="softtex-uk-office-content">
+              <p className="softtex-eyebrow">UK MARKETING OFFICE</p>
+              <h3>Yusuf <span>· WhatsApp</span></h3>
+              <p>Message our WhatsApp desk and ask to speak with Yusuf.</p>
+            </div>
+            <div className="softtex-uk-office-action">
+              <a
+                className="softtex-button softtex-button-outline"
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello, I would like to speak with Yusuf about the UK marketing office.')}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Message on WhatsApp <ArrowUpRight size={16} />
+              </a>
+            </div>
           </div>
         </div>
 
+        {/* Right Column: Production Process & Commercial Governance (Symmetrical Height) */}
         <aside className="softtex-contact-note">
-          <p className="softtex-eyebrow">A straightforward process</p>
-          <h2>From tech pack to shipment.</h2>
-          <p>Share your product brief and target delivery window. Our team will confirm feasibility, pricing and the production schedule before an order is placed.</p>
-          <a className="softtex-button softtex-button-primary" href={`mailto:${email}?subject=${encodeURIComponent('Apparel production enquiry')}`}>
-            Start an enquiry <ArrowUpRight size={17} />
-          </a>
-
-          <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid rgba(0,0,0,0.08)' }}>
-            <p style={{ margin: '0 0 6px', fontSize: '12px', fontWeight: 600, color: 'var(--editorial-ink, #0b1a2b)' }}>
-              Commercial Governance
+          <div className="softtex-contact-note-main">
+            <p className="softtex-eyebrow">A straightforward process</p>
+            <h2>From tech pack to shipment.</h2>
+            <p className="softtex-muted">
+              Share your product brief and target delivery window. Our team will confirm feasibility, pricing and the production schedule before an order is placed.
             </p>
-            <p style={{ margin: 0, fontSize: '12px', color: 'var(--editorial-muted, #5a6b7d)', lineHeight: 1.5 }}>
-              Review our minimum order quantities (MOQ), sample approval protocol, payment guidelines and export policies on our dedicated{' '}
+            <a
+              className="softtex-button softtex-button-primary"
+              href={`mailto:${email}?subject=${encodeURIComponent('Apparel production enquiry')}`}
+            >
+              Start an enquiry <ArrowUpRight size={17} />
+            </a>
+          </div>
+
+          <div className="softtex-contact-governance-box">
+            <p className="softtex-eyebrow" style={{ color: 'var(--editorial-bronze, #8f5825)', margin: '0 0 6px' }}>Commercial Governance</p>
+            <p style={{ margin: '0 0 12px', fontSize: '13px', color: 'var(--editorial-muted, #5a6b7d)', lineHeight: 1.55 }}>
+              Review our minimum order quantities (MOQ 300 pcs), AQL 1.5/2.5 inspection benchmarks, payment structures and export policies on our dedicated{' '}
               <Link to="/terms-conditions" style={{ color: 'var(--editorial-bronze, #8f5825)', fontWeight: 600, textDecoration: 'underline' }}>
                 Terms &amp; Conditions page &rarr;
               </Link>
             </p>
+            <div className="softtex-contact-meta-row">
+              <div className="softtex-contact-meta-item">
+                <small>Working Hours</small>
+                <strong>Mon &ndash; Sat &bull; 9am &ndash; 7pm GMT+6</strong>
+              </div>
+              <div className="softtex-contact-meta-item">
+                <small>Direct Turnaround</small>
+                <strong>Within 24 Business Hours</strong>
+              </div>
+            </div>
           </div>
         </aside>
       </section>
