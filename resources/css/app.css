@@ -6243,22 +6243,106 @@ html, body {
 
 /* STRICT: Hide mobile contact drawer chips on desktop */
 @media (min-width: 1025px) {
+    .softtex-topbar-desktop {
+        display: flex !important;
+    }
+    .softtex-topbar-mobile-ticker {
+        display: none !important;
+    }
     .softtex-mobile-nav-contact {
         display: none !important;
     }
 }
 
-/* Mobile topbar responsive behavior */
+/* Mobile topbar responsive continuous marquee ticker */
 @media (max-width: 1024px) {
-    .softtex-topbar-contact {
+    .softtex-topbar-desktop {
         display: none !important;
     }
-    .softtex-topbar-inner {
-        justify-content: center !important;
-        text-align: center !important;
+    .softtex-topbar-contact {
+        display: none !important;
     }
     .softtex-mobile-nav-contact {
         display: flex !important;
     }
+
+    .softtex-topbar-mobile-ticker {
+        display: block !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        background: var(--navy);
+        padding: 6px 0 !important;
+        white-space: nowrap !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        touch-action: pan-y;
+    }
+
+    .softtex-ticker-track {
+        display: inline-flex !important;
+        width: max-content !important;
+        animation: softtexContinuousTicker 28s linear infinite !important;
+        will-change: transform;
+    }
+
+    .softtex-ticker-track:hover,
+    .softtex-ticker-track:focus-within,
+    .softtex-ticker-track:active {
+        animation-play-state: paused !important;
+    }
+
+    .softtex-ticker-content {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        padding-right: 28px !important;
+        font-size: 11px !important;
+        color: #e2e8f0 !important;
+        letter-spacing: 0.025em !important;
+    }
+
+    .softtex-ticker-content .ticker-bullet {
+        color: #f6ad55 !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        user-select: none;
+    }
+
+    .softtex-ticker-content .ticker-link {
+        color: #cbd5e1 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    .softtex-ticker-content .ticker-link:hover,
+    .softtex-ticker-content .ticker-link:active {
+        color: #f6ad55 !important;
+    }
+
+    .softtex-ticker-content .ticker-wa {
+        color: #68d391 !important;
+        font-weight: 600 !important;
+    }
 }
+
+@keyframes softtexContinuousTicker {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .softtex-ticker-track {
+        animation: none !important;
+        overflow-x: auto !important;
+    }
+}
+
 

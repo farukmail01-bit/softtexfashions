@@ -100,21 +100,42 @@
     <div class="softtex-public-site">
       <div>
         {{-- TOP EDITORIAL ANNOUNCEMENT BAR --}}
-        <div class="top softtex-editorial-topbar">
-          <div class="w softtex-topbar-inner">
+        <div class="top softtex-editorial-topbar" role="region" aria-label="Announcement">
+          {{-- Desktop Topbar --}}
+          <div class="w softtex-topbar-inner softtex-topbar-desktop">
             <span class="softtex-topbar-tagline">100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
             <div class="softtex-topbar-contact">
-              <a href="tel:+8801904464294" class="softtex-topbar-link">
-                &#9742; <span>+880 1904 464294</span>
-              </a>
+              <a href="tel:+8801904464294" class="softtex-topbar-link">&#9742; <span>+880 1904 464294</span></a>
               <span class="softtex-topbar-divider">|</span>
-              <a href="tel:01612844020" class="softtex-topbar-link">
-                &#9742; <span>01612 844020</span>
-              </a>
+              <a href="tel:01612844020" class="softtex-topbar-link">&#9742; <span>01612 844020</span></a>
               <span class="softtex-topbar-divider">|</span>
-              <a href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions" target="_blank" rel="noreferrer" class="softtex-topbar-link softtex-topbar-wa">
-                &#9993; <span>WhatsApp Desk</span>
-              </a>
+              <a href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions" target="_blank" rel="noreferrer" class="softtex-topbar-link softtex-topbar-wa">&#9993; <span>WhatsApp Desk</span></a>
+            </div>
+          </div>
+
+          {{-- Mobile Infinite Marquee Ticker --}}
+          <div class="softtex-topbar-mobile-ticker">
+            <div class="softtex-ticker-track">
+              <div class="softtex-ticker-content">
+                <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="tel:+8801904464294" class="ticker-link">&#9742; <span>+880 1904 464294</span></a>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="tel:01612844020" class="ticker-link">&#9742; <span>01612 844020</span></a>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions" target="_blank" rel="noreferrer" class="ticker-link ticker-wa">&#9993; <span>WhatsApp Desk</span></a>
+                <span class="ticker-bullet">&middot;</span>
+              </div>
+              <div class="softtex-ticker-content" aria-hidden="true">
+                <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="tel:+8801904464294" class="ticker-link">&#9742; <span>+880 1904 464294</span></a>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="tel:01612844020" class="ticker-link">&#9742; <span>01612 844020</span></a>
+                <span class="ticker-bullet">&middot;</span>
+                <a href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions" target="_blank" rel="noreferrer" class="ticker-link ticker-wa">&#9993; <span>WhatsApp Desk</span></a>
+                <span class="ticker-bullet">&middot;</span>
+              </div>
             </div>
           </div>
         </div>
