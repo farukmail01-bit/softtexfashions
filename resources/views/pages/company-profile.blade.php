@@ -6,7 +6,7 @@
       'title' => 'Woven Shirts & Tops',
       'category' => 'Woven Wear',
       'image' => 'images/collections/woven-shirts-collection.jpg',
-      'url' => route('product.category', 'mens'),
+      'url' => url('/catalogue/mens'),
       'count' => '120+ Styles',
       'desc' => 'Poplin, oxford, linen blends & tailored formal/casual shirts.',
     ],
@@ -14,7 +14,7 @@
       'title' => 'Knitwear & Polos',
       'category' => 'Knitwear',
       'image' => 'images/collections/knitwear-polos-collection.jpg',
-      'url' => route('product.category', 'womens'),
+      'url' => url('/catalogue/womens'),
       'count' => '100+ Styles',
       'desc' => '100% combed cotton jersey tees, piqués & fleece hoodies.',
     ],
@@ -22,7 +22,7 @@
       'title' => 'Denim & Bottoms',
       'category' => 'Denim & Casuals',
       'image' => 'images/collections/denim-bottoms-collection.jpg',
-      'url' => route('product.category', 'mens'),
+      'url' => url('/catalogue/mens'),
       'count' => '80+ Styles',
       'desc' => '10-14oz authentic ring denim, stretches & washed chinos.',
     ],
@@ -30,7 +30,7 @@
       'title' => 'Jackets & Outerwear',
       'category' => 'Outerwear',
       'image' => 'images/factory/slider-one.b923b4732b89d937bdaf.jpg',
-      'url' => route('product.category', 'mens'),
+      'url' => url('/catalogue/mens'),
       'count' => '45+ Styles',
       'desc' => 'Technical field jackets, windbreakers & lightweight puffers.',
     ],
@@ -38,7 +38,7 @@
       'title' => 'Children & Babywear',
       'category' => 'Kidswear',
       'image' => 'images/collections/children-babywear-collection.jpg',
-      'url' => route('product.category', 'kids'),
+      'url' => url('/catalogue/kids'),
       'count' => '78+ Styles',
       'desc' => 'Safe, nickel-free, OEKO-TEX certified infant & youth apparel.',
     ],
@@ -246,7 +246,7 @@
           Full-spectrum apparel manufacturing across knitwear, woven tailoring, authentic washed denim, and certified babywear.
         </p>
       </div>
-      <a href="{{ route('product.category', 'mens') }}" style="font-size:12px; font-weight:650; color:var(--editorial-bronze, #9c6c38);">
+      <a href="{{ url('/catalogue/mens') }}" style="font-size:12px; font-weight:650; color:var(--editorial-bronze, #9c6c38);">
         View full catalogue &rarr;
       </a>
     </div>
