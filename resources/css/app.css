@@ -3502,6 +3502,294 @@ Link {
     margin: 0;
 }
 
+/* Minimalist clean banner pill */
+.softtex-editorial-banner-pill-clean {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    font-weight: 650;
+    color: #fff;
+    background: rgba(10, 25, 47, 0.78);
+    backdrop-filter: blur(8px);
+    padding: 7px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.softtex-editorial-banner-pill-clean span.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    display: inline-block;
+}
+
+/* Photo composition & Overlapping stats badge in Who We Are */
+.softtex-who-composition {
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.softtex-who-stat-card {
+    position: relative;
+    margin-top: -28px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #fff;
+    border: 1px solid var(--editorial-line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 28px rgba(10, 25, 47, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 18px;
+}
+
+.softtex-who-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.softtex-who-stat-item strong {
+    font-size: 17px;
+    font-weight: 750;
+    color: var(--editorial-bronze, #9c6c38);
+    line-height: 1.2;
+}
+
+.softtex-who-stat-item span {
+    font-size: 11px;
+    color: var(--editorial-muted);
+    font-weight: 550;
+}
+
+/* Mission Values 3-Card Grid */
+.softtex-mission-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+}
+
+.softtex-mission-value-card {
+    background: #fff;
+    border: 1px solid var(--editorial-line);
+    border-radius: 8px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 16px rgba(10, 25, 47, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.softtex-mission-value-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.07);
+}
+
+.softtex-mission-value-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.softtex-mission-value-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(156, 108, 56, 0.12);
+    color: var(--editorial-bronze, #9c6c38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.softtex-mission-value-card h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--editorial-ink);
+}
+
+.softtex-mission-value-card p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--editorial-muted);
+}
+
+/* Enhanced Metrics Bar */
+.softtex-profile-metrics-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.softtex-profile-metric-box {
+    background: var(--editorial-sand, #f8f6f0);
+    border: 1px solid var(--editorial-line);
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.softtex-profile-metric-box:hover {
+    border-color: var(--editorial-bronze, #9c6c38);
+    transform: translateY(-2px);
+}
+
+.softtex-profile-metric-box strong {
+    display: block;
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 800;
+    color: var(--editorial-ink);
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+}
+
+.softtex-profile-metric-box span {
+    display: block;
+    font-size: 11.5px;
+    color: var(--editorial-muted);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* What We Make 5-Category Product Grid */
+.softtex-profile-products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.softtex-profile-product-card {
+    background: #fff;
+    border: 1px solid var(--editorial-line);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(10, 25, 47, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.softtex-profile-product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(10, 25, 47, 0.08);
+    border-color: var(--editorial-bronze, #9c6c38);
+}
+
+.softtex-profile-product-img-wrap {
+    position: relative;
+    height: 170px;
+    overflow: hidden;
+    background: #eae6dd;
+}
+
+.softtex-profile-product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.softtex-profile-product-card:hover .softtex-profile-product-img-wrap img {
+    transform: scale(1.05);
+}
+
+.softtex-profile-product-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(10, 25, 47, 0.85);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+}
+
+.softtex-profile-product-body {
+    padding: 14px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.softtex-profile-product-body h4 {
+    margin: 0 0 4px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--editorial-ink);
+    line-height: 1.3;
+}
+
+.softtex-profile-product-body p {
+    margin: 0 0 10px;
+    font-size: 11px;
+    color: var(--editorial-muted);
+    line-height: 1.45;
+    flex: 1;
+}
+
+.softtex-profile-product-link {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--editorial-bronze, #9c6c38);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+    .softtex-profile-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .softtex-profile-metrics-bar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .softtex-mission-values-grid {
+        grid-template-columns: 1fr;
+    }
+    .softtex-profile-metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .softtex-profile-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .softtex-profile-metrics-bar {
+        grid-template-columns: 1fr;
+    }
+    .softtex-profile-products-grid {
+        grid-template-columns: 1fr;
+    }
+    .softtex-who-stat-card {
+        grid-template-columns: 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 .softtex-vision-page {
     overflow: hidden;
 }
