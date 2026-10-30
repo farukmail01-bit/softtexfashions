@@ -176,6 +176,28 @@ Route::get('/download-cpanel-archive', function () {
     abort(404, 'cPanel Archive not found.');
 })->name('download.cpanel');
 
+// Direct Vendor Dependency Download Routes
+Route::get('/download-vendor-zip', function () {
+    $path = public_path('vendor.zip');
+    if (file_exists($path)) {
+        return response()->download($path, 'vendor.zip', [
+            'Content-Type' => 'application/zip',
+        ]);
+    }
+    abort(404, 'vendor.zip not found.');
+})->name('download.vendor.zip');
+
+Route::get('/download-vendor-tar', function () {
+    $path = public_path('vendor.tar.gz');
+    if (file_exists($path)) {
+        return response()->download($path, 'vendor.tar.gz', [
+            'Content-Type' => 'application/gzip',
+        ]);
+    }
+    abort(404, 'vendor.tar.gz not found.');
+})->name('download.vendor.tar');
+
+
 // 8. Public Blog Entry Points
 Route::get('/blog', [PageController::class, 'home'])->name('blog');
 Route::get('/blog/{slug}', [PageController::class, 'home'])->name('blog.detail');
