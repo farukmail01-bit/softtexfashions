@@ -77,105 +77,6 @@ const productCollections = [
   },
 ];
 
-const buyerLogos = [
-  {
-    name: 'Guess',
-    logo: 'images/buyer/guess.png',
-    link: '/contact',
-    region: 'Americas',
-    category: 'Denim & Trendwear',
-    desc: 'Premium washed denim, graphic tees & casual apparel programmes.',
-  },
-  {
-    name: 'Eddie Bauer',
-    logo: 'images/buyer/eddies-bauer.png',
-    link: '/catalogue/eddiebauer',
-    region: 'Americas',
-    category: 'Outerwear & Performance',
-    desc: 'Technical field jackets, packable puffers & rugged outdoor knits.',
-  },
-  {
-    name: 'Forever 21',
-    logo: 'images/buyer/forever-21.jpg',
-    link: '/catalogue/forever',
-    region: 'Americas',
-    category: 'Fast Fashion Ladieswear',
-    desc: 'Rapid-turnaround trend tops, dresses & fashion-forward jersey.',
-  },
-  {
-    name: 'U.S. Polo Assn.',
-    logo: 'images/buyer/us-polo.jpg',
-    link: '/catalogue/us-polo',
-    region: 'Americas',
-    category: 'Heritage Polos & Knits',
-    desc: 'Combed cotton double-piqué polos, fleece hoodies & sweat shorts.',
-  },
-  {
-    name: 'Hard Rock',
-    logo: 'images/buyer/hard-rock.png',
-    link: '/contact',
-    region: 'Americas',
-    category: 'Merchandise & Heavy Tees',
-    desc: 'Heavyweight organic graphic t-shirts & signature merchandise.',
-  },
-  {
-    name: 'Head Sportswear',
-    logo: 'images/buyer/head.png',
-    link: '/catalogue/head',
-    region: 'Europe',
-    category: 'Athletic Activewear',
-    desc: 'Quick-dry training tees, tennis polo tops & active performance wear.',
-  },
-  {
-    name: 'Emart',
-    logo: 'images/buyer/emart.png',
-    link: '/catalogue/emart',
-    region: 'Asia-Pacific',
-    category: 'Licensed Character Apparel',
-    desc: 'Official Peanuts™ Charlie Brown & Snoopy licensed graphic tees.',
-  },
-  {
-    name: 'Home Plus',
-    logo: 'images/buyer/home-plus.jpg',
-    link: '/contact',
-    region: 'Asia-Pacific',
-    category: 'Retail Basics & Loungewear',
-    desc: 'High-volume essential t-shirts, loungewear & family basics.',
-  },
-  {
-    name: 'Joy Rich',
-    logo: 'images/buyer/joy-rich.jpg',
-    link: '/contact',
-    region: 'Asia-Pacific',
-    category: 'Creative Streetwear',
-    desc: 'Street fashion knits, typography hoodies & contemporary silhouettes.',
-  },
-  {
-    name: 'Keith Haring',
-    logo: 'images/buyer/keith-haring.jpg',
-    link: '/catalogue/keithhering',
-    region: 'Americas',
-    category: 'Graphic Artwear',
-    desc: 'Licensed Keith Haring pop-art streetwear tees & heavy jersey.',
-  },
-  {
-    name: 'Rich Cotton',
-    logo: 'images/buyer/rich-cotton.jpg',
-    link: '/catalogue/rich-cotton',
-    region: 'Europe',
-    category: 'Sustainable Combed Knits',
-    desc: 'Eco-dyed combed cotton V-necks & signature single-jersey basics.',
-  },
-  {
-    name: 'Skechers',
-    logo: 'images/buyer/skechers.jpg',
-    link: '/catalogue/skechers',
-    region: 'Americas',
-    category: 'Athleisure & Sportswear',
-    desc: 'Ergonomic moisture-wicking tees, sports joggers & performance knits.',
-  },
-];
-
 const operationalBenchmarks = [
   {
     icon: <Layers size={20} />,
@@ -292,7 +193,6 @@ export default function HomePage() {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [heroSlideDirection, setHeroSlideDirection] = useState('next');
   const [isHeroPhotoPaused, setIsHeroPhotoPaused] = useState(false);
-  const [brandRegion, setBrandRegion] = useState('all');
   const heroGridRef = useRef(null);
   const previousHeroSlide = useRef(activeHeroSlide);
 
@@ -388,11 +288,6 @@ export default function HomePage() {
     { value: cmsCounters[2]?.value || '230+', label: 'Manufacturing units' },
     { value: cmsCounters[3]?.value || '17+', label: 'Associated countries' },
   ];
-
-  const filteredBuyerLogos = useMemo(() => {
-    if (brandRegion === 'all') return buyerLogos;
-    return buyerLogos.filter((b) => b.region === brandRegion);
-  }, [brandRegion]);
 
   return (
     <div className="softtex-home-page softtex-editorial-home">
@@ -673,8 +568,8 @@ export default function HomePage() {
         <div className="softtex-editorial-wrap">
           <div className="softtex-editorial-heading softtex-reveal">
             <p className="softtex-editorial-eyebrow">Trusted worldwide</p>
-            <h2>Certified Standards, Global Brands</h2>
-            <p>Our assigned manufacturing units operate to recognized international compliance benchmarks and supply reputable apparel brands worldwide.</p>
+            <h2>Certified Standards &amp; International Compliance</h2>
+            <p>Our assigned manufacturing units operate to recognized international compliance benchmarks and ethical sourcing standards worldwide.</p>
           </div>
 
           <div className="softtex-editorial-metrics softtex-reveal-scale">
@@ -684,73 +579,6 @@ export default function HomePage() {
                 <span>{counter.label}</span>
               </div>
             ))}
-          </div>
-
-          {/* LUXURY UPGRADE: Global Brands & Production Portfolios Showcase */}
-          <div className="softtex-editorial-brands-block softtex-reveal" style={{ marginTop: '40px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px', marginBottom: '18px' }}>
-              <div>
-                <h3 style={{ marginBottom: '4px' }}>Global Brands &amp; Production Portfolios</h3>
-                <p style={{ margin: 0, fontSize: '13px', color: 'var(--editorial-muted)' }}>
-                  Trusted manufacturing partner for prestigious fashion retailers across North America, Europe and Asia-Pacific.
-                </p>
-              </div>
-              <span style={{ fontSize: '11.5px', color: 'var(--editorial-bronze)', fontWeight: 650, letterSpacing: '0.04em' }}>
-                12 Accredited Brand Portfolios
-              </span>
-            </div>
-
-            {/* Regional Filter Tabs */}
-            <div className="softtex-brand-tabs" role="tablist" aria-label="Filter brands by region">
-              {[
-                { id: 'all', label: 'All Partners (12)' },
-                { id: 'Americas', label: 'North America (7)' },
-                { id: 'Europe', label: 'Europe & UK (2)' },
-                { id: 'Asia-Pacific', label: 'Asia-Pacific (3)' },
-              ].map((tab) => (
-                <button
-                  type="button"
-                  key={tab.id}
-                  className={`softtex-brand-tab-btn ${brandRegion === tab.id ? 'active' : ''}`}
-                  onClick={() => setBrandRegion(tab.id)}
-                  role="tab"
-                  aria-selected={brandRegion === tab.id}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Interactive Brand Spotlight Grid */}
-            <div className="softtex-brand-spotlight-grid">
-              {filteredBuyerLogos.map((buyer) => (
-                <Link
-                  className="softtex-brand-spotlight-card"
-                  key={buyer.name}
-                  to={buyer.link}
-                  title={`View ${buyer.name} Production Portfolio`}
-                  aria-label={`${buyer.name} production portfolio`}
-                >
-                  <div className="softtex-brand-spotlight-card-top">
-                    <div className="softtex-brand-spotlight-logo-wrap">
-                      <img src={assetUrl(buyer.logo)} alt={buyer.name} loading="lazy" />
-                    </div>
-                    <span className="softtex-brand-spotlight-region-pill">{buyer.region}</span>
-                  </div>
-                  <div className="softtex-brand-spotlight-body">
-                    <h4>{buyer.name}</h4>
-                    <span style={{ display: 'block', fontSize: '11px', fontWeight: 650, color: 'var(--editorial-bronze)', marginBottom: '4px' }}>
-                      {buyer.category}
-                    </span>
-                    <p>{buyer.desc}</p>
-                  </div>
-                  <div className="softtex-brand-spotlight-footer">
-                    <span>Explore Portfolio</span>
-                    <ArrowRight size={14} />
-                  </div>
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Real Certification Emblems: Continuous Scrolling Marquee with Enlarged Badges */}

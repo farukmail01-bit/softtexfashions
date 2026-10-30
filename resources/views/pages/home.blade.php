@@ -269,72 +269,14 @@
   <div class="w">
     <div class="hd softtex-reveal">
       <div class="ey">Trusted Worldwide</div>
-      <h2>Certified Standards, Global Brands</h2>
-      <p>Our assigned manufacturing units operate to recognized international compliance benchmarks and supply reputable apparel brands worldwide.</p>
+      <h2>Certified Standards &amp; International Compliance</h2>
+      <p>Our assigned manufacturing units operate to recognized international compliance benchmarks and ethical sourcing standards worldwide.</p>
     </div>
     <div class="kp softtex-reveal-scale">
       <div><b>100+</b><span>Garment categories</span></div>
       <div><b>5+</b><span>Years of experience</span></div>
       <div><b>230+</b><span>Assigned manufacturing units</span></div>
       <div><b>17+</b><span>Associated countries</span></div>
-    </div>
-
-    {{-- Brand Logos Showcase from public/images/buyer --}}
-    @php
-      $buyerLogosList = [
-        ['name' => 'Guess', 'logo' => 'images/buyer/guess.png', 'url' => route('contact'), 'region' => 'Americas', 'category' => 'Denim & Trendwear', 'desc' => 'Premium washed denim, graphic tees & casual apparel programmes.'],
-        ['name' => 'Eddie Bauer', 'logo' => 'images/buyer/eddies-bauer.png', 'url' => route('product.client', 'eddiebauer'), 'region' => 'Americas', 'category' => 'Outerwear & Performance', 'desc' => 'Technical mountain jackets, packable puffers & rugged outdoor knits.'],
-        ['name' => 'Forever 21', 'logo' => 'images/buyer/forever-21.jpg', 'url' => route('product.client', 'forever'), 'region' => 'Americas', 'category' => 'Fast Fashion Ladieswear', 'desc' => 'Rapid-turnaround trend tops, dresses & fashion-forward jersey.'],
-        ['name' => 'U.S. Polo Assn.', 'logo' => 'images/buyer/us-polo.jpg', 'url' => route('product.client', 'us-polo'), 'region' => 'Americas', 'category' => 'Heritage Polos & Knits', 'desc' => 'Combed cotton double-piqué polos, fleece hoodies & sweat shorts.'],
-        ['name' => 'Hard Rock', 'logo' => 'images/buyer/hard-rock.png', 'url' => route('contact'), 'region' => 'Americas', 'category' => 'Merchandise & Heavy Tees', 'desc' => 'Heavyweight organic graphic t-shirts & signature merchandise.'],
-        ['name' => 'Head Sportswear', 'logo' => 'images/buyer/head.png', 'url' => route('product.client', 'head'), 'region' => 'Europe', 'category' => 'Athletic Activewear', 'desc' => 'Quick-dry training tees, tennis polo tops & active performance wear.'],
-        ['name' => 'Emart', 'logo' => 'images/buyer/emart.png', 'url' => route('product.client', 'emart'), 'region' => 'Asia-Pacific', 'category' => 'Licensed Character Apparel', 'desc' => 'Official Peanuts™ Charlie Brown & Snoopy licensed graphic tees.'],
-        ['name' => 'Home Plus', 'logo' => 'images/buyer/home-plus.jpg', 'url' => route('contact'), 'region' => 'Asia-Pacific', 'category' => 'Retail Basics & Loungewear', 'desc' => 'High-volume essential t-shirts, loungewear & family basics.'],
-        ['name' => 'Joy Rich', 'logo' => 'images/buyer/joy-rich.jpg', 'url' => route('contact'), 'region' => 'Asia-Pacific', 'category' => 'Creative Streetwear', 'desc' => 'Street fashion knits, typography hoodies & contemporary silhouettes.'],
-        ['name' => 'Keith Haring', 'logo' => 'images/buyer/keith-haring.jpg', 'url' => route('product.client', 'keithhering'), 'region' => 'Americas', 'category' => 'Graphic Artwear', 'desc' => 'Licensed Keith Haring pop-art streetwear tees & heavy jersey.'],
-        ['name' => 'Rich Cotton', 'logo' => 'images/buyer/rich-cotton.jpg', 'url' => route('product.client', 'rich-cotton'), 'region' => 'Europe', 'category' => 'Sustainable Combed Knits', 'desc' => 'Eco-dyed combed cotton V-necks & signature single-jersey basics.'],
-        ['name' => 'Skechers', 'logo' => 'images/buyer/skechers.jpg', 'url' => route('product.client', 'skechers'), 'region' => 'Americas', 'category' => 'Athleisure & Sportswear', 'desc' => 'Ergonomic moisture-wicking tees, sports joggers & performance knits.'],
-      ];
-    @endphp
-    <div class="softtex-editorial-brands-block softtex-reveal">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
-        <div>
-          <h3 style="margin-bottom:4px;">Global Brands &amp; Production Portfolios</h3>
-          <p style="margin:0; font-size:13px; color:var(--editorial-muted, #72849a);">Trusted manufacturing partner for prestigious fashion retailers worldwide.</p>
-        </div>
-        <span style="font-size:11.5px; color:var(--editorial-bronze, #9c6c38); font-weight:650; letter-spacing:0.04em;">12 Accredited Brand Portfolios</span>
-      </div>
-
-      {{-- Regional Filter Tabs --}}
-      <div class="softtex-brand-tabs" role="tablist" aria-label="Filter brands by region">
-        <button type="button" class="softtex-brand-tab-btn active" data-region="all" role="tab" aria-selected="true">All Partners (12)</button>
-        <button type="button" class="softtex-brand-tab-btn" data-region="Americas" role="tab" aria-selected="false">North America (7)</button>
-        <button type="button" class="softtex-brand-tab-btn" data-region="Europe" role="tab" aria-selected="false">Europe &amp; UK (2)</button>
-        <button type="button" class="softtex-brand-tab-btn" data-region="Asia-Pacific" role="tab" aria-selected="false">Asia-Pacific (3)</button>
-      </div>
-
-      {{-- Interactive Brand Spotlight Grid --}}
-      <div class="softtex-brand-spotlight-grid">
-        @foreach($buyerLogosList as $buyer)
-          <a class="softtex-brand-spotlight-card" href="{{ $buyer['url'] }}" data-region="{{ $buyer['region'] }}" title="View {{ $buyer['name'] }} Production Portfolio">
-            <div class="softtex-brand-spotlight-card-top">
-              <div class="softtex-brand-spotlight-logo-wrap">
-                <img src="{{ asset($buyer['logo']) }}" alt="{{ $buyer['name'] }}" loading="lazy">
-              </div>
-              <span class="softtex-brand-spotlight-region-pill">{{ $buyer['region'] }}</span>
-            </div>
-            <div class="softtex-brand-spotlight-body">
-              <h4>{{ $buyer['name'] }}</h4>
-              <span style="display:block; font-size:11px; font-weight:650; color:var(--editorial-bronze, #9c6c38); margin-bottom:4px;">{{ $buyer['category'] }}</span>
-              <p>{{ $buyer['desc'] }}</p>
-            </div>
-            <div class="softtex-brand-spotlight-footer">
-              <span>Explore Portfolio</span>
-              <span>&rarr;</span>
-            </div>
-          </a>
-        @endforeach
-      </div>
     </div>
 
     {{-- Certification Emblems: Continuous Scrolling Marquee with Enlarged Badges --}}
@@ -396,26 +338,6 @@
 @section('scripts')
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Regional brand tab filter
-    document.querySelectorAll('.softtex-brand-tab-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.softtex-brand-tab-btn').forEach(function (b) {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        var region = btn.getAttribute('data-region');
-        document.querySelectorAll('.softtex-brand-spotlight-card').forEach(function (card) {
-          if (region === 'all' || card.getAttribute('data-region') === region) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.softtex-reveal, .softtex-reveal-scale, .softtex-reveal-left, .softtex-reveal-right')
         .forEach(function (el) { el.classList.add('is-revealed'); });
