@@ -60,8 +60,32 @@ export default function Navbar({ onOpenRfq }) {
     <>
       {/* TOP EDITORIAL ANNOUNCEMENT BAR */}
       <div className="top softtex-editorial-topbar">
-        <div className="w" style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-          <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+        <div className="w softtex-topbar-inner">
+          <span className="softtex-topbar-tagline">
+            100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment
+          </span>
+          <div className="softtex-topbar-contact">
+            <a href="tel:+8801904464294" className="softtex-topbar-link" title="Call Mobile">
+              <Phone size={12} />
+              <span>+880 1904 464294</span>
+            </a>
+            <span className="softtex-topbar-divider">|</span>
+            <a href="tel:01612844020" className="softtex-topbar-link" title="Call Telephone">
+              <Phone size={12} />
+              <span>01612 844020</span>
+            </a>
+            <span className="softtex-topbar-divider">|</span>
+            <a
+              href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions"
+              target="_blank"
+              rel="noreferrer"
+              className="softtex-topbar-link softtex-topbar-wa"
+              title="Chat on WhatsApp"
+            >
+              <MessageCircle size={12} />
+              <span>WhatsApp Desk</span>
+            </a>
+          </div>
         </div>
       </div>
 

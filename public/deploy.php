@@ -93,6 +93,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         echo "No deployment logs yet.\n";
     }
+
+    echo "\n--- System Health & Environment Diagnostics ---\n";
+    $hasVendor = file_exists($baseDir . '/vendor/autoload.php');
+    echo "vendor/autoload.php: " . ($hasVendor ? "PRESENT (OK)" : "MISSING! (Run composer install or upload vendor directory)") . "\n";
+
+    $hasEnv = file_exists($baseDir . '/.env');
+    echo ".env file: " . ($hasEnv ? "PRESENT (OK)" : "MISSING! (Create .env from .env.cpanel.example)") . "\n";
+
+    if ($hasEnv) {
+        $envContent = (string) @file_get_contents($baseDir . '/.env');
+        $hasKey = str_contains($envContent, 'APP_KEY=base64:');
+        echo "APP_KEY: " . ($hasKey ? "CONFIGURED (OK)" : "MISSING OR EMPTY! (Must set APP_KEY in .env)") . "\n";
+        preg_match('/DB_DATABASE=([^\r\n]+)/', $envContent, $mDb);
+        echo "DB_DATABASE: " . ($mDb[1] ?? 'NOT SET') . "\n";
+    }
+
+    $dirsToCheck = [
+        'storage' => $baseDir . '/storage',
+        'storage/logs' => $baseDir . '/storage/logs',
+        'storage/framework/views' => $baseDir . '/storage/framework/views',
+        'storage/framework/sessions' => $baseDir . '/storage/framework/sessions',
+        'storage/framework/cache' => $baseDir . '/storage/framework/cache',
+        'bootstrap/cache' => $baseDir . '/bootstrap/cache',
+    ];
+    echo "\n--- Directory Permissions ---\n";
+    foreach ($dirsToCheck as $name => $path) {
+        $exists = is_dir($path);
+        $writable = is_writable($path);
+        $perms = $exists ? substr(sprintf('%o', fileperms($path)), -4) : 'N/A';
+        echo sprintf("%-28s: %s | perms: %s\n", $name, ($writable ? "WRITABLE (OK)" : ($exists ? "NOT WRITABLE!" : "DIRECTORY MISSING!")), $perms);
+    }
+
+    echo "\n--- Web Server Error Logs (public/error_log) ---\n";
+    $publicErrorLog = $baseDir . '/public/error_log';
+    if (file_exists($publicErrorLog)) {
+        $lines = file($publicErrorLog);
+        $recent = array_slice($lines, -25);
+        echo implode('', $recent);
+    } else {
+        echo "No public/error_log found.\n";
+    }
+
+    echo "\n--- Root Error Logs (error_log) ---\n";
+    $rootErrorLog = $baseDir . '/error_log';
+    if (file_exists($rootErrorLog)) {
+        $lines = file($rootErrorLog);
+        $recent = array_slice($lines, -25);
+        echo implode('', $recent);
+    } else {
+        echo "No root error_log found.\n";
+    }
+
+    echo "\n--- Laravel Framework Log (storage/logs/laravel.log) ---\n";
+    $laravelLog = $baseDir . '/storage/logs/laravel.log';
+    if (file_exists($laravelLog)) {
+        $lines = file($laravelLog);
+        $recent = array_slice($lines, -25);
+        echo implode('', $recent);
+    } else {
+        echo "No storage/logs/laravel.log found.\n";
+    }
+
+    if ($hasVendor && $hasEnv) {
+        echo "\n--- Laravel Framework Bootstrap Test ---\n";
+        try {
+            require_once $baseDir . '/vendor/autoload.php';
+            $app = require_once $baseDir . '/bootstrap/app.php';
+            echo "Bootstrap: SUCCESS (Laravel 12 initialized without fatal errors)\n";
+        } catch (\Throwable $t) {
+            echo "BOOTSTRAP FATAL ERROR: " . $t->getMessage() . "\n";
+            echo "File: " . $t->getFile() . ":" . $t->getLine() . "\n";
+        }
+    }
     exit;
 }
 

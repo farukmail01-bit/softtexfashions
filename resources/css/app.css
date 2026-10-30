@@ -6181,3 +6181,84 @@ html, body {
         gap: 10px;
     }
 }
+
+/* ==========================================================================
+   13. Topbar Contact Integration & Mobile Navigation Isolation
+   ========================================================================== */
+.softtex-topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 7px 0;
+}
+
+.softtex-topbar-tagline {
+    font-size: 11.5px;
+    letter-spacing: 0.035em;
+    color: #e2e8f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.softtex-topbar-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11.5px;
+    white-space: nowrap;
+}
+
+.softtex-topbar-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.softtex-topbar-link:hover {
+    color: #f6ad55;
+    text-decoration: none;
+}
+
+.softtex-topbar-wa {
+    color: #68d391;
+    font-weight: 500;
+}
+
+.softtex-topbar-wa:hover {
+    color: #9ae6b4;
+}
+
+.softtex-topbar-divider {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 10px;
+    user-select: none;
+}
+
+/* STRICT: Hide mobile contact drawer chips on desktop */
+@media (min-width: 1025px) {
+    .softtex-mobile-nav-contact {
+        display: none !important;
+    }
+}
+
+/* Mobile topbar responsive behavior */
+@media (max-width: 1024px) {
+    .softtex-topbar-contact {
+        display: none !important;
+    }
+    .softtex-topbar-inner {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .softtex-mobile-nav-contact {
+        display: flex !important;
+    }
+}
+

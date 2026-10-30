@@ -101,8 +101,21 @@
       <div>
         {{-- TOP EDITORIAL ANNOUNCEMENT BAR --}}
         <div class="top softtex-editorial-topbar">
-          <div class="w container text-center" style="justify-content:center;">
-            <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+          <div class="w softtex-topbar-inner">
+            <span class="softtex-topbar-tagline">100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+            <div class="softtex-topbar-contact">
+              <a href="tel:+8801904464294" class="softtex-topbar-link">
+                &#9742; <span>+880 1904 464294</span>
+              </a>
+              <span class="softtex-topbar-divider">|</span>
+              <a href="tel:01612844020" class="softtex-topbar-link">
+                &#9742; <span>01612 844020</span>
+              </a>
+              <span class="softtex-topbar-divider">|</span>
+              <a href="https://wa.me/8801904464294?text=Hello%20Softtex%20Fashions" target="_blank" rel="noreferrer" class="softtex-topbar-link softtex-topbar-wa">
+                &#9993; <span>WhatsApp Desk</span>
+              </a>
+            </div>
           </div>
         </div>
 
