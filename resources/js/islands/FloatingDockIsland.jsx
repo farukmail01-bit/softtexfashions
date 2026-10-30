@@ -41,7 +41,7 @@ export default function FloatingDockIsland() {
 
   return (
     <div
-      className="softtex-floating-dock"
+      className="softtex-floating-dock softtex-screen-only no-print"
       style={{
         position: 'fixed',
         bottom: 'calc(16px + env(safe-area-inset-bottom))',

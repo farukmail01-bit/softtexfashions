@@ -69,22 +69,6 @@ export default function ContactPage() {
             <span className="softtex-contact-icon"><MapPin size={20} /></span>
             <span><small>Bangladesh office</small><strong>{address}</strong></span>
           </div>
-
-          <div className="softtex-uk-office">
-            <div>
-              <p className="softtex-eyebrow">UK MARKETING OFFICE</p>
-              <h3>Yusuf <span>· WhatsApp</span></h3>
-              <p>Message our WhatsApp desk and ask to speak with Yusuf.</p>
-            </div>
-            <a
-              className="softtex-button softtex-button-outline"
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello, I would like to speak with Yusuf about the UK marketing office.')}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Message on WhatsApp <ArrowUpRight size={16} />
-            </a>
-          </div>
         </div>
 
         <aside className="softtex-contact-note">

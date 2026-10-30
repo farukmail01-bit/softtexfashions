@@ -4068,7 +4068,7 @@ Link {
 @media print {
     @page {
         size: A4 portrait;
-        margin: 14mm 15mm 15mm 15mm;
+        margin: 10mm 12mm 10mm 12mm;
     }
 
     *,
@@ -4080,10 +4080,11 @@ Link {
 
     html, body {
         background: #ffffff !important;
+        background-color: #ffffff !important;
         color: #0b1a2b !important;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-        font-size: 9.5pt !important;
-        line-height: 1.45 !important;
+        font-size: 8.5pt !important;
+        line-height: 1.35 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
@@ -4096,22 +4097,33 @@ Link {
     .mobile-drawer,
     footer,
     .softtex-editorial-footer,
+    .softtex-floating-dock,
     .floating-dock,
     .softtex-floating-island,
+    #softtex-floating-island,
+    div[class*="floating-dock"],
+    div[class*="softtex-floating"],
     .softtex-rfq-modal,
     .softtex-cost-calculator-modal,
-    #softtex-floating-island,
     .softtex-cookie-banner,
     .softtex-terms-print-banner,
     .softtex-screen-only,
     .cta,
     .softtex-editorial-cta,
+    .softtex-terms-hero,
+    .softtex-terms-filter-bar,
     button,
     .btn,
     .softtex-editorial-button,
     .no-print {
         display: none !important;
         visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
     }
 
     .softtex-print-only {
@@ -4119,12 +4131,24 @@ Link {
         visibility: visible !important;
     }
 
-    /* 2. Terms Page Print Layout */
+    /* Force pure white background across all containers */
+    .softtex-public-site,
+    .softtex-editorial-page,
     .softtex-terms-page,
-    .softtex-terms-page * {
-        visibility: visible !important;
+    .sec,
+    .sec.alt,
+    .ph,
+    .w,
+    .container,
+    article,
+    section,
+    div {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #0b1a2b !important;
     }
 
+    /* 2. Terms Page Print Layout */
     .softtex-terms-page {
         background: #ffffff !important;
         padding: 0 !important;
@@ -4132,127 +4156,248 @@ Link {
         width: 100% !important;
     }
 
-    .softtex-terms-page .ph {
-        padding: 0 0 16px !important;
-        text-align: left !important;
+    .softtex-terms-print-letterhead {
+        border-bottom: 2px solid #98642f !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 8px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    .softtex-terms-page .ph h1 {
-        font-size: 18pt !important;
+    .softtex-terms-print-brand-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+    }
+
+    .softtex-terms-print-company-name {
+        font-family: Newsreader, Georgia, serif !important;
+        font-size: 15pt !important;
+        font-weight: 700 !important;
         color: #0b1a2b !important;
-        margin: 0 0 6px !important;
+        letter-spacing: 0.02em !important;
+        margin: 0 0 2px !important;
+        line-height: 1.1 !important;
     }
 
-    .softtex-terms-page .ph p {
-        font-size: 8.5pt !important;
-        color: #4b5563 !important;
-        line-height: 1.4 !important;
-        margin: 0 0 12px !important;
+    .softtex-terms-print-company-desc {
+        font-size: 7.5pt !important;
+        font-weight: 600 !important;
+        color: #98642f !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+        margin-bottom: 2px !important;
+    }
+
+    .softtex-terms-print-company-details {
+        font-size: 6.8pt !important;
+        color: #555555 !important;
+        line-height: 1.3 !important;
+    }
+
+    .softtex-terms-print-badge-box {
+        text-align: right !important;
+        border: 1px solid #98642f !important;
+        border-radius: 4px !important;
+        padding: 4px 8px !important;
+        background: #ffffff !important;
+    }
+
+    .softtex-terms-print-badge-code {
+        font-size: 7.5pt !important;
+        font-weight: 700 !important;
+        color: #98642f !important;
+    }
+
+    .softtex-terms-print-badge-title {
+        font-size: 6.8pt !important;
+        color: #0b1a2b !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+    }
+
+    .softtex-terms-print-doc-title {
+        font-family: Newsreader, Georgia, serif !important;
+        font-size: 10.5pt !important;
+        font-weight: 700 !important;
+        color: #0b1a2b !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+        padding: 3px 0 !important;
+        margin: 4px 0 6px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+    }
+
+    .softtex-terms-page .ph {
+        display: none !important;
     }
 
     .softtex-terms-pills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 6px !important;
-        margin-bottom: 14px !important;
+        gap: 5px !important;
+        margin-bottom: 8px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
     .softtex-terms-pill {
-        border: 1px solid #d1d5db !important;
-        background: #f9fafb !important;
+        border: 1px solid #cbd5e1 !important;
+        background: #ffffff !important;
         color: #111827 !important;
-        font-size: 8pt !important;
-        padding: 3px 8px !important;
-        border-radius: 4px !important;
+        font-size: 6.8pt !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
     }
 
     .softtex-terms-bento {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
-        gap: 8px !important;
-        margin-bottom: 18px !important;
+        gap: 6px !important;
+        margin-bottom: 10px !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
 
     .softtex-terms-bento-card {
-        border: 1px solid #e5e7eb !important;
+        border: 1px solid #cbd5e1 !important;
         border-radius: 4px !important;
-        padding: 8px 10px !important;
+        padding: 5px 7px !important;
         background: #ffffff !important;
     }
 
+    .softtex-terms-bento-icon {
+        display: none !important;
+    }
+
     .softtex-terms-bento-card h4 {
-        font-size: 9pt !important;
+        font-size: 7.5pt !important;
         color: #98642f !important;
-        margin: 0 0 3px !important;
+        margin: 0 0 1px !important;
+        font-weight: 700 !important;
     }
 
     .softtex-terms-bento-card p {
-        font-size: 7.5pt !important;
+        font-size: 6.5pt !important;
         color: #4b5563 !important;
-        line-height: 1.3 !important;
+        line-height: 1.25 !important;
         margin: 0 !important;
     }
 
     .softtex-terms-articles-grid {
-        display: block !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 6px 10px !important;
     }
 
     .softtex-terms-article-card {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
-        border: 1px solid #d1d5db !important;
+        border: 1px solid #cbd5e1 !important;
         border-radius: 4px !important;
         background: #ffffff !important;
-        padding: 10px 14px !important;
-        margin-bottom: 10px !important;
+        padding: 7px 10px !important;
+        margin-bottom: 0 !important;
     }
 
     .softtex-terms-article-header {
         display: flex !important;
         align-items: flex-start !important;
-        gap: 10px !important;
-        margin-bottom: 6px !important;
+        gap: 6px !important;
+        margin-bottom: 3px !important;
     }
 
     .softtex-terms-article-num {
-        font-size: 13pt !important;
+        font-size: 9.5pt !important;
         font-weight: 700 !important;
         color: #98642f !important;
         line-height: 1 !important;
+        background: transparent !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
     }
 
     .softtex-terms-article-title {
-        font-size: 10.5pt !important;
+        font-size: 8.2pt !important;
         font-weight: 700 !important;
         color: #0b1a2b !important;
-        margin: 0 0 2px !important;
+        margin: 0 0 1px !important;
+        line-height: 1.15 !important;
     }
 
     .softtex-terms-article-subtitle {
-        font-size: 7.5pt !important;
+        font-size: 6.5pt !important;
         font-weight: 600 !important;
         color: #98642f !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.05em !important;
+        letter-spacing: 0.04em !important;
         margin: 0 !important;
     }
 
     .softtex-terms-article-list {
         margin: 0 !important;
-        padding-left: 14px !important;
+        padding-left: 12px !important;
+        list-style: disc !important;
     }
 
     .softtex-terms-article-list li {
-        font-size: 8.5pt !important;
-        line-height: 1.4 !important;
+        font-size: 7pt !important;
+        line-height: 1.25 !important;
         color: #374151 !important;
-        margin-bottom: 3px !important;
+        margin-bottom: 2px !important;
+        display: list-item !important;
+        gap: 0 !important;
     }
 
     .softtex-terms-article-list li svg {
         display: none !important;
+    }
+
+    .softtex-terms-print-endorsement {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+        margin-top: 10px !important;
+        padding-top: 8px !important;
+        border-top: 1px dashed #999999 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .softtex-terms-print-sign-box {
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 4px !important;
+        padding: 6px 10px !important;
+        background: #ffffff !important;
+    }
+
+    .softtex-terms-sign-title {
+        font-size: 6.8pt !important;
+        font-weight: 700 !important;
+        color: #98642f !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+        margin-bottom: 2px !important;
+    }
+
+    .softtex-terms-sign-company {
+        font-size: 8pt !important;
+        font-weight: 700 !important;
+        color: #0b1a2b !important;
+        margin-bottom: 4px !important;
+    }
+
+    .softtex-terms-sign-placeholder {
+        height: 32px !important;
+        border-bottom: 1px solid #4b5563 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .softtex-terms-sign-meta {
+        font-size: 6.8pt !important;
+        color: #4b5563 !important;
+        line-height: 1.3 !important;
     }
 
     /* 3. Catalogue Print When Triggered from ProductGalleryPage */
@@ -7106,11 +7251,149 @@ html, body {
 }
 
 /* ==========================================================================
-   TERMS & CONDITIONS EDITORIAL PAGE
+   TERMS & CONDITIONS EDITORIAL SUITE (SCREEN & PRINT)
    ========================================================================== */
 .softtex-terms-page {
     background-color: var(--editorial-bg, #faf8f3);
     color: var(--editorial-ink, #0b1a2b);
+}
+
+.softtex-terms-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(52px, 6.5vw, 84px) 0 clamp(40px, 5vw, 64px);
+    color: #ffffff;
+    background:
+        radial-gradient(ellipse at 88% 20%, rgba(183, 133, 59, 0.22), transparent 44%),
+        radial-gradient(ellipse at 12% 80%, rgba(15, 36, 56, 0.5), transparent 40%),
+        linear-gradient(135deg, #091726 0%, #0f2438 52%, #173855 100%);
+    border-bottom: 1px solid rgba(183, 133, 59, 0.25);
+}
+
+.softtex-terms-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(183, 133, 59, 0.12);
+    border: 1px solid rgba(183, 133, 59, 0.35);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #e5b378;
+    margin-bottom: 18px;
+}
+
+.softtex-terms-hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #dca766;
+    box-shadow: 0 0 8px #dca766;
+}
+
+.softtex-terms-hero h1 {
+    font-family: Newsreader, Georgia, serif;
+    font-size: clamp(34px, 4.5vw, 56px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0 0 16px;
+    max-width: 900px;
+}
+
+.softtex-terms-hero-lead {
+    font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 820px;
+    margin: 0 0 28px;
+}
+
+.softtex-terms-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.softtex-terms-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.softtex-terms-kpi-card {
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(15, 36, 56, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.softtex-terms-kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(183, 133, 59, 0.45);
+}
+
+.softtex-terms-kpi-val {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #e5b378;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.softtex-terms-kpi-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.softtex-terms-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid var(--editorial-line, #e6ded1);
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(11, 26, 43, 0.04);
+    margin: 0 auto 32px;
+    max-width: fit-content;
+}
+
+.softtex-terms-filter-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #5d6673;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.softtex-terms-filter-btn:hover {
+    color: #0b1a2b;
+    background: rgba(152, 100, 47, 0.08);
+}
+
+.softtex-terms-filter-btn.active {
+    background: #0b1a2b;
+    color: #e5b378;
 }
 
 .softtex-terms-pills {
@@ -7193,7 +7476,7 @@ html, body {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 .softtex-terms-article-card {
@@ -7202,12 +7485,13 @@ html, body {
     border-radius: 8px;
     padding: 28px 24px;
     box-shadow: 0 4px 16px rgba(11, 26, 43, 0.03);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .softtex-terms-article-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(143, 88, 37, 0.3);
+    border-color: rgba(143, 88, 37, 0.35);
+    box-shadow: 0 8px 24px rgba(11, 26, 43, 0.06);
 }
 
 .softtex-terms-article-header {
@@ -7272,12 +7556,23 @@ html, body {
 }
 
 @media (max-width: 1024px) {
+    .softtex-terms-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     .softtex-terms-bento {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+    .softtex-terms-kpis {
+        grid-template-columns: 1fr;
+    }
+    .softtex-terms-filter-bar {
+        border-radius: 12px;
+        width: 100%;
+        justify-content: center;
+    }
     .softtex-terms-bento {
         grid-template-columns: 1fr;
         gap: 16px;

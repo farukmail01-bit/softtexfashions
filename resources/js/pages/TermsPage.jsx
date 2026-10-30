@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CreditCard,
@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   ArrowRight,
   Printer,
+  Sparkles,
   FileText,
 } from 'lucide-react';
 
@@ -41,6 +42,7 @@ const coreHighlights = [
 const articles = [
   {
     num: '01',
+    category: 'orders',
     title: 'Order Placement & Tech Pack Specifications',
     subtitle: 'Technical Foundation & Sampling',
     items: [
@@ -52,6 +54,7 @@ const articles = [
   },
   {
     num: '02',
+    category: 'orders',
     title: 'Minimum Order Quantities (MOQ)',
     subtitle: 'Volume Standards & Flexibility',
     items: [
@@ -62,6 +65,7 @@ const articles = [
   },
   {
     num: '03',
+    category: 'pricing',
     title: 'Commercial Pricing & Annual Contracts',
     subtitle: 'Currency, FOB & Discounts',
     items: [
@@ -72,6 +76,7 @@ const articles = [
   },
   {
     num: '04',
+    category: 'pricing',
     title: 'Payment Terms & Financial Safeguards',
     subtitle: 'Banking & Remittance Guidelines',
     items: [
@@ -82,6 +87,7 @@ const articles = [
   },
   {
     num: '05',
+    category: 'production',
     title: 'Production Lead Times & Critical Path',
     subtitle: 'Delivery Milestones & T&A Tracking',
     items: [
@@ -92,6 +98,7 @@ const articles = [
   },
   {
     num: '06',
+    category: 'production',
     title: 'Quality Assurance & Inspection Standards',
     subtitle: 'Zero-Defect Commitment',
     items: [
@@ -102,6 +109,7 @@ const articles = [
   },
   {
     num: '07',
+    category: 'legal',
     title: 'Social Compliance & Factory Standards',
     subtitle: 'Ethical & Environmental Integrity',
     items: [
@@ -112,6 +120,7 @@ const articles = [
   },
   {
     num: '08',
+    category: 'legal',
     title: 'Governing Law & Dispute Resolution',
     subtitle: 'Legal Jurisdiction & Incoterms',
     items: [
@@ -122,10 +131,24 @@ const articles = [
   },
 ];
 
+const filterCategories = [
+  { id: 'all', label: 'All Articles (8)' },
+  { id: 'orders', label: '01-02 Orders & MOQ' },
+  { id: 'pricing', label: '03-04 Pricing & Payment' },
+  { id: 'production', label: '05-06 Production & Quality' },
+  { id: 'legal', label: '07-08 Compliance & Law' },
+];
+
 export default function TermsPage() {
+  const [activeFilter, setActiveFilter] = useState('all');
+
   const handlePrint = () => {
     window.print();
   };
+
+  const displayedArticles = activeFilter === 'all'
+    ? articles
+    : articles.filter((a) => a.category === activeFilter);
 
   return (
     <div className="softtex-editorial-page softtex-terms-page">
@@ -143,7 +166,7 @@ export default function TermsPage() {
           <div className="softtex-terms-print-badge-box">
             <div className="softtex-terms-print-badge-code">DOC ID: STX-TOS-2026/27</div>
             <div className="softtex-terms-print-badge-title">Official Trade Policy</div>
-            <div style={{ fontSize: '7pt', color: '#555555', marginTop: '2px' }}>AQL 1.5 / 2.5 Certified</div>
+            <div style={{ fontSize: '6.8pt', color: '#555555', marginTop: '1px' }}>AQL 1.5 / 2.5 Certified</div>
           </div>
         </div>
         <div className="softtex-terms-print-doc-title">
@@ -151,32 +174,57 @@ export default function TermsPage() {
         </div>
       </div>
 
-      {/* 1. Page Header */}
-      <section className="ph">
-        <div className="w">
-          <p className="ey">Commercial Governance &amp; Trade Guidelines</p>
-          <h1>Terms &amp; Conditions</h1>
-          <p>
-            Clear, transparent, and international trade-compliant commercial principles governing apparel manufacturing,
-            minimum order quantities, payment structures, quality control, and export logistics at Softtex Fashions Wear Limited.
+      {/* 1. On-Screen Hero Header (Dark Luxury Editorial) */}
+      <header className="softtex-terms-hero softtex-screen-only">
+        <div className="container">
+          <div className="softtex-terms-hero-badge">
+            <span className="softtex-terms-hero-badge-dot" />
+            Commercial Governance &amp; Export Protocols
+          </div>
+          <h1>Commercial Terms &amp; Trade Governance</h1>
+          <p className="softtex-terms-hero-lead">
+            Clear, transparent, and ICC Incoterms 2020-compliant commercial principles governing apparel manufacturing,
+            minimum order quantities, payment structures, AQL 1.5/2.5 quality control, and duty-free export logistics
+            at Softtex Fashions Wear Limited.
           </p>
 
-          <div className="softtex-terms-pills">
-            <span className="softtex-terms-pill">
-              <span className="softtex-terms-pill-dot" /> Incoterms: FOB Chittagong / CIF Global Ports
-            </span>
-            <span className="softtex-terms-pill">
-              <span className="softtex-terms-pill-dot" /> Standard MOQ: 300 Pcs / Style
-            </span>
-            <span className="softtex-terms-pill">
-              <span className="softtex-terms-pill-dot" /> Payment: 50% Advance / 50% Pre-Shipment
-            </span>
-            <span className="softtex-terms-pill">
-              <span className="softtex-terms-pill-dot" /> Quality Protocol: AQL 1.5 / 2.5 FRI
-            </span>
+          <div className="softtex-terms-hero-actions">
+            <Link className="softtex-editorial-button" to="/contact">
+              Request Proforma Invoice (PI) <ArrowRight size={16} />
+            </Link>
+            <button
+              type="button"
+              onClick={handlePrint}
+              className="softtex-editorial-button softtex-editorial-button-secondary"
+              style={{ cursor: 'pointer' }}
+            >
+              <Printer size={16} /> Print / Save Official Policy (PDF)
+            </button>
+            <Link className="softtex-editorial-button softtex-editorial-button-outline" to="/calculator" style={{ borderColor: 'rgba(255,255,255,0.25)', color: '#ffffff' }}>
+              FOB Cost Calculator <Sparkles size={16} />
+            </Link>
+          </div>
+
+          <div className="softtex-terms-kpis">
+            <div className="softtex-terms-kpi-card">
+              <div className="softtex-terms-kpi-val">300 Pcs</div>
+              <div className="softtex-terms-kpi-label">Standard OEM Bulk MOQ</div>
+            </div>
+            <div className="softtex-terms-kpi-card">
+              <div className="softtex-terms-kpi-val">AQL 1.5 / 2.5</div>
+              <div className="softtex-terms-kpi-label">Major / Minor FRI Gate</div>
+            </div>
+            <div className="softtex-terms-kpi-card">
+              <div className="softtex-terms-kpi-val">50% / 50%</div>
+              <div className="softtex-terms-kpi-label">Advance &amp; Pre-Shipment</div>
+            </div>
+            <div className="softtex-terms-kpi-card">
+              <div className="softtex-terms-kpi-val">20-45 Days</div>
+              <div className="softtex-terms-kpi-label">Ex-Factory Bulk Delivery</div>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* 2. Top Bento Highlights */}
       <section className="sec" style={{ paddingTop: '56px', paddingBottom: '32px' }}>
@@ -209,7 +257,7 @@ export default function TermsPage() {
       {/* 3. Detailed Articles Grid */}
       <section className="sec alt" style={{ paddingTop: '56px', paddingBottom: '64px' }}>
         <div className="w">
-          <div className="hd" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 36px' }}>
+          <div className="hd" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 28px' }}>
             <div className="ey">Commercial Articles</div>
             <h2>Detailed Terms &amp; Production Policies</h2>
             <p>
@@ -217,8 +265,23 @@ export default function TermsPage() {
             </p>
           </div>
 
-          <div className="softtex-terms-articles-grid">
-            {articles.map((art) => (
+          {/* Interactive Screen Category Filter Bar */}
+          <div className="softtex-terms-filter-bar softtex-screen-only">
+            {filterCategories.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                className={`softtex-terms-filter-btn ${activeFilter === cat.id ? 'active' : ''}`}
+                onClick={() => setActiveFilter(cat.id)}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Screen Article View (Filtered) */}
+          <div className="softtex-terms-articles-grid softtex-screen-only">
+            {displayedArticles.map((art) => (
               <article key={art.num} className="softtex-terms-article-card">
                 <div className="softtex-terms-article-header">
                   <span className="softtex-terms-article-num">{art.num}</span>
@@ -232,6 +295,29 @@ export default function TermsPage() {
                   {art.items.map((item, idx) => (
                     <li key={idx}>
                       <CheckCircle2 size={16} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          {/* Print-Only Articles View (Always Prints All 8 Articles in Dense 2-Column Grid) */}
+          <div className="softtex-terms-articles-grid softtex-print-only">
+            {articles.map((art) => (
+              <article key={art.num} className="softtex-terms-article-card">
+                <div className="softtex-terms-article-header">
+                  <span className="softtex-terms-article-num">{art.num}</span>
+                  <div>
+                    <h3 className="softtex-terms-article-title">{art.title}</h3>
+                    <p className="softtex-terms-article-subtitle">{art.subtitle}</p>
+                  </div>
+                </div>
+
+                <ul className="softtex-terms-article-list">
+                  {art.items.map((item, idx) => (
+                    <li key={idx}>
                       <span>{item}</span>
                     </li>
                   ))}

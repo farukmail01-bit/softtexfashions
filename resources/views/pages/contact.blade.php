@@ -17,10 +17,6 @@
       <a class="softtex-contact-method" href="tel:+8801904464294"><span><small>Mobile</small><strong>+880 1904 464294</strong></span></a>
       <a class="softtex-contact-method" href="tel:01612844020"><span><small>Telephone</small><strong>01612 844020</strong></span></a>
       <div class="softtex-contact-method"><span><small>Bangladesh office</small><strong>House # 53/55(3A floor), Road # 20, Nikunja-2, Khilkhet, Dhaka -1229, Bangladesh.</strong></span></div>
-      <div class="softtex-uk-office">
-        <div><p class="softtex-eyebrow">UK MARKETING OFFICE</p><h3>Yusuf <span>· WhatsApp</span></h3><p>Message our WhatsApp desk and ask to speak with Yusuf.</p></div>
-        <a class="softtex-button softtex-button-outline" href="https://wa.me/8801904464294?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20Yusuf%20about%20the%20UK%20marketing%20office." target="_blank" rel="noreferrer">Message on WhatsApp</a>
-      </div>
     </div>
     <aside class="softtex-contact-note">
       <p class="softtex-eyebrow">A straightforward process</p>

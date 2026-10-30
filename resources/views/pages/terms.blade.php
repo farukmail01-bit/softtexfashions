@@ -27,6 +27,7 @@
   $articles = [
     [
       'num' => '01',
+      'category' => 'orders',
       'title' => 'Order Placement & Tech Pack Specifications',
       'subtitle' => 'Technical Foundation & Sampling',
       'items' => [
@@ -38,6 +39,7 @@
     ],
     [
       'num' => '02',
+      'category' => 'orders',
       'title' => 'Minimum Order Quantities (MOQ)',
       'subtitle' => 'Volume Standards & Flexibility',
       'items' => [
@@ -48,6 +50,7 @@
     ],
     [
       'num' => '03',
+      'category' => 'pricing',
       'title' => 'Commercial Pricing & Annual Contracts',
       'subtitle' => 'Currency, FOB & Discounts',
       'items' => [
@@ -58,6 +61,7 @@
     ],
     [
       'num' => '04',
+      'category' => 'pricing',
       'title' => 'Payment Terms & Financial Safeguards',
       'subtitle' => 'Banking & Remittance Guidelines',
       'items' => [
@@ -68,6 +72,7 @@
     ],
     [
       'num' => '05',
+      'category' => 'production',
       'title' => 'Production Lead Times & Critical Path',
       'subtitle' => 'Delivery Milestones & T&A Tracking',
       'items' => [
@@ -78,6 +83,7 @@
     ],
     [
       'num' => '06',
+      'category' => 'production',
       'title' => 'Quality Assurance & Inspection Standards',
       'subtitle' => 'Zero-Defect Commitment',
       'items' => [
@@ -88,6 +94,7 @@
     ],
     [
       'num' => '07',
+      'category' => 'legal',
       'title' => 'Social Compliance & Factory Standards',
       'subtitle' => 'Ethical & Environmental Integrity',
       'items' => [
@@ -98,6 +105,7 @@
     ],
     [
       'num' => '08',
+      'category' => 'legal',
       'title' => 'Governing Law & Dispute Resolution',
       'subtitle' => 'Legal Jurisdiction & Incoterms',
       'items' => [
@@ -125,7 +133,7 @@
       <div class="softtex-terms-print-badge-box">
         <div class="softtex-terms-print-badge-code">DOC ID: STX-TOS-2026/27</div>
         <div class="softtex-terms-print-badge-title">Official Trade Policy</div>
-        <div style="font-size: 7pt; color: #555555; margin-top: 2px;">AQL 1.5 / 2.5 Certified</div>
+        <div style="font-size: 6.8pt; color: #555555; margin-top: 1px;">AQL 1.5 / 2.5 Certified</div>
       </div>
     </div>
     <div class="softtex-terms-print-doc-title">
@@ -133,29 +141,60 @@
     </div>
   </div>
 
-  {{-- 1. Page Header --}}
-  <section class="ph">
-    <div class="w">
-      <p class="ey">Commercial Governance &amp; Trade Guidelines</p>
-      <h1>Terms &amp; Conditions</h1>
-      <p>Clear, transparent, and international trade-compliant commercial principles governing apparel manufacturing, minimum order quantities, payment structures, quality control, and export logistics at Softtex Fashions Wear Limited.</p>
+  {{-- 1. On-Screen Hero Header (Dark Luxury Editorial) --}}
+  <header class="softtex-terms-hero softtex-screen-only">
+    <div class="container">
+      <div class="softtex-terms-hero-badge">
+        <span class="softtex-terms-hero-badge-dot"></span>
+        Commercial Governance &amp; Export Protocols
+      </div>
+      <h1>Commercial Terms &amp; Trade Governance</h1>
+      <p class="softtex-terms-hero-lead">
+        Clear, transparent, and ICC Incoterms 2020-compliant commercial principles governing apparel manufacturing,
+        minimum order quantities, payment structures, AQL 1.5/2.5 quality control, and duty-free export logistics
+        at Softtex Fashions Wear Limited.
+      </p>
 
-      <div class="softtex-terms-pills">
-        <span class="softtex-terms-pill">
-          <span class="softtex-terms-pill-dot"></span> Incoterms: FOB Chittagong / CIF Global Ports
-        </span>
-        <span class="softtex-terms-pill">
-          <span class="softtex-terms-pill-dot"></span> Standard MOQ: 300 Pcs / Style
-        </span>
-        <span class="softtex-terms-pill">
-          <span class="softtex-terms-pill-dot"></span> Payment: 50% Advance / 50% Pre-Shipment
-        </span>
-        <span class="softtex-terms-pill">
-          <span class="softtex-terms-pill-dot"></span> Quality Protocol: AQL 1.5 / 2.5 FRI
-        </span>
+      <div class="softtex-terms-hero-actions">
+        <a class="softtex-editorial-button" href="{{ route('contact') }}">
+          Request Proforma Invoice (PI) &rarr;
+        </a>
+        <button
+          type="button"
+          onclick="window.print()"
+          class="softtex-editorial-button softtex-editorial-button-secondary"
+          style="cursor: pointer;"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:6px;">
+            <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/>
+          </svg>
+          Print / Save Official Policy (PDF)
+        </button>
+        <a class="softtex-editorial-button softtex-editorial-button-outline" href="{{ url('/calculator') }}" style="border-color: rgba(255,255,255,0.25); color: #ffffff;">
+          FOB Cost Calculator
+        </a>
+      </div>
+
+      <div class="softtex-terms-kpis">
+        <div class="softtex-terms-kpi-card">
+          <div class="softtex-terms-kpi-val">300 Pcs</div>
+          <div class="softtex-terms-kpi-label">Standard OEM Bulk MOQ</div>
+        </div>
+        <div class="softtex-terms-kpi-card">
+          <div class="softtex-terms-kpi-val">AQL 1.5 / 2.5</div>
+          <div class="softtex-terms-kpi-label">Major / Minor FRI Gate</div>
+        </div>
+        <div class="softtex-terms-kpi-card">
+          <div class="softtex-terms-kpi-val">50% / 50%</div>
+          <div class="softtex-terms-kpi-label">Advance &amp; Pre-Shipment</div>
+        </div>
+        <div class="softtex-terms-kpi-card">
+          <div class="softtex-terms-kpi-val">20-45 Days</div>
+          <div class="softtex-terms-kpi-label">Ex-Factory Bulk Delivery</div>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
   {{-- 2. Top Bento Highlights --}}
   <section class="sec" style="padding-top: 56px; padding-bottom: 32px;">
@@ -218,8 +257,8 @@
 
       <div class="softtex-terms-print-banner softtex-screen-only" style="margin-top: 40px; padding: 24px 28px; background: #ffffff; border: 1px solid var(--editorial-line, #e6ded1); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
         <div>
-          <h4 style="margin: 0 0 4px; fontSize: 16px; color: #0b1a2b;">Need a formal signed copy for your compliance department?</h4>
-          <p style="margin: 0; fontSize: 13px; color: #5a6b7d;">You can print or save these terms as a reference PDF directly from your browser.</p>
+          <h4 style="margin: 0 0 4px; font-size: 16px; color: #0b1a2b;">Need a formal signed copy for your compliance department?</h4>
+          <p style="margin: 0; font-size: 13px; color: #5a6b7d;">You can print or save these terms as a reference PDF directly from your browser.</p>
         </div>
         <button type="button" onclick="window.print()" class="softtex-editorial-button softtex-editorial-button-outline" style="cursor: pointer;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;">
