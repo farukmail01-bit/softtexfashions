@@ -6,21 +6,21 @@ import FloatingDockIsland from './islands/FloatingDockIsland';
 import RfqIsland from './islands/RfqIsland';
 import ScrollToTop from './components/ScrollToTop';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const CompliancePage = lazy(() => import('./pages/CompliancePage'));
-const ProductsPage = lazy(() => import('./pages/ProductsPage'));
-const VisionPage = lazy(() => import('./pages/VisionPage'));
-const ManagementPage = lazy(() => import('./pages/ManagementPage'));
-const QualityPage = lazy(() => import('./pages/QualityPage'));
-const TermsPage = lazy(() => import('./pages/TermsPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const ProductGalleryPage = lazy(() => import('./pages/ProductGalleryPage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
-const BlogPage = lazy(() => import('./pages/BlogPage'));
-const ArticleDetailPage = lazy(() => import('./pages/ArticleDetailPage'));
-const SourcingHub = lazy(() => import('./pages/SourcingHub'));
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import CompliancePage from './pages/CompliancePage';
+import ProductsPage from './pages/ProductsPage';
+import VisionPage from './pages/VisionPage';
+import ManagementPage from './pages/ManagementPage';
+import QualityPage from './pages/QualityPage';
+import TermsPage from './pages/TermsPage';
+import ContactPage from './pages/ContactPage';
+import ProductGalleryPage from './pages/ProductGalleryPage';
+import NotFoundPage from './pages/NotFoundPage';
+import BlogPage from './pages/BlogPage';
+import ArticleDetailPage from './pages/ArticleDetailPage';
+import SourcingHub from './pages/SourcingHub';
 const AdminRoot = lazy(() => import('./admin/AdminRoot'));
 
 function PageSeoTracker() {
@@ -112,7 +112,7 @@ function AppContent() {
       <Navbar />
 
       <main id="main-content">
-        <Suspense fallback={<div className="softtex-route-loading" role="status">Loading page…</div>}>
+        <Suspense fallback={<div className="softtex-route-instant" aria-hidden="true" />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about/company-profile" element={<AboutPage />} />

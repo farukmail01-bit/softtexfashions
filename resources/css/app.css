@@ -1342,12 +1342,12 @@ Link {
 }
 
 .softtex-route-loading {
-    min-height: 42vh;
+    min-height: 20vh;
     display: grid;
     place-items: center;
-    padding: 32px;
+    padding: 24px;
     color: var(--editorial-muted);
-    background: var(--editorial-bg);
+    background: transparent;
 }
 
 .softtex-editorial-wrap {
@@ -7486,6 +7486,308 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   SERVICES SHOWCASE EDITORIAL STYLES
+   ========================================================================== */
+.softtex-services-hero {
+    padding: clamp(48px, 6vw, 76px) 0 clamp(36px, 4vw, 56px);
+    border-bottom: 1px solid var(--editorial-line);
+}
+
+.softtex-services-hero-lead {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.65;
+    color: var(--editorial-muted);
+    max-width: 860px;
+    margin: 0 0 32px;
+}
+
+.softtex-services-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.softtex-services-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.softtex-services-kpi-card {
+    padding: 22px 20px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 4px;
+    background: var(--editorial-card);
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.softtex-services-kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--editorial-bronze);
+    box-shadow: 0 10px 24px rgba(152, 100, 47, 0.08);
+}
+
+.softtex-services-kpi-val {
+    font-family: Newsreader, Georgia, serif;
+    font-size: clamp(26px, 2.6vw, 34px);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--editorial-bronze);
+    margin-bottom: 6px;
+}
+
+.softtex-services-kpi-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--editorial-ink);
+    margin-bottom: 4px;
+}
+
+.softtex-services-kpi-desc {
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--editorial-muted);
+    margin: 0;
+}
+
+.softtex-services-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 36px;
+}
+
+.softtex-services-card {
+    padding: 30px 26px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 4px;
+    background: var(--editorial-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.softtex-services-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--editorial-bronze);
+    box-shadow: 0 14px 30px rgba(152, 100, 47, 0.09);
+}
+
+.softtex-services-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.softtex-services-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(152, 100, 47, 0.08);
+    color: var(--editorial-bronze);
+    border: 1px solid rgba(152, 100, 47, 0.2);
+}
+
+.softtex-services-card-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--editorial-bronze);
+    background: rgba(152, 100, 47, 0.08);
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+.softtex-services-card-title {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--editorial-ink);
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.softtex-services-card-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--editorial-muted);
+    margin: 0 0 20px;
+}
+
+.softtex-services-card-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    border-top: 1px solid var(--editorial-line);
+    padding-top: 18px;
+}
+
+.softtex-services-card-checklist li {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--editorial-ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.softtex-services-card-checklist li svg {
+    color: var(--editorial-bronze);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.softtex-services-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 36px;
+}
+
+.softtex-services-flow-card {
+    padding: 26px 22px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 4px;
+    background: var(--editorial-card);
+    position: relative;
+    transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.softtex-services-flow-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--editorial-bronze);
+}
+
+.softtex-services-flow-step {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--editorial-bronze);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.softtex-services-flow-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--editorial-ink);
+    margin: 0 0 8px;
+    line-height: 1.35;
+}
+
+.softtex-services-flow-card p {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--editorial-muted);
+    margin: 0;
+}
+
+.softtex-services-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.softtex-services-cat-card {
+    padding: 24px 20px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 4px;
+    background: var(--editorial-card);
+    transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.softtex-services-cat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--editorial-bronze);
+}
+
+.softtex-services-cat-title {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--editorial-ink);
+    margin: 0 0 6px;
+}
+
+.softtex-services-cat-items {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--editorial-muted);
+    margin: 0;
+}
+
+.softtex-services-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.softtex-services-highlight-card {
+    padding: 26px 24px;
+    border: 1px solid var(--editorial-line);
+    border-left: 3px solid var(--editorial-bronze);
+    border-radius: 4px;
+    background: var(--editorial-card);
+}
+
+.softtex-services-highlight-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--editorial-ink);
+    margin: 0 0 6px;
+}
+
+.softtex-services-highlight-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--editorial-muted);
+    margin: 0;
+}
+
+.softtex-route-instant {
+    min-height: 20vh;
+    opacity: 0;
+}
+
+@media (max-width: 1024px) {
+    .softtex-services-bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .softtex-services-kpis,
+    .softtex-services-flow-grid,
+    .softtex-services-cat-grid,
+    .softtex-services-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .softtex-services-kpis,
+    .softtex-services-bento-grid,
+    .softtex-services-flow-grid,
+    .softtex-services-cat-grid,
+    .softtex-services-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 
