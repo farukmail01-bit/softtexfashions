@@ -276,30 +276,29 @@ const heroSlides = [
   {
     path: 'images/home-slider/linen-fashion-editorial.jpg',
     alt: 'Minimalist linen fashion editorial',
+    hasOverlayText: true,
     headline: <>Quality in Every Detail.<em>Made for Global Markets.</em></>,
     description: 'Thoughtful product development, quality assurance and production coordination for international fashion brands.',
   },
   {
     path: 'images/home-slider/softtex-buying-house-meeting.jpg',
     alt: 'Softtex apparel buying house team reviewing designs and production plans',
-    headline: <>Your Vision.<em>Our Sourcing Expertise.</em></>,
-    description: 'Connecting global fashion brands with reliable apparel manufacturing, sourcing, quality control and production coordination from Bangladesh.',
+    hasOverlayText: false,
   },
   {
     path: 'images/home-slider/softtex-fashions-global-garment-manufacturing-banner.jpg',
     alt: 'Softtex Fashions Global Garment Manufacturing Banner',
-    headline: <>Global Manufacturing.<em>Precision & Scale.</em></>,
-    description: 'World-class garment manufacturing with certified compliance, modern machinery, and high-efficiency capacity.',
+    hasOverlayText: false,
   },
   {
     path: 'images/home-slider/softtex-fashions-quality-in-every-stitch.jpg',
     alt: 'Softtex Fashions Quality in Every Stitch',
-    headline: <>Quality in Every Stitch.<em>Excellence Assured.</em></>,
-    description: 'Rigorous multi-stage quality control from raw materials to final shipment per strict international AQL standards.',
+    hasOverlayText: false,
   },
   {
     path: 'images/home-slider/fashion-atelier.jpg',
     alt: 'Sunlit fashion atelier and clothing design workspace',
+    hasOverlayText: true,
     headline: <>From Concept.<em>To Collection.</em></>,
     description: 'We connect your product ideas with dependable apparel manufacturing and sourcing partners in Bangladesh.',
   },
@@ -445,7 +444,7 @@ export default function HomePage() {
   return (
     <div className="softtex-home-page softtex-editorial-home">
       <section
-        className="softtex-editorial-hero softtex-editorial-hero-fullscreen"
+        className={`softtex-editorial-hero softtex-editorial-hero-fullscreen ${!heroSlides[activeHeroSlide]?.hasOverlayText ? 'is-pure-banner' : ''}`}
         aria-labelledby="home-heading"
         aria-roledescription="carousel"
         aria-label="Softtex fashion highlights"
@@ -465,27 +464,33 @@ export default function HomePage() {
               style={{ backgroundImage: `url(${assetUrl(slide.path)})` }}
             />
           ))}
-          <div className="softtex-editorial-hero-overlay" />
+          {heroSlides[activeHeroSlide]?.hasOverlayText && (
+            <div className="softtex-editorial-hero-overlay" />
+          )}
         </div>
 
         {/* Foreground Content */}
         <div className="softtex-editorial-wrap softtex-editorial-hero-inner">
-          <div
-            ref={heroGridRef}
-            className="softtex-editorial-hero-copy"
-            aria-live="polite"
-          >
-            <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">SOFTTEX FASHIONS WEAR LIMITED</p>
-            <h1 id="home-heading">{heroSlides[activeHeroSlide].headline}</h1>
-            <p className="softtex-editorial-lead">{heroSlides[activeHeroSlide].description}</p>
-            <div className="softtex-editorial-actions">
-              <Link className="softtex-editorial-button" to="/services">Explore our capabilities <ArrowRight size={16} /></Link>
-              <Link className="softtex-editorial-button softtex-editorial-button-outline" to="/contact">Start a conversation</Link>
+          {heroSlides[activeHeroSlide]?.hasOverlayText ? (
+            <div
+              ref={heroGridRef}
+              className="softtex-editorial-hero-copy"
+              aria-live="polite"
+            >
+              <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">SOFTTEX FASHIONS WEAR LIMITED</p>
+              <h1 id="home-heading">{heroSlides[activeHeroSlide].headline}</h1>
+              <p className="softtex-editorial-lead">{heroSlides[activeHeroSlide].description}</p>
+              <div className="softtex-editorial-actions">
+                <Link className="softtex-editorial-button" to="/services">Explore our capabilities <ArrowRight size={16} /></Link>
+                <Link className="softtex-editorial-button softtex-editorial-button-outline" to="/contact">Start a conversation</Link>
+              </div>
+              <div className="softtex-editorial-values" aria-label="Our commitments">
+                <span>Reliable sourcing</span><span>Quality focused</span><span>Long-term partnership</span>
+              </div>
             </div>
-            <div className="softtex-editorial-values" aria-label="Our commitments">
-              <span>Reliable sourcing</span><span>Quality focused</span><span>Long-term partnership</span>
-            </div>
-          </div>
+          ) : (
+            <h1 id="home-heading" className="sr-only">SOFTTEX FASHIONS WEAR LIMITED - 100% Export-Oriented Garments Manufacturer &amp; Buying House</h1>
+          )}
 
           {/* Floating Hero Carousel Controls */}
           <div className="softtex-editorial-hero-controls-wrap">

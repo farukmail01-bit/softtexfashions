@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- FULL-BLEED EDITORIAL HERO (100% EDGE-TO-EDGE FULLSCREEN PHOTOGRAPHY) --}}
-<section class="softtex-editorial-hero softtex-editorial-hero-fullscreen" style="background-image: url('{{ asset('images/home-slider/linen-fashion-editorial.jpg') }}'); background-size: cover; background-position: center right; position: relative;">
+<section class="softtex-editorial-hero softtex-editorial-hero-fullscreen" style="background-image: url('{{ asset('images/home-slider/linen-fashion-editorial.jpg') }}'); background-size: cover; background-position: center center; position: relative;">
   <div class="softtex-editorial-hero-overlay"></div>
   <div class="w softtex-editorial-hero-inner">
     <div class="softtex-editorial-hero-copy">
