@@ -7329,90 +7329,72 @@ html, body {
 
 /* 4. Hero Section on Mobile */
 @media (max-width: 768px) {
-    /* Base Container for Text Slides */
+    /* All Hero Slides on Mobile: 100% Full-Width Uniform Aspect Ratio (Matches Pure Banner) */
     .softtex-editorial-hero,
-    .softtex-editorial-hero-fullscreen {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: auto !important;
+    .softtex-editorial-hero-fullscreen,
+    .softtex-editorial-hero.is-pure-banner,
+    .softtex-editorial-hero-fullscreen.is-pure-banner {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 1994 / 789 !important;
         height: auto !important;
-        min-height: clamp(420px, 62vh, 480px) !important;
+        min-height: 0 !important;
         max-height: none !important;
         padding: 0 !important;
         margin: 0 !important;
-        overflow: hidden;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
-    /* Pure Graphic Banner Slides (Slides without HTML overlay) */
-    .softtex-editorial-hero.is-pure-banner,
-    .softtex-editorial-hero-fullscreen.is-pure-banner {
-        aspect-ratio: 1994 / 789 !important;
-        height: auto !important;
-        min-height: clamp(160px, 39.57vw, 260px) !important;
-        max-height: none !important;
-        padding: 0 !important;
-    }
-
+    /* All Photographic Background Slides: 100% Edge-to-Edge Without Cropping */
+    .softtex-editorial-hero-bg-slide,
     .softtex-editorial-hero.is-pure-banner .softtex-editorial-hero-bg-slide {
         background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 
-    .softtex-editorial-hero.is-pure-banner .softtex-editorial-hero-controls-wrap {
-        bottom: 8px !important;
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) scale(0.82) !important;
-        z-index: 10;
-    }
-
-    /* Photographic Background Positioning on Mobile */
-    .softtex-editorial-hero-bg-slide {
-        background-size: cover !important;
-        background-position: 72% center !important;
-    }
-
-    /* Mobile Scrim / Overlay for text slides */
+    /* Remove full-photo scrim on mobile so photographic vibrancy is 100% preserved */
     .softtex-editorial-hero-overlay {
-        background: linear-gradient(
-            180deg,
-            rgba(250, 248, 243, 0.45) 0%,
-            rgba(250, 248, 243, 0.20) 40%,
-            rgba(15, 36, 56, 0.35) 100%
-        ) !important;
+        display: none !important;
     }
 
-    /* Inner Wrapper: 24px top safe clearance, 68px bottom clearance for controls */
-    .softtex-editorial-hero-inner {
-        position: relative;
-        z-index: 2;
+    /* Inner Wrapper: Positioned absolute over the proportional banner */
+    .softtex-editorial-hero-inner,
+    .softtex-editorial-hero.is-pure-banner .softtex-editorial-hero-inner {
+        position: absolute !important;
+        inset: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
         height: 100% !important;
-        min-height: clamp(420px, 62vh, 480px) !important;
-        padding: 24px 16px 68px !important;
+        min-height: 100% !important;
+        max-height: 100% !important;
+        padding: 8px 12px 22px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         box-sizing: border-box !important;
+        pointer-events: none !important;
     }
 
-    /* Frosted Editorial Glass Content Card - 100% Text Readability */
+    /* Frosted Editorial Glass Content Card - Subtle, Low-Opacity (0.45), Compact */
     .softtex-editorial-hero-copy {
         position: relative !important;
         z-index: 5 !important;
-        background: rgba(255, 255, 255, 0.93) !important;
-        backdrop-filter: blur(14px) !important;
-        -webkit-backdrop-filter: blur(14px) !important;
-        border: 1px solid rgba(143, 88, 37, 0.24) !important;
-        border-radius: 8px !important;
-        padding: 20px 18px 16px !important;
-        box-shadow: 0 10px 30px rgba(15, 36, 56, 0.15) !important;
-        margin: 0 auto !important;
-        width: 100% !important;
-        max-width: 440px !important;
+        pointer-events: auto !important;
+        background: rgba(255, 255, 255, 0.45) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.60) !important;
+        border-radius: 6px !important;
+        padding: 6px 10px !important;
+        box-shadow: 0 4px 14px rgba(15, 36, 56, 0.08) !important;
+        margin: 0 !important;
+        width: auto !important;
+        max-width: min(230px, 58%) !important;
         box-sizing: border-box !important;
         text-align: left !important;
     }
@@ -7421,22 +7403,25 @@ html, body {
     .softtex-editorial-hero-copy .softtex-editorial-eyebrow,
     .softtex-editorial-hero-copy .ey {
         justify-content: flex-start !important;
-        font-size: 9.5px !important;
-        letter-spacing: 0.13em !important;
-        margin: 0 0 6px !important;
+        font-size: 7.5px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.1em !important;
+        margin: 0 0 2px !important;
         color: var(--editorial-bronze, #8f5825) !important;
+        line-height: 1.1 !important;
     }
 
     /* H1 inside Card */
     .softtex-editorial-hero-copy h1,
     .softtex-editorial-hero h1 {
         font-family: Newsreader, Georgia, serif !important;
-        font-size: clamp(21px, 5.8vw, 25px) !important;
-        line-height: 1.22 !important;
-        letter-spacing: -0.015em !important;
+        font-size: clamp(12px, 3.4vw, 14.5px) !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.01em !important;
+        font-weight: 600 !important;
         color: var(--editorial-ink, #0f2438) !important;
-        margin: 0 0 8px !important;
-        text-shadow: none !important;
+        margin: 0 0 3px !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
     }
 
     .softtex-editorial-hero-copy h1 em,
@@ -7444,17 +7429,22 @@ html, body {
         display: block !important;
         color: var(--editorial-bronze, #8f5825) !important;
         font-style: normal !important;
+        font-weight: 600 !important;
         text-shadow: none !important;
     }
 
-    /* Lead Text inside Card */
+    /* Lead Text inside Card - 2 compact lines max */
     .softtex-editorial-lead {
-        font-size: 13px !important;
-        line-height: 1.5 !important;
-        color: #475569 !important;
-        margin: 0 0 14px !important;
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+        color: #334155 !important;
+        margin: 0 0 5px !important;
         text-shadow: none !important;
         max-width: 100% !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
     }
 
     /* Actions & Buttons inside Card */
@@ -7462,80 +7452,107 @@ html, body {
     .softtex-editorial-hero-copy > div[style*="display:flex"],
     .softtex-editorial-hero-copy > div[style*="display: flex"] {
         display: flex !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-        width: 100% !important;
+        flex-direction: row !important;
+        gap: 4px !important;
+        width: auto !important;
         margin-bottom: 0 !important;
     }
 
     .softtex-editorial-button,
     .softtex-editorial-hero-copy .btn {
-        width: 100% !important;
-        text-align: center !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
         justify-content: center !important;
-        padding: 10px 16px !important;
-        font-size: 13px !important;
-        min-height: 42px !important;
+        gap: 3px !important;
+        padding: 2px 8px !important;
+        font-size: 9px !important;
+        font-weight: 600 !important;
+        min-height: 22px !important;
+        height: 22px !important;
         box-sizing: border-box !important;
-        border-radius: 4px !important;
+        border-radius: 3px !important;
+        line-height: 1 !important;
     }
 
+    .softtex-editorial-button svg,
+    .softtex-editorial-hero-copy .btn svg {
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    /* Hide redundant secondary button and values line on mobile */
     .softtex-editorial-button-outline,
-    .softtex-editorial-hero-copy .btn.o {
-        width: 100% !important;
-        text-align: center !important;
-        justify-content: center !important;
-        padding: 10px 16px !important;
-        font-size: 13px !important;
-        min-height: 42px !important;
-        box-sizing: border-box !important;
-        border: 1px solid var(--editorial-line, #e2e8f0) !important;
-        background: rgba(250, 248, 243, 0.6) !important;
-        color: var(--editorial-ink, #0f2438) !important;
-    }
-
-    /* Hide redundant values line on mobile to keep card ultra-crisp */
+    .softtex-editorial-hero-copy .btn.o,
     .softtex-editorial-values,
     .vals {
         display: none !important;
     }
 
-    /* Floating Hero Carousel Controls - Bottom Centered Safe Area */
-    .softtex-editorial-hero-controls-wrap {
+    /* Floating Hero Carousel Controls - Bottom Centered Scaled Down */
+    .softtex-editorial-hero-controls-wrap,
+    .softtex-editorial-hero.is-pure-banner .softtex-editorial-hero-controls-wrap {
         position: absolute !important;
-        bottom: 12px !important;
+        bottom: 5px !important;
         left: 50% !important;
         right: auto !important;
-        transform: translateX(-50%) !important;
+        transform: translateX(-50%) scale(0.72) !important;
+        transform-origin: center bottom !important;
         z-index: 10 !important;
         width: auto !important;
         display: flex !important;
         justify-content: center !important;
+        pointer-events: auto !important;
     }
 
     .softtex-editorial-photo-controls {
-        padding: 4px 10px !important;
-        gap: 6px !important;
-        background: rgba(250, 248, 243, 0.94) !important;
-        border: 1px solid rgba(143, 88, 37, 0.28) !important;
-        box-shadow: 0 4px 16px rgba(15, 36, 56, 0.16) !important;
+        padding: 3px 8px !important;
+        gap: 5px !important;
+        background: rgba(255, 255, 255, 0.85) !important;
+        border: 1px solid rgba(143, 88, 37, 0.22) !important;
+        box-shadow: 0 2px 10px rgba(15, 36, 56, 0.12) !important;
         border-radius: 999px !important;
-        backdrop-filter: blur(8px) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
     }
 
     .softtex-editorial-photo-controls > button {
-        width: 28px !important;
-        height: 28px !important;
+        width: 24px !important;
+        height: 24px !important;
     }
 
     .softtex-editorial-photo-indicators button {
-        width: 6px !important;
-        height: 6px !important;
+        width: 5px !important;
+        height: 5px !important;
     }
 
     .softtex-editorial-photo-indicators button.active {
-        width: 18px !important;
+        width: 16px !important;
         background: var(--editorial-bronze, #8f5825) !important;
+    }
+}
+
+/* Micro Mobile Screens (< 380px) */
+@media (max-width: 380px) {
+    .softtex-editorial-hero-copy {
+        max-width: min(210px, 62%) !important;
+        padding: 5px 8px !important;
+    }
+    .softtex-editorial-hero-copy h1,
+    .softtex-editorial-hero h1 {
+        font-size: 11.5px !important;
+        margin-bottom: 2px !important;
+    }
+    .softtex-editorial-lead {
+        -webkit-line-clamp: 1 !important;
+        margin-bottom: 4px !important;
+    }
+    .softtex-editorial-button,
+    .softtex-editorial-hero-copy .btn {
+        min-height: 20px !important;
+        height: 20px !important;
+        padding: 2px 6px !important;
+        font-size: 8.5px !important;
     }
 }
 
