@@ -195,6 +195,8 @@ export default function HomePage() {
   const [isHeroPhotoPaused, setIsHeroPhotoPaused] = useState(false);
   const heroGridRef = useRef(null);
   const previousHeroSlide = useRef(activeHeroSlide);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const changeHeroSlide = (direction) => {
     setHeroSlideDirection(direction);
@@ -203,6 +205,28 @@ export default function HomePage() {
         ? (current + 1) % heroSlides.length
         : (current - 1 + heroSlides.length) % heroSlides.length
     ));
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartX.current = e.touches[0].clientX;
+      setIsHeroPhotoPaused(true);
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      touchEndX.current = e.changedTouches[0].clientX;
+      setIsHeroPhotoPaused(false);
+      const diff = touchStartX.current - touchEndX.current;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          changeHeroSlide('next');
+        } else {
+          changeHeroSlide('prev');
+        }
+      }
+    }
   };
 
   useEffect(() => {
@@ -302,6 +326,8 @@ export default function HomePage() {
         onBlurCapture={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setIsHeroPhotoPaused(false);
         }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Full-bleed background slider layer spanning 100% of the hero section */}
         <div className="softtex-editorial-hero-bg-layer" aria-hidden="true">

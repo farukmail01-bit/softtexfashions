@@ -6,14 +6,14 @@
   <div class="softtex-editorial-hero-overlay"></div>
   <div class="w softtex-editorial-hero-inner">
     <div class="softtex-editorial-hero-copy">
-      <p class="ey l">SOFTTEX FASHIONS WEAR LIMITED</p>
+      <p class="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">SOFTTEX FASHIONS WEAR LIMITED</p>
       <h1>Quality in Every Detail. <em>Made for Global Markets.</em></h1>
       <p class="softtex-editorial-lead">Thoughtful product development, quality assurance and production coordination for international fashion brands.</p>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;">
-        <a class="btn" href="{{ route('services') }}">Explore our capabilities &rarr;</a>
-        <a class="btn o" href="{{ route('contact') }}">Start a conversation</a>
+      <div class="softtex-editorial-actions" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;">
+        <a class="btn softtex-editorial-button" href="{{ route('services') }}">Explore our capabilities &rarr;</a>
+        <a class="btn o softtex-editorial-button softtex-editorial-button-outline" href="{{ route('contact') }}">Start a conversation</a>
       </div>
-      <div class="vals">
+      <div class="vals softtex-editorial-values">
         <span>Reliable sourcing</span>
         <span>Quality focused</span>
         <span>Long-term partnership</span>
