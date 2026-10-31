@@ -4305,7 +4305,7 @@ Link {
 }
 
 .softtex-editorial-footer {
-    padding: 54px 0 0;
+    padding: 36px 0 0;
     color: #b9c5d4;
     background: var(--editorial-navy);
     font-size: 13px;
@@ -4390,8 +4390,8 @@ Link {
 
 .softtex-editorial-footer-bottom {
     max-width: var(--softtex-container-max, 1280px);
-    margin: 42px auto 0;
-    padding: 17px 0;
+    margin: 24px auto 0;
+    padding: 14px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     color: #b9c5d4;
     font-size: 11px;
@@ -4558,7 +4558,7 @@ Link {
 
 @media (max-width: 575.98px) {
     .softtex-editorial-footer {
-        padding: 34px 0 calc(100px + env(safe-area-inset-bottom));
+        padding: 24px 0 calc(75px + env(safe-area-inset-bottom));
     }
 
     .softtex-editorial-content-grid,
@@ -5369,8 +5369,8 @@ h2 {
     justify-content: space-between;
     gap: 6px 22px;
     flex-wrap: wrap;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .top span + span {
     margin-left: 22px;
@@ -5390,9 +5390,9 @@ header .w,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 78px;
+    min-height: 64px;
     height: auto;
-    padding: 6px 0;
+    padding: 3px 0;
     gap: 16px;
 }
 .logo,
@@ -7099,6 +7099,15 @@ html, body {
         z-index: 999;
     }
 
+    header .w,
+    .softtex-editorial-header .w,
+    .softtex-editorial-nav-wrap {
+        min-height: 54px !important;
+        height: auto !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
     #mb,
     .softtex-editorial-menu-toggle {
         display: inline-flex !important;
@@ -7828,7 +7837,7 @@ html, body {
         overflow: hidden !important;
         width: 100% !important;
         background: var(--navy);
-        padding: 6px 0 !important;
+        padding: 2.5px 0 !important;
         white-space: nowrap !important;
         position: relative !important;
         box-sizing: border-box !important;
