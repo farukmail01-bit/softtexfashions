@@ -69,7 +69,7 @@ export default function Navbar({ onOpenRfq }) {
         {/* Desktop View: Clean side-by-side flex */}
         <div className="w softtex-topbar-inner softtex-topbar-desktop">
           <span className="softtex-topbar-tagline">
-            100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment
+            100% Export-Oriented Garments Manufacturer &amp; Buying House &bull; Start-Up Support: Low MOQs from 200 pcs
           </span>
           <div className="softtex-topbar-contact">
             <a href="tel:+8801904464294" className="softtex-topbar-link" title="Call Mobile">
@@ -99,7 +99,7 @@ export default function Navbar({ onOpenRfq }) {
         <div className="softtex-topbar-mobile-ticker">
           <div className="softtex-ticker-track">
             <div className="softtex-ticker-content">
-              <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+              <span>100% Export-Oriented Garments Manufacturer &bull; Start-Up Support: Low MOQs from 200 pcs &bull; Quality Our Commitment</span>
               <span className="ticker-bullet">&middot;</span>
               <a href="tel:+8801904464294" className="ticker-link">
                 <Phone size={11} />
@@ -124,7 +124,7 @@ export default function Navbar({ onOpenRfq }) {
             </div>
             {/* Duplicated for seamless infinite loop */}
             <div className="softtex-ticker-content" aria-hidden="true">
-              <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+              <span>100% Export-Oriented Garments Manufacturer &bull; Start-Up Support: Low MOQs from 200 pcs &bull; Quality Our Commitment</span>
               <span className="ticker-bullet">&middot;</span>
               <a href="tel:+8801904464294" className="ticker-link">
                 <Phone size={11} />

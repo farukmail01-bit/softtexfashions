@@ -135,8 +135,12 @@ const heroSlides = [
     path: 'images/home-slider/linen-fashion-editorial.jpg',
     alt: 'Minimalist linen fashion editorial',
     hasOverlayText: true,
+    eyebrow: 'SOFTTEX FASHIONS WEAR LIMITED',
     headline: <>Quality in Every Detail.<em>Made for Global Markets.</em></>,
-    description: 'Thoughtful product development, quality assurance and production coordination for international fashion brands.',
+    description: 'Thoughtful product development, quality assurance and production coordination for international fashion brands & emerging labels.',
+    primaryBtn: { text: 'Explore our capabilities', to: '/services' },
+    secondaryBtn: { text: 'Start a conversation', to: '/contact' },
+    values: ['Reliable sourcing', 'Quality focused', 'Start-up friendly'],
   },
   {
     path: 'images/home-slider/softtex-buying-house-meeting.jpg',
@@ -157,8 +161,12 @@ const heroSlides = [
     path: 'images/home-slider/fashion-atelier.jpg',
     alt: 'Sunlit fashion atelier and clothing design workspace',
     hasOverlayText: true,
-    headline: <>From Concept.<em>To Collection.</em></>,
-    description: 'We connect your product ideas with dependable apparel manufacturing and sourcing partners in Bangladesh.',
+    eyebrow: 'START-UP & EMERGING BRANDS ACCELERATOR',
+    headline: <>Launch Your Fashion Brand.<em>Start-Up Support &amp; Low MOQs.</em></>,
+    description: 'Dedicated incubation for emerging fashion labels: flexible MOQs from 200 pcs, proto sampling in 5-7 days, free tech-pack reviews, and end-to-end guidance from sketch to bulk shipment.',
+    primaryBtn: { text: 'Explore Start-Up Services', to: '/startup-services' },
+    secondaryBtn: { text: 'Request Low-MOQ Quote', to: '/contact' },
+    values: ['Low MOQ from 200 pcs', '5-7 Days Sampling', 'Tech-Pack Assistance'],
   },
 ];
 
@@ -192,7 +200,7 @@ export default function HomePage() {
   const [pageData, setPageData] = useState(null);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [heroSlideDirection, setHeroSlideDirection] = useState('next');
-  const [isHeroPhotoPaused, setIsHeroPhotoPaused] = useState(false);
+  const [isHeroControlsHovered, setIsHeroControlsHovered] = useState(false);
   const heroGridRef = useRef(null);
   const previousHeroSlide = useRef(activeHeroSlide);
   const touchStartX = useRef(0);
@@ -210,14 +218,14 @@ export default function HomePage() {
   const handleTouchStart = (e) => {
     if (e.touches && e.touches[0]) {
       touchStartX.current = e.touches[0].clientX;
-      setIsHeroPhotoPaused(true);
+      setIsHeroControlsHovered(true);
     }
   };
 
   const handleTouchEnd = (e) => {
     if (e.changedTouches && e.changedTouches[0]) {
       touchEndX.current = e.changedTouches[0].clientX;
-      setIsHeroPhotoPaused(false);
+      setIsHeroControlsHovered(false);
       const diff = touchStartX.current - touchEndX.current;
       if (Math.abs(diff) > 40) {
         if (diff > 0) {
@@ -229,18 +237,17 @@ export default function HomePage() {
     }
   };
 
+  // Robust, uninterrupted Auto-Rotation: advances every 4.2 seconds
   useEffect(() => {
-    if (isHeroPhotoPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return undefined;
-    }
+    if (isHeroControlsHovered) return undefined;
 
     const timer = window.setInterval(() => {
       setHeroSlideDirection('next');
       setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
-    }, 5500);
+    }, 4200);
 
     return () => window.clearInterval(timer);
-  }, [isHeroPhotoPaused]);
+  }, [isHeroControlsHovered, activeHeroSlide]);
 
   useEffect(() => {
     if (previousHeroSlide.current === activeHeroSlide) return;
@@ -320,12 +327,6 @@ export default function HomePage() {
         aria-labelledby="home-heading"
         aria-roledescription="carousel"
         aria-label="Softtex fashion highlights"
-        onMouseEnter={() => setIsHeroPhotoPaused(true)}
-        onMouseLeave={() => setIsHeroPhotoPaused(false)}
-        onFocusCapture={() => setIsHeroPhotoPaused(true)}
-        onBlurCapture={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget)) setIsHeroPhotoPaused(false);
-        }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -343,6 +344,17 @@ export default function HomePage() {
           )}
         </div>
 
+        {/* Floating Start-Up Quick Link Pill (Desktop) */}
+        <Link
+          to="/startup-services"
+          className="softtex-hero-startup-pill"
+          aria-label="Start-Up & Emerging Brands Support - Learn More"
+        >
+          <span className="softtex-startup-dot" />
+          <span className="softtex-startup-text">Start-Up Support: Low MOQs from 200 pcs</span>
+          <ArrowRight size={13} aria-hidden="true" />
+        </Link>
+
         {/* Foreground Content */}
         <div className="softtex-editorial-wrap softtex-editorial-hero-inner">
           {heroSlides[activeHeroSlide]?.hasOverlayText ? (
@@ -351,15 +363,31 @@ export default function HomePage() {
               className="softtex-editorial-hero-copy"
               aria-live="polite"
             >
-              <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">SOFTTEX FASHIONS WEAR LIMITED</p>
+              <p className="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">
+                {heroSlides[activeHeroSlide].eyebrow || 'SOFTTEX FASHIONS WEAR LIMITED'}
+              </p>
               <h1 id="home-heading">{heroSlides[activeHeroSlide].headline}</h1>
               <p className="softtex-editorial-lead">{heroSlides[activeHeroSlide].description}</p>
               <div className="softtex-editorial-actions">
-                <Link className="softtex-editorial-button" to="/services">Explore our capabilities <ArrowRight size={16} /></Link>
-                <Link className="softtex-editorial-button softtex-editorial-button-outline" to="/contact">Start a conversation</Link>
+                <Link
+                  className="softtex-editorial-button"
+                  to={heroSlides[activeHeroSlide].primaryBtn?.to || '/services'}
+                >
+                  {heroSlides[activeHeroSlide].primaryBtn?.text || 'Explore our capabilities'} <ArrowRight size={16} />
+                </Link>
+                <Link
+                  className="softtex-editorial-button softtex-editorial-button-outline"
+                  to={heroSlides[activeHeroSlide].secondaryBtn?.to || '/contact'}
+                >
+                  {heroSlides[activeHeroSlide].secondaryBtn?.text || 'Start a conversation'}
+                </Link>
               </div>
               <div className="softtex-editorial-values" aria-label="Our commitments">
-                <span>Reliable sourcing</span><span>Quality focused</span><span>Long-term partnership</span>
+                {heroSlides[activeHeroSlide].values?.map((val) => (
+                  <span key={val}>{val}</span>
+                )) || (
+                  <><span>Reliable sourcing</span><span>Quality focused</span><span>Start-up friendly</span></>
+                )}
               </div>
             </div>
           ) : (
@@ -367,7 +395,11 @@ export default function HomePage() {
           )}
 
           {/* Floating Hero Carousel Controls */}
-          <div className="softtex-editorial-hero-controls-wrap">
+          <div
+            className="softtex-editorial-hero-controls-wrap"
+            onMouseEnter={() => setIsHeroControlsHovered(true)}
+            onMouseLeave={() => setIsHeroControlsHovered(false)}
+          >
             <div className="softtex-editorial-photo-controls" aria-label="Choose hero slide">
               <button
                 type="button"

@@ -2,21 +2,36 @@
 
 @section('content')
 {{-- FULL-BLEED EDITORIAL HERO (100% EDGE-TO-EDGE FULLSCREEN PHOTOGRAPHY) --}}
-<section class="softtex-editorial-hero softtex-editorial-hero-fullscreen" style="background-image: url('{{ asset('images/home-slider/linen-fashion-editorial.jpg') }}'); background-size: cover; background-position: center center; position: relative;">
-  <div class="softtex-editorial-hero-overlay"></div>
+<section class="softtex-editorial-hero softtex-editorial-hero-fullscreen" aria-label="Softtex fashion highlights">
+  <div class="softtex-editorial-hero-bg-layer" aria-hidden="true">
+    <div class="softtex-editorial-hero-bg-slide active" style="background-image: url('{{ asset('images/home-slider/linen-fashion-editorial.jpg') }}');"></div>
+    <div class="softtex-editorial-hero-bg-slide" style="background-image: url('{{ asset('images/home-slider/softtex-buying-house-meeting.jpg') }}');"></div>
+    <div class="softtex-editorial-hero-bg-slide" style="background-image: url('{{ asset('images/home-slider/softtex-fashions-global-garment-manufacturing-banner.jpg') }}');"></div>
+    <div class="softtex-editorial-hero-bg-slide" style="background-image: url('{{ asset('images/home-slider/softtex-fashions-quality-in-every-stitch.jpg') }}');"></div>
+    <div class="softtex-editorial-hero-bg-slide" style="background-image: url('{{ asset('images/home-slider/fashion-atelier.jpg') }}');"></div>
+    <div class="softtex-editorial-hero-overlay"></div>
+  </div>
+
+  {{-- Floating Start-Up Quick Link Pill (Desktop) --}}
+  <a href="{{ route('startup-services') }}" class="softtex-hero-startup-pill" aria-label="Start-Up & Emerging Brands Support">
+    <span class="softtex-startup-dot"></span>
+    <span class="softtex-startup-text">Start-Up Support: Low MOQs from 200 pcs</span>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  </a>
+
   <div class="w softtex-editorial-hero-inner">
     <div class="softtex-editorial-hero-copy">
       <p class="softtex-editorial-eyebrow softtex-editorial-eyebrow-left">SOFTTEX FASHIONS WEAR LIMITED</p>
       <h1>Quality in Every Detail. <em>Made for Global Markets.</em></h1>
-      <p class="softtex-editorial-lead">Thoughtful product development, quality assurance and production coordination for international fashion brands.</p>
+      <p class="softtex-editorial-lead">Thoughtful product development, quality assurance and production coordination for international fashion brands &amp; emerging labels.</p>
       <div class="softtex-editorial-actions" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;">
         <a class="btn softtex-editorial-button" href="{{ route('services') }}">Explore our capabilities &rarr;</a>
-        <a class="btn o softtex-editorial-button softtex-editorial-button-outline" href="{{ route('contact') }}">Start a conversation</a>
+        <a class="btn o softtex-editorial-button softtex-editorial-button-outline" href="{{ route('startup-services') }}">Start-Up Incubation</a>
       </div>
       <div class="vals softtex-editorial-values">
         <span>Reliable sourcing</span>
         <span>Quality focused</span>
-        <span>Long-term partnership</span>
+        <span>Start-Up friendly</span>
       </div>
     </div>
   </div>

@@ -103,7 +103,7 @@
         <div class="top softtex-editorial-topbar" role="region" aria-label="Announcement">
           {{-- Desktop Topbar --}}
           <div class="w softtex-topbar-inner softtex-topbar-desktop">
-            <span class="softtex-topbar-tagline">100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+            <span class="softtex-topbar-tagline">100% Export-Oriented Garments Manufacturer &amp; Buying House &bull; Start-Up Support: Low MOQs from 200 pcs</span>
             <div class="softtex-topbar-contact">
               <a href="tel:+8801904464294" class="softtex-topbar-link">&#9742; <span>+880 1904 464294</span></a>
               <span class="softtex-topbar-divider">|</span>
@@ -117,7 +117,7 @@
           <div class="softtex-topbar-mobile-ticker">
             <div class="softtex-ticker-track">
               <div class="softtex-ticker-content">
-                <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+                <span>100% Export-Oriented Garments Manufacturer &bull; Start-Up Support: Low MOQs from 200 pcs &bull; Quality Our Commitment</span>
                 <span class="ticker-bullet">&middot;</span>
                 <a href="tel:+8801904464294" class="ticker-link">&#9742; <span>+880 1904 464294</span></a>
                 <span class="ticker-bullet">&middot;</span>
@@ -127,7 +127,7 @@
                 <span class="ticker-bullet">&middot;</span>
               </div>
               <div class="softtex-ticker-content" aria-hidden="true">
-                <span>100% Export-Oriented Garments Manufacturer &amp; Buying House - Quality Our Commitment</span>
+                <span>100% Export-Oriented Garments Manufacturer &bull; Start-Up Support: Low MOQs from 200 pcs &bull; Quality Our Commitment</span>
                 <span class="ticker-bullet">&middot;</span>
                 <a href="tel:+8801904464294" class="ticker-link">&#9742; <span>+880 1904 464294</span></a>
                 <span class="ticker-bullet">&middot;</span>
